@@ -1,0 +1,101 @@
+<!--
+ * @Description: 
+ * @verbose: 
+ * @Author: shangXueYun
+ * @Date: 2021-08-02 10:04:30
+ * @LastEditors: shangXueYun
+ * @LastEditTime: 2022-08-17 11:38:10
+-->
+<!--index.wxml-->
+<!-- top fixed -->
+<view class="container">
+  <view class="top_fixed">
+    <!-- 筛选小类 -->
+    <view class="selectKind">
+      <scroll-view class="selectKind_item" scroll-x="true" scroll-with-animation scroll-y="false" bindscroll="onGoodsScroll"  scroll-left="{{scrollLeft}}">
+        <view class="kindItem {{activeId === item.id ? 'active' : ''}}"
+              bindtap='selectKind' wx:for-item="item" 
+              data-id='{{item.id}}' data-index='{{index}}'
+              wx:for="{{kindList}}" wx:for-index="index" wx:key="id">
+              <image wx:if="{{item.value === '农贸'}}" src='../../../img/index/agticultural@2x.png'></image>
+              <image wx:if="{{item.value === '水产'}}" src='../../../img/index/aquatic@2x.png'></image>
+              <image wx:if="{{item.value === '花鸟'}}" src='../../../img/index/bird@2x.png'></image>
+              <image wx:if="{{item.value === '干货'}}" src='../../../img/index/dry@2x.png'></image>
+              <image wx:if="{{item.value === '冻品'}}" src='../../../img/index/frozen@2x.png'></image>
+              <image wx:if="{{item.value === '水果'}}" src='../../../img/index/fruits@2x.png'></image>
+              <image wx:if="{{item.value === '肉类'}}" src='../../../img/index/meat@2x.png'></image>
+              <image wx:if="{{item.value === '蔬菜'}}" src='../../../img/index/vegetables@2x.png'></image>
+              <image wx:if="{{item.value !== '蔬菜' && item.value !== '干货' && item.value !== '花鸟' && item.value !== '水产' && item.value !== '肉类' && item.value !== '水果' && item.value !== '冻品' && item.value !== '农贸'}}"
+             src='../../../img/index/vegetables@2x.png'></image>
+              <view class="">{{item.value || ' '}}</view>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 商品模块 -->
+    <view class="GoodsList">
+      <scroll-view class="GoodsListscroll" scroll-y="true" bindscroll="scroll">
+        <view class="GoodsList_box"
+          wx:for="{{classificationList}}"
+          data-Obj="{{ item }}"
+          wx:for-index="index"
+          wx:for-item="item"
+          data-tenantId="{{item.id}}"
+          bindtap="gostoreShopp"
+          wx:key="index">
+          <view class="GoodsList_item">
+            <image wx:if="{{item.shopPhotos}}" src="{{item.shopPhotos}}" lazy-load="true" />
+            <image wx:else src="../../../img/global/tenant_defalut.png" lazy-load="true" />
+            <!-- <view class="GoodsList_button">
+              <view class="title">{{item.lineName}}
+                <view class="specification" wx:if="{{!item.specification || item.specification<=0}}">1{{item.unitName}}
+                </view>
+                <view class="specification" wx:else>约{{item.specification}}{{item.unitName}}
+                </view>
+              </view>
+              <text class="store">【{{item.tenantName}}】</text>
+              <view class="foter">
+                <text class="price">¥{{item.price}}</text>
+                <text class="month_sales">月售{{item.salesNum}}</text>
+              </view>
+            </view> -->
+            <view class="GoodsList_button">
+                <view class="title">{{ item.referred }}
+                </view>
+                <view class="foter">
+                  <text class="price">{{ item.buildingName }}</text>
+                  <text class="month_sales">{{ item.shopNo }}</text>
+                </view>
+              </view>
+          </view>
+        </view>
+          <!-- <view class="GoodsList_box" bindtap="gostoreShopp">
+            <view class="GoodsList_item">
+              <image src="../../../img/global/tenant_defalut.png" lazy-load="true" />
+              <view class="GoodsList_button">
+                <view class="title">小杨水产
+                </view>
+                <view class="foter">
+                  <text class="price">水产交易区</text>
+                  <text class="month_sales">水产101</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="GoodsList_box">
+            <view class="GoodsList_item">
+              <image src="../../../img/global/tenant_defalut.png" lazy-load="true" />
+              <view class="GoodsList_button"
+                <view class="title">小杨水产
+                </view>
+                <view class="foter">
+                  <text class="price">水产交易区</text>
+                  <text class="month_sales">水产101</text>
+                </view>
+              </view>
+            </view>
+          </view> -->
+          <view class="nodata">没有更多数据了</view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

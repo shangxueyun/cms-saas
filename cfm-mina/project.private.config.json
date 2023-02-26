@@ -1,0 +1,62 @@
+{
+  "setting": {
+
+  },
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "search",
+          "pathName": "pages/index/search",
+          "query": "name=‘蔬菜’",
+          "scene": null
+        },
+        {
+          "name": "searchResult",
+          "pathName": "pages/index/searchResult",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index/index",
+          "pathName": "pages/index/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/location/location",
+          "pathName": "pages/index/location/location",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/location/location",
+          "pathName": "pages/index/location/location",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/location/location",
+          "pathName": "pages/index/location/location",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/location/location",
+          "pathName": "pages/index/location/location",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

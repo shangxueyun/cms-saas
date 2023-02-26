@@ -1,0 +1,36 @@
+
+<view class="codeDetails">
+  <view class="content" >
+    <view class="time">
+      {{ dataTime }}:<text>{{ seconds }}</text>
+    </view>
+    <image class="image" src="{{ codeImg }}" />
+    <view class="info">
+      <view class="text">
+        <text>
+          预约日期：
+        </text>
+        <text class="bolder">
+          {{ codeDetails.date }}
+        </text>
+      </view>
+      <view class="text">
+        <text>
+          预约时间：
+        </text>
+        <text class="bolder">
+          {{ codeDetails.time }}
+        </text>
+      </view>
+      <view class="text">
+        <text>
+          到访区域：
+        </text>
+        <text class="bolder">
+          {{ codeDetails.buildingName }}
+        </text>
+      </view>
+    </view>
+  </view>
+</view>
+

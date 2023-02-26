@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "购物车",
+  "navigationBarBackgroundColor": "#ffffff",
+  "usingComponents": {
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-toast": "@vant/weapp/toast/index"
+  }
+}

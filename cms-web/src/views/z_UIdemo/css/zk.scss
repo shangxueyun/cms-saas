@@ -1,0 +1,89 @@
+// 默认Tab
+.default_tab_block {
+    height: 62px;
+    line-height: 62px;
+    box-shadow:0px 1px 2px 0px rgba(190,199,208,0.2);
+    background-color: #ffffff;
+    display: flex;
+    li {
+        width: 160px;
+        height: 62px;
+        cursor: pointer;
+        text-align: center;
+        span {
+            font-size: 14px;
+            color:#333333;
+        }
+        .tab_badge {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            span:nth-child(2) {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: -25px;
+                min-width: 18px;
+                height: 18px;
+                line-height: 18px;
+                padding: 0 3px;
+                font-weight: normal;
+                color: white;
+                text-align: center;
+                text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+                border-radius: 18px;
+                background: #D92E20;
+                font-size: 12px;
+            }
+        }
+    }
+    .active {
+        border-bottom: 3px solid #3575F6;
+        span {
+            color: #3575F6;
+            font-weight: 600;
+        } 
+    }
+}
+
+// 二级Tab
+.second_tab_block {
+    display: flex;
+    background-color: #ffffff;
+    li {
+        width:100px;
+        height:34px;
+        text-align: center;
+        line-height: 34px;
+        color:#333333;
+        border-radius:17px;
+        font-size: 14px;
+        margin-right:8px;
+        cursor: pointer;
+        &.active {
+            background:#3575F6;
+            color:#fff;
+            font-weight: 600;
+        }
+    }
+}
+
+// 临近Tab
+.Lj_tab_block {
+    display: flex;
+    background-color: #ffffff;
+    li {
+        width:100px;
+        height:34px;
+        text-align: center;
+        line-height: 34px;
+        color:#333333;
+        font-size: 14px;
+        margin-right:8px;
+        cursor: pointer;
+        &.active {
+            color:#3575F6;
+            font-weight: 600;
+        }
+    }
+}

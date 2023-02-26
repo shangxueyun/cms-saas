@@ -1,0 +1,62 @@
+<wxs src="../../../utils/businessTool.wxs" module="tools" />
+<view class="coupon">
+  <view class="useCoupon" wx:if="{{showUsingCoupon.length != 0}}">
+    <view class="couponInfo" wx:if="{{showUsingCoupon.length}}">可用优惠券</view>
+    <view class="usingItem" wx:for="{{showUsingCoupon}}" wx:key="index">
+      <view class="useingTop">
+        <view class="couponLeft">
+          <view class="money">
+            ￥<text>{{item.denomination}}</text>
+          </view>
+          <view class="explain">
+            满{{item.requiredAmoun}}可用
+          </view>
+        </view>
+        <view class="couponRight">
+          <view class="activity">
+            <view class="activityName">{{item.couponName}}</view>
+            <view class="choose" bindtap="choose" data-index='{{index}}'>
+              <view></view>
+              <image src='../../../img/global/selected.png' wx:if="{{index == couponAmount.chooseIndex}}"></image>
+            </view>
+          </view>
+          <view class="activityTime">{{tools.formatDate(item.couponStartTime)}} - {{tools.formatDate(item.couponEndTime)}}</view>
+        </view>
+      </view>
+      <view class="useingBottom {{item.showTip ? 'showTipHeight' : ''}}">
+        <view class="useTip {{item.showTip ? '' : 'showTipDel'}}">{{item.describe}}</view>
+        <view class='iconfont icon-xiala' wx:if="{{!item.showTip && item.describe}}"  bindtap="showTip" data-index='{{index}}' data-showtip='{{item.showTip}}'></view>
+        <view class='iconfont icon-zhedie' wx:elif="{{item.showTip && item.describe}}"  bindtap="showTip" data-index='{{index}}' data-showtip='{{item.showTip}}'></view>
+      </view>
+    </view>
+  </view>
+  <view class="useCoupon " wx:if="{{showUnUsingCoupon.length != 0}}">
+    <view class="couponInfo" wx:if="{{showUnUsingCoupon.length}}">不可用优惠券</view>
+    <view class="usingItem expireCoupon" wx:for="{{showUnUsingCoupon}}" wx:key="index">
+      <view class="useingTop">
+        <view class="couponLeft">
+          <view class="money expireCoupon">
+            ￥<text class="expireCoupon">{{item.denomination}}</text>
+          </view>
+          <view class="explain expireCoupon">
+            满{{item.requiredAmoun}}可用
+          </view>
+        </view>
+        <view class="couponRight">
+          <view class="activity">
+            <view class="activityName expireCoupon">{{item.couponName}}</view>
+            <view class="activityButton">
+            </view>
+          </view>
+          <view class="activityTime expireCoupon">{{tools.formatDate(item.couponStartTime)}} - {{tools.formatDate(item.couponStartTime)}}</view>
+        </view>
+      </view>
+      <view class="useingBottom {{item.showTip ? 'showTipHeight' : ''}}">
+        <view class="useTip {{item.showTip ? '' : 'showTipDel'}}">{{item.describe}}</view>
+        <view class='iconfont icon-xiala' wx:if="{{!item.showTip && item.describe}}"  bindtap="showTip2" data-index='{{index}}' data-showtip='{{item.showTip}}'></view>
+        <view class='iconfont icon-zhedie' wx:elif="{{item.showTip && item.describe}}"  bindtap="showTip2" data-index='{{index}}' data-showtip='{{item.showTip}}'></view>
+      </view>
+    </view>
+  </view>
+</view>
+<button bindtap='goBack' class="submit-bottom reset-button">确定</button>

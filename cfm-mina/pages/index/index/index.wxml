@@ -1,0 +1,80 @@
+<!--
+ * @Description: 
+ * @verbose: 
+ * @Author: shangXueYun
+ * @Date: 2022-08-10 09:36:00
+ * @LastEditors: shangXueYun
+ * @LastEditTime: 2022-08-18 17:03:52
+-->
+<navigationBar></navigationBar>
+<wxs src="../../../utils/businessTool.wxs" module="tools" />
+<!-- <view class=""></view> -->
+<view style="height:100%;background-color: #ffffff;overflow-y: auto;overflow-x: hidden">
+  <view class="forward">
+    <view class="forwardB">
+      <image src="../../../img/index/bg@2x.png" lazy-load="true"></image>
+      <view class="forwardBin">
+        <view class="forwardBTop">
+          <view>入场预约</view>
+          <view>
+            <view class="forwardBtn" bindtap="toMake" >立即预约</view>
+          </view>
+        </view>
+        <view class="forwardBButton">
+          <view class="forwardBLeft" bindtap = "toCode" >
+            <view class="bIcon">
+              <view class='iconfont icon-erweima'></view>
+            </view>
+            <view class="name">预约码</view>
+          </view>
+          <view class="forwardBLeft" bindtap = "toRecord" >
+            <view class="bIcon">
+              <view class='iconfont icon-yuyuejilu'></view>
+            </view>
+            <view class="name">预约记录</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="classification">
+    <!-- <view class="food-item" bindtap='goSearchReault'> -->
+    <view class="food-item" wx:for="{{classificationList}}" wx:key="index"  bindtap='goSearchReault' data-id='{{item.id}}'>
+      <image wx:if="{{item.value === '农贸'}}" src='../../../img/index/agticultural@2x.png'></image>
+      <image wx:if="{{item.value === '水产'}}" src='../../../img/index/aquatic@2x.png'></image>
+      <image wx:if="{{item.value === '花鸟'}}" src='../../../img/index/bird@2x.png'></image>
+      <image wx:if="{{item.value === '干货'}}" src='../../../img/index/dry@2x.png'></image>
+      <image wx:if="{{item.value === '冻品'}}" src='../../../img/index/frozen@2x.png'></image>
+      <image wx:if="{{item.value === '水果'}}" src='../../../img/index/fruits@2x.png'></image>
+      <image wx:if="{{item.value === '肉类'}}" src='../../../img/index/meat@2x.png'></image>
+      <image wx:if="{{item.value === '蔬菜'}}" src='../../../img/index/vegetables@2x.png'></image>
+      <image wx:if="{{item.value !== '蔬菜' && item.value !== '干货' && item.value !== '花鸟' && item.value !== '水产' && item.value !== '肉类' && item.value !== '水果' && item.value !== '冻品' && item.value !== '农贸'}}"
+             src='../../../img/index/vegetables@2x.png'></image>
+      <text class="cf-name">{{item.value}}</text>
+    </view>
+  </view>
+  <view class="homeContent">
+    <view class="homeTitle">服务区</view>
+    <view class="homeBox">
+      <view class="homeBoxL" bindtap="goService" data-type='building'>
+        <image class="" src="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/building.png" lazy-load="false"></image>
+        <text>行政大楼</text>
+      </view>
+      <view class="homeBoxR">
+        <view class="homeBoxRB" bindtap="goService"  data-type='account'>
+          <image class="" src="../../../img/index/account.png" lazy-load="false"></image>
+          <text>结算中心</text>
+        </view>
+        <view class="homeBoxRB" bindtap="goService"  data-type='dining'>
+          <image class="" src="../../../img/index/dining.png" lazy-load="false"></image>
+          <text>大食堂</text>
+        </view>
+        <view class="homeBoxRB" bindtap="goService"  data-type='safety'>
+          <image class="" src="../../../img/index/safety.png" lazy-load="false"></image>
+          <text>食安检测</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<van-toast id="van-toast" />

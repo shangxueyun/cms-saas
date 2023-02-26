@@ -1,0 +1,7 @@
+/* pages/shoppingCar/editOrder/editOrder.wxss */
+page{
+  background: #f4f4f4;
+  
+}
+
+

@@ -1,0 +1,171 @@
+<!-- pages/shoppingCar/index/index.wxml -->
+<view class='shoppingCar'>
+  <!-- 绑定手机号 -->
+  <!-- <view class='content' wx:if='{{shoppingCar.length > 0 || invalidationGoods.length > 0}}'> -->
+  <view class='content' wx:if='{{!bindPhoneTurn}}'>
+    <view class='list' scroll-y='{{true}}' wx:if="{{!(shoppingCar.valid.length === 0 && shoppingCar.expier.length === 0) }}">
+      <!-- <view class='tip' wx:if='{{!(totalPrice >= 25)}}'>下单金额满25元起送</view> -->
+      <view class='listItem' wx:for='{{shoppingCar.valid}}' wx:for-index='shopIndex' wx:key='id'>
+        <view class="shopBox">
+          <view class='shop'>
+            <view bindtap='shopChecked' data-index='{{shopIndex}}' data-tenantId='{{item.tenantId}}'>
+              <view class='select'>
+                <view></view>
+                <image src='../../../img/global/selected.png' wx:if='{{goodsCheckedTurn[shopIndex].shopTurn}}'></image>
+              </view>
+            </view>
+            <view class='shopName' bindtap='goShop' data-tenantId='{{item.tenantId}}'>
+              <text>{{item.tenantName}}</text>
+              <view class='iconfont icon-right'></view>
+            </view>
+            <view>
+              <view class='shopDel' bindtap='shopDel' data-shopIndex='{{shopIndex}}' data-item='{{item}}'>
+                <text class="iconfont icon-cms_shanchu-233"></text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='goodsList'>
+          <view class='goodsItem' wx:for='{{item.shoppingCart}}' wx:key='id'>
+            <view data-goods='{{item}}' data-index='{{index}}' data-shopIndex='{{shopIndex}}' bindtap='checkedGoods'>
+              <view class='select'>
+                <view></view>
+                <image src='../../../img/global/selected.png' wx:if='{{goodsCheckedTurn[shopIndex].goodsTurn[index]}}'></image>
+              </view>
+              <!-- <view class='selectCover' wx:if='{{!item.onSale}}'></view> -->
+            </view>
+            <view class='itemContent'>
+              <view class='itemImg'>
+                <image src='{{item.imgUrl ? item.imgUrl : "../../../img/global/good-defalut.png"}}' lazy-load="true"></image>
+                <!-- <view class='itemCover' wx:if='{{!item.onSale}}'>已失效</view> -->
+                <view class="itemButton" wx:if='{{item.lineStock <= 5 && item.lineStock > 0 }}'>仅剩{{item.lineStock}}件</view>
+                <!-- <view wx:if="{{item.category !== 'IMMEDIATELY'}}" class="distribution-Label">{{item.categoryStr}}</view> -->
+              </view>
+            </view>
+            <view class='itemControl'>
+              <view class='itemKind'>
+                <view>
+                  <view class="name">{{item.goodsName}}</view>
+                    <view class="specification" wx:if="{{!item.specification || item.specification<=0}}">
+                      1{{item.unitName}}
+                    </view>
+                  <view class="specification" wx:else>
+                    约{{item.specification}}{{item.unitName}}
+                  </view>
+                </view>
+                <!-- <text>{{item.name}}<text wx:key="id" wx:for="{{item.goodsPropertyDetailedDTOS}}">{{','+item.detailedName}}</text> x {{item.goodsCnt}}</text> -->
+              </view>
+              <view class='changeShopCar'>
+                <!-- <text>
+                  <text class='foodPricetext'>￥</text>
+                  <text>{{item.price}}</text>
+                </text> -->
+                <view class="infoPrice" wx:if="{{item.showDiscount}}">
+                  ¥{{item.price}}
+                  <view class="oldPrice">¥{{item.resourcePrice}}</view>
+                </view>
+                <view class="infoPrice" wx:else>
+                  ¥{{item.price}}
+                </view>
+                <view>
+                  <view bindtap='reduce' data-index='{{index}}' data-shopIndex='{{shopIndex}}'>
+                    <view class="iconfont icon-kfd_jian-33 {{item.salesNum !== 0 ? '' : 'iconColor'}}"></view>
+                  </view>
+                  <text>{{item.salesNum > 999 ? '999' : item.salesNum}}</text>
+                  <view bindtap='plus' data-index='{{index}}' data-shopIndex='{{shopIndex}}' data-goods='{{item}}'>
+                    <view class="iconfont icon-kfd_jia"></view>
+                  </view>
+                </view>
+                <!-- <image bindtap='noPlusAlert' wx:if='{{!item.onSale}}' src='../../../img/addShopCarDefault.png'></image> -->
+              </view>
+              <!-- <text>￥{{item.priceAll}}</text> -->
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 失效商品 -->
+      <!-- wx:if='{{shoppingCar.expier.length > 0}}' -->
+      <view class="invalidation-goods" wx:if='{{shoppingCar.expier.length > 0}}'>
+        <view class="goods-total">
+          <view>失效商品{{shoppingCar.expier.length}}件</view>
+          <view bindtap='delInvalidGoods'>清空失效商品</view>
+        </view>
+        <view class="goods-list">
+          <view class='goodsList'>
+            <view class='goodsItem' wx:for='{{shoppingCar.expier}}' wx:key='id'>
+              <view data-goods='{{item}}' data-index='{{index}}' data-tenantId='{{tenantId}}' bindtap='checkedGoods'>
+                <view class='invalselect'>
+                  <view class="inval-icon">失效</view>
+                </view>
+                <!-- <view class='selectCover' wx:if='{{!item.onSale}}'></view> -->
+              </view>
+              <view class='itemContent'>
+                <view class='itemImg'>
+                  <image src='{{item.imgUrl ? item.imgUrl : "../../../img/global/good-defalut.png"}}' lazy-load="true"></image>
+                  <view class='itemCover'></view>
+                </view>
+                <view class='itemKind'>
+                  <!-- <text class="textOverflow">{{item.goodsName}}</text> -->
+                  <!-- <text>
+                    {{item.name}}
+                    <text wx:key="id" wx:for="{{item.goodsPropertyDetailedDTOS}}">
+                      {{','+item.detailedName}}
+                    </text>
+                    x {{item.goodsCnt}}
+                  </text> -->
+                  <text>
+                    <!-- <text class='foodPricetext'>￥{{item.price}}</text> -->
+                  </text>
+                </view>
+              </view>
+              <view class='itemControl'>
+                <view class='itemKind'>
+                <view>
+                  <view class="name">{{item.goodsName}}</view>
+                    <!-- <view class="specification" wx:if="{{!item.specification || item.specification<=0}}">
+                      1{{item.unitName}}
+                    </view>
+                  <view class="specification" wx:else>
+                    约{{item.specification}}{{item.unitName}}
+                  </view> -->
+                </view>
+                <!-- <text>{{item.name}}<text wx:key="id" wx:for="{{item.goodsPropertyDetailedDTOS}}">{{','+item.detailedName}}</text> x {{item.goodsCnt}}</text> -->
+              </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view></view>
+    </view>
+    <view class='contentEmpty' wx:if="{{(shoppingCar.valid.length === 0 && shoppingCar.expier.length === 0) }}">
+      <view class='empty'>
+        <image src="../../../img/global/kong@2x.png"></image>
+        <text class="emptyTop">购物车为空</text>
+        <text class="emptyBut">赶紧慰劳一下自己吧~</text>
+      </view>
+    </view>
+    <view class='control'>
+      <view class='controlLeft'>
+        <view bindtap='allChecked' class="checkBox">
+          <view class='select'>
+            <view></view>
+            <image src='../../../img/global/selected.png' wx:if="{{allCheckedTurn}}"></image>
+            <!-- <image src='../../../img/global/unselected.png' wx:else></image> -->
+          </view>
+          <text>全选</text>
+        </view>
+      </view>
+      <view class='controlCenter'>
+        <view class="controlRight {{totalPrice === 0 || totalPrice < startGiveFee ? 'gray' : ''}}" bindtap='goBalance'>{{tagPrice}}</view>
+        <view>
+          合计：
+          <text>
+            <text class='foodPricetext'>￥{{totalPrice}}</text>
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<van-toast id="van-toast" />

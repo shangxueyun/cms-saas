@@ -1,0 +1,64 @@
+<view class="onSale">
+  <view class="onSaleTime">
+    <view class="timeTop">
+      <view class="onSaleNavbar">
+        <view class='back' bindtap="goBack">
+          <view class='iconfont icon-fanhui'></view>
+        </view>
+        <view class="navbarText">限时优惠</view>
+        <view></view>
+      </view>
+    </view>
+    <view class="time">
+      <view class="timeInfo">
+        距离本场{{tag}}
+        <view class="timeShow">{{hour}}</view>:
+        <view class="timeShow">{{minute}}</view>:
+        <view class="timeShow">{{second}}</view>
+      </view>
+      <view>优惠结果以提交订单为准，售完即止，结束后恢复原售价</view>
+    </view>
+    <view class="timeButtom"></view>
+  </view>
+  <view class="onSaleGoods">
+    <view class="saleGoods" wx:for="{{onsaleData}}" wx:key="index">
+      <view class="imUrl" hover-class="none" hover-stop-propagation="false">
+        <image src="{{item.gImgurl ? item.gImgurl : '../../../img/global/good-defalut.png'}}" lazy-load="true"></image>
+        <view class="lineStock" wx:if="{{item.lineStock > 0 && item.lineStock <= 5}}">仅剩{{item.lineStock}}件</view>
+        <view class='goodsCover' wx:elif="{{ item.lineStock <= 0}}">
+           <view class="cover">已售完</view>
+        </view>
+      </view>
+      <view class="saleGoodsInfo">
+        <view class="infoTop">
+          <view class="infoName">
+            {{item.lineName}}
+            <view wx:if="{{!item.specification || item.specification<=0}}">1{{item.unitName}}</view>
+            <view wx:else>约{{item.specification}}{{item.unitName}}</view>
+          </view>
+          <view class="shopName">
+            【{{item.tenantName}}】
+          </view>
+        </view>
+        <view class="infoButtom">
+          <view class="infoPrice" wx:if="{{item.showDiscount}}">
+            ¥{{item.price}}
+            <view class="oldPrice">¥{{item.resourcePrice}}</view>
+          </view>
+          <view class="infoPrice" wx:else>
+            ¥{{item.price}}
+          </view>
+          <view class="button {{saleStatus === 'ING' ? 'gray' : ''}} {{( saleStatus === 'ING' && endState) ? 'flgray' : ''}}"  bindtap="addShopCar" wx:if='{{item.lineStock > 0}}' data-index="{{index}}" data-salesNum="{{item.salesNum}}"  data-lineStock="{{item.lineStock}}">
+            马上抢
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="loadAll"wx:if="{{loadAll && tableData.length!==0}}">
+    <text>- </text>
+    <text> 已经到底了 </text>
+    <text> -</text>
+  </view>
+</view>
+<van-toast id="van-toast" />

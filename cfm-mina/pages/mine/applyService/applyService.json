@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index"
+  }
+}

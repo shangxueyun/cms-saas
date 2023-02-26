@@ -1,0 +1,84 @@
+
+<view class="park-container" style="border-top: 1rpx solid #f2f2f2;">
+  <van-cell title="交易区" is-link value="{{ from.trading }}" bind:click="SelectTradingDol">
+    <span slot="icon" class="flag">*</span>
+  </van-cell>
+</view>
+
+<view class="park-container">
+  <van-cell title="铺位编号">
+    <input style="width: 45%;text-align: right;margin-right: 10rpx;" bind:input="berthInput" value="{{ from.berthNo }}" slot="right-icon" type="text" placeholder="请填写" name="no" />
+    <span slot="icon" class="flag">*</span>
+  </van-cell>
+</view>
+
+<view class="park-container">
+  <van-cell title="姓名" is-link value="{{ from.name }}" bind:click="SelectNameDol">
+    <span slot="icon" class="flag">*</span>
+  </van-cell>
+</view>
+
+<view class="park-container">
+  <van-cell title="身份证后六位">
+    <input style="width: 45%;text-align: right;margin-right: 10rpx;" bind:blur="idCardblur" min="6" max="6" bind:input="idCardVlaue" value="{{ from.idCard }}" slot="right-icon" type="text" placeholder="请填写" name="no" />
+    <span slot="icon" class="flag">*</span>
+  </van-cell>
+</view>
+
+<view class="upload">
+  <van-uploader
+    file-list="{{ from.fileList }}"
+    deletable="{{ true }}"
+    max-count="1"
+    upload-text="上传图片"
+    bind:delete="imageDelete"
+    bind:after-read="imageAfter"
+    preview-image="{{ true }}"
+  />
+</view>
+
+<view class="footer">
+  <view class="content">
+    <van-checkbox value="{{ from.checked }}" bind:change="onChange">以上填写的内容真实有效。如未履行疫情防控义务造成传染病传播扩散，将承担相应的法律责任。</van-checkbox>
+  </view>
+  <button
+    disabled="{{ !fromDataBle }}"
+    bindtap="submit"
+  >确认上传</button>
+</view>
+
+<van-popup show="{{ TradingDol }}"  position="bottom" bind:close="TradingonClose">
+  <van-picker
+    show-toolbar
+    title="请选择交易区"
+    active-class="active-class"
+    value-key="value"
+    columns="{{ TradingDolcolumns }}"
+    bind:cancel="TradingDolCancel"
+    bind:confirm="TradingDolConfirm"
+  />
+</van-popup>
+
+<van-popup show="{{ NameDol }}"  position="bottom" bind:close="NameonClose">
+  <van-picker
+    show-toolbar
+    title="请选择人员"
+    value-key="value"
+    active-class="active-class"
+    columns="{{ NameDolcolumns }}"
+    bind:cancel="NameDolCancel"
+    bind:confirm="NameDolConfirm"
+  />
+</van-popup>
+
+<view class="succee">
+  <van-popup show="{{ succeeShow }}" position="center">
+    <image class="img" src="../../../img/index/succee.png" />
+    <text class="h3">随申码已成功上传！</text>
+    <text class="text">您可选择退出或者重新上传</text>
+    <div class="button">
+      <button class="exit" bindtap='exit'>退出小程序</button>
+      <button bindtap="again" class="again">重新上传</button>
+    </div>
+  </van-popup>
+</view>

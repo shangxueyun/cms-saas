@@ -1,0 +1,26 @@
+<!--
+ * @Description: 
+ * @verbose: 
+ * @Author: shangXueYun
+ * @Date: 2021-07-23 16:28:04
+ * @LastEditors: shangXueYun
+ * @LastEditTime: 2021-07-30 15:43:03
+-->
+<!--index.wxml-->
+<view class="container">
+  <van-dialog id="CFM-dialog" />
+  <!-- 在页面内添加对应的节点 -->
+  <van-notify id="van-notify" />
+
+  <!-- 地理位置授权 -->
+  <view catchtouchmove='true' wx:if="{{showAddressSetting}}" bindtap='closeAddressTip' class="addressMask">
+    <view catchtap='return' class="addressCenter">
+      <view class="address-top">温馨提示</view>
+      <view class="address-center">开启定位授权，获取更好的体验！</view>
+      <view class="address-footer">
+        <navigator class="addAddress-bottom" open-type="exit" target="miniProgram">退出小程序</navigator>
+        <button class="addAddress-bottom" open-type="openSetting" bindopensetting='mapLocate'>前往授权</button>
+      </view>
+    </view>
+  </view>
+</view>

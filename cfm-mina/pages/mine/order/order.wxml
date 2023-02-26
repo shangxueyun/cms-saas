@@ -1,0 +1,120 @@
+<wxs src="../../../utils/businessTool.wxs" module="tools" />
+<view class="order">
+  <view class='nav'>
+    <view bindtap='tabSwitch' data-tab='WAIT_PAY' class='navItem {{tabSwitchStatus == "WAIT_PAY" ? "navChecked" : ""}}'>
+      <text>待支付</text>
+    </view>
+    <view bindtap='tabSwitch' data-tab='WAITORDER' class='navItem {{tabSwitchStatus == "WAITORDER" ? "navChecked" : ""}}'>
+      <text>待收货</text>
+    </view>
+    <view bindtap='tabSwitch' data-tab='ALL' class='navItem {{tabSwitchStatus == "ALL" ? "navChecked" : ""}}'>
+      <text class='firstText'>全部</text>
+    </view>
+  </view>
+  <view class='orderList' wx:if='{{waitPayOrderList.length > 0}}' wx:if='{{tabSwitchStatus === "WAIT_PAY"}}'>
+    <view class='orderItem' wx:for='{{waitPayOrderList}}' wx:key='id' bindtap='goOrderDetail' data-id='{{item.id}}' data-status='{{tabSwitchStatus}}'>
+      <view class='order-item-header'>
+        <view class='order-time'>下单时间：{{tools.formatDate(item.createOrderTime)}}</view>
+        <view class='order-status'>{{tools.orderStatusFormat(item.orderStatus)}}</view>
+      </view>
+      <view class="order-item-content">
+        <view class="order-item-list" wx:for="{{item.tenantOrders}}" data-index2='index' wx:for-item="item2" wx:key='id'>
+          <view class='shop-name'>
+            <text class="iconfont icon-kfd_dianpu"></text>
+            {{item2.tenantReferred}}
+          </view>
+          <view class='shop-goods'>
+            <view class='shop-goods-item' wx:for="{{item2.details}}" wx:for-item="item3" wx:key='id' wx:if="{{index < 6}}">
+              <image src="{{item3.imageUrl}}"></image>
+            </view>
+            <view class="ellipsis" wx:if="{{item2.details.length > 6}}">...</view>
+          </view>
+        </view>
+      </view>
+      <view class='cont-bottom'>
+        <text>共{{sumNumber[index]}}件商品</text>
+        <text>实付：</text>
+        <text>¥{{item.actualPayment}}</text>
+        <text>（含配送费¥{{item.freigh}}）</text>
+      </view>
+      <view class="order-item-bottom">
+        <view class="bottom-bottom">
+          <button type="default" plain="true" catchtap="cancelOrder" data-item="{{ item }}">
+            取消订单
+          </button>
+          <button type="default" plain="true" catchtap='showModal' data-item="{{ item }}">
+            修改送达时间
+          </button>
+          <button type="default" plain="true" catchtap='toPay' data-item="{{ item }}">
+            去支付 {{item.payTimeDeadLine}}
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='orderList' wx:if='{{orderList.length > 0}}' wx:if='{{tabSwitchStatus !== "WAIT_PAY"}}'>
+    <scroll-view bindscroll="scrollEvent" scroll-top="{{scrollTopType}}" bindscrolltolower="scrollBottom" scroll-y="true" class="scoll-h">
+      <view class='orderItem' wx:for='{{orderList}}' wx:key='id' bindtap='goOrderDetail' data-id='{{item.id}}' data-status='{{tabSwitchStatus}}'>
+        <view class='order-item-header'>
+          <view class='order-time'>下单时间：{{tools.formatDate(item.createOrderTime)}}</view>
+          <view class='order-status {{item.orderStatus == "CANCELLED" || item.orderStatus == "COMPLETE" || item.orderStatus == "NOT_PAY" ? "black" : ""}}'>
+            {{tools.orderStatusFormat(item.orderStatus)}}
+          </view>
+        </view>
+        <view class="order-item-content">
+          <view class="order-item-list" wx:for='{{item.tenantOrders}}' wx:key='id' wx:for-item="item2">
+            <view class='shop-name'>
+              <text class="iconfont icon-kfd_dianpu"></text>
+              {{item2.tenantReferred}}
+            </view>
+            <view class='shop-goods'>
+              <view class='shop-goods-item' wx:for="{{item2.details}}" wx:for-item="item3" wx:key='id' wx:if="{{index < 6}}">
+                <image src="{{item3.imageUrl}}"></image>
+              </view>
+              <view class="ellipsis" wx:if="{{item2.details.length > 6}}">...</view>
+            </view>
+          </view>
+          <view class='cont-bottom no-freigh'>
+            <text>共{{item.totalNumber}}件商品</text>
+            <text>实付：</text>
+            <text>¥{{item.actualPayment}}</text>
+            <text>（含配送费¥{{item.freigh}}）</text>
+          </view>
+        </view>
+        <view class="order-item-bottom">
+          <view class="bottom-bottom" wx:if="{{item.orderStatus === 'WAIT_PAY'}}">
+            <button type="default" plain="true" catchtap="cancelOrder" data-item="{{ item }}">
+              取消订单
+            </button>
+            <button type="default" plain="true" catchtap='showModal' data-item="{{ item }}">
+              修改送达时间
+            </button>
+            <button type="default" plain="true" catchtap='toPay' data-item="{{ item }}">
+              去支付 {{item.payTimeDeadLine}}
+            </button>
+          </view>
+          <view class="bottom-bottom" wx:else>
+            <!-- wx:if="{{item.orderStatus === 'ACCEPTORDER' || item.orderStatus === 'NOT_ACCEPTORDER'}}" -->
+            <!-- <button type="default" plain="true" catchtap="cancelOrder2" data-item="{{ item }}" wx:if="{{item.orderStatus === 'WAIT_PAY'}}">
+              取消订单
+            </button> -->
+            <button type="default" plain="true" catchtap="delOrder" data-id="{{ item.id }}" wx:if="{{item.orderStatus === 'COMPLETE' || item.orderStatus === 'CANCELLED' || item.orderStatus === 'NOT_PAY'}}">
+              删除订单
+            </button>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <van-dialog id="van-dialog" />
+  <van-action-sheet show="{{ showCancel }}" title="选择取消原因" bind:close="onCloseCancel">
+    <view wx:for="{{reasonList}}" wx:key="index" class="reason-list" bindtap="selectReason" data-index="{{ index }}">
+      <text class='{{selectedIndex === index ? "active" : "" }}'>{{item.name}}</text>
+      <text class="iconfont icon-cms_gou-227" wx:if="{{selectedIndex === index}}"></text>
+    </view>
+    <button type="default" plain="true" bindtap="cancelOrderHandler" class="cancle-btn">确 定</button>
+  </van-action-sheet>
+  <!-- 预计送达时间弹层 -->
+  <deliveryTime id="DeliveryTime"></deliveryTime>
+  <van-toast id="van-toast" />
+</view>

@@ -1,0 +1,242 @@
+/* pages/mine/addAddress/addAddress.wxss */
+.addAddress-content{
+  padding-top:20rpx;
+}
+.addAddress-tips{
+  margin-top: 30rpx;
+  text-align: center;
+  color: #ff0000;
+}
+.addAddress-info{
+  background-color: #ffffff;
+}
+.addAddress-info .addAddress-li:last-child{
+  border-bottom:0;
+}
+
+.addAddress-li{
+  border-bottom:1px solid #F2F2F2;
+  height: 100rpx;
+  display: flex;
+ 
+}
+.addAddress-text{
+  display: block;
+  width:125rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color:#040F0F;
+  padding-left:24rpx;
+}
+.comInput{
+  display: block;
+  line-height: 100rpx;
+  height:100rpx;
+  font-size: 26rpx;
+  color:#333333;
+  padding-right:24rpx;
+  box-sizing: border-box;
+}
+.textInput{
+  font-size: 26rpx;
+  color:#333333;
+  padding-right:14rpx;
+  /* box-sizing: border-box; */
+  line-height: 30rpx;
+  height: 100rpx;
+  width: 500rpx;
+}
+.textPlaceholder{
+  color: #ccc;
+  line-height: 8rpx;
+  font-size: 26rpx;
+  width: 500rpx;
+  padding-right:14rpx;
+}
+.addAddress-input{
+  height:100rpx;
+  flex: 1;
+  line-height: 100rpx;
+}
+.addAddress-inputflex{
+  height:100rpx;
+  flex: 1;
+  line-height: 100rpx;
+  display: flex;
+  padding-right: 46rpx;
+}
+.choose-address{
+  padding-right:24rpx;
+  width: 562rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+}
+.choose-address-info{
+  color:#cccccc;
+  font-size: 26rpx;
+  float: left;
+  display: block;
+  height:100rpx;
+  line-height: 100rpx;
+}
+.choose-address-right{
+   color:#dcdcdc;
+  font-size: 30rpx;
+  float: right;
+  display: block;
+  height:100rpx;
+  line-height: 100rpx;
+}
+.psection{
+  color:#cccccc;
+}
+.sex-label{
+  display: block;
+  height:40rpx;
+}
+.address-radio{
+  display: block;
+  width:40rpx;
+  height:40rpx;
+  float:left;
+}
+.sex-label text{
+  display: block;
+  height:40rpx;
+  float:left;
+  font-size: 30rpx;
+  color:#333333;
+}
+.radio-box{
+  float: left;
+  margin-top:35rpx;
+  margin-right:70rpx;
+}
+.radio-deflut{
+  width:40rpx;
+  height:40rpx;
+  border-radius: 40rpx;
+  border:1rpx solid #cccccc;
+  float: left;
+  margin-right:20rpx;
+}
+.radio-box text{
+  display: block;
+  height:40rpx;
+  line-height: 40rpx;
+  color:#333333;
+  font-size: 30rpx;
+  float: left;
+}
+.radio-deflut image{
+  display:none;
+  width:100%;
+  height:100%;
+}
+.radio-active .radio-deflut{
+  border: 0;
+  width:44rpx;
+  height:44rpx;
+}
+.radio-active .radio-deflut image{
+  display: block;
+  width:100%;
+  height:100%;
+}
+
+.tip-info{
+  width:100%;
+  line-height: 80rpx;
+  margin-top:-18rpx;
+  background-color: rgba(255, 240, 240, 1);
+	border-top: solid 1px rgba(229, 229, 229, 1); 
+  border-bottom: solid 1px rgba(229, 229, 229, 1);
+ text-align: center;
+ font-size: 28rpx;
+  color:#ff7674;
+}
+.tip_Show{
+  display: block;
+}
+.tip_Hide{
+  display: none;
+}
+.distribution_scope{
+  margin-top: 20rpx;
+  background-color: #ffffff;
+}
+.distribution_scope>text {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  color: #666666;
+  padding-left: 24rpx;
+}
+.section{
+  flex:1;
+}
+.section picker{
+  width:100%;
+  height:100%;
+}
+.addAddress-di {
+  position: relative;
+  white-space: nowrap;
+}
+.layout {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  overflow: hidden;/*超出部分隐藏*/
+  white-space: nowrap;/*不换行*/
+  text-overflow:ellipsis;/*超出部分文字以...显示*/
+}
+.layoution {
+  /* padding-left: 24rpx; */
+}
+.iconfont {
+  position: absolute;
+  right: 30rpx;
+  top: 0;
+  width: 40rpx;
+  height: 40rpx;
+  color: #ccc;
+  line-height: 110rpx;
+} 
+.picker{
+  display: block;
+  /* float: right; */
+  width:100%;
+  height:100%;
+  overflow: hidden;/*超出部分隐藏*/
+  white-space: nowrap;/*不换行*/
+  text-overflow:ellipsis;
+}
+.addAddress-text{
+  width:165rpx;
+}
+.bt_disabled {
+  background-color: #dddddd;
+}
+.choose-address{
+  display: flex;
+}
+.comInput{
+  flex: 1;
+}
+.map_height{
+  height:306rpx!important;
+}
+
+.default-address{
+  width: 360rpx;
+}
+.default-address-ip{
+  text-align: right;
+  padding-right: 28rpx;
+}
+
+.wx-switch-input {
+  zoom: .7;
+}

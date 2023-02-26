@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index",
+    "navigationBar":"/components/navigationBar/navigationBar",
+    "van-overlay": "@vant/weapp/overlay/index"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "backgroundTextStyle": "dark",
+  "navigationStyle": "default",
+  "navigationBarTitleText": "分类",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-transition": "@vant/weapp/transition/index",
+    "van-divider": "@vant/weapp/divider/index"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "dark",
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "商家店铺",
+  "navigationBarBackgroundColor": "#ffffff",
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index"
+  }
+}

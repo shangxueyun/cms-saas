@@ -1,0 +1,10 @@
+{
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "搜索",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

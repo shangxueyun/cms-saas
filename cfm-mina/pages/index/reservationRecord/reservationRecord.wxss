@@ -1,0 +1,78 @@
+
+  page{
+    background-color: #fff;
+  }
+  .content {
+    padding: 30rpx;
+    background: #fff;
+  }
+  .content .item{
+    box-shadow: 0rpx 0rpx 24rpx 4rpx rgba(102, 111, 241, 0.25);
+    border-radius: 32rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30rpx;
+    height: 180rpx;
+    margin-bottom: 30rpx;
+    position: relative;
+  }
+  .content .item-left{
+    width: 76%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .item-left .left-top{
+    width: 100%;
+  }
+  .left-top .model{
+    display: flex;
+    width: 100%;
+  }
+  .model .text{
+    display: flex;
+    flex-direction: column;
+    font-size: 30rpx;
+    color: #2C3038;
+    line-height: 50rpx;
+  }
+  .model .image{
+    width: 110rpx;
+    height: 110rpx;
+    margin: 0 10rpx 10rpx 0;
+  }
+  .item-left .time{
+    color: #757B82;
+    font-size: 24rpx;
+  }
+  .content .item-right{
+    width: 14%;
+  }
+  .content .item-cancel{
+    width: 14%;
+    margin-right: 48rpx;
+  }
+  .content .cancel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 32rpx;
+    background: rgba(243,243,243, 0.5);
+  }
+  .item-right button{
+    margin: 74% 0;
+    width: 116rpx;
+    height: 56rpx;
+    background: #F7F8FA;
+    color: #3A41DD;
+    font-size: 28rpx;
+    line-height: 56rpx;
+    border-radius: 16rpx;
+  }
+  .item-right .color{
+    color: #B2B5C2;
+    width: 142rpx;
+  }

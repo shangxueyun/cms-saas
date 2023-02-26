@@ -1,0 +1,27 @@
+<!-- * @Description: 
+ * @verbose: 
+ * @Author: shangXueYun
+ * @Date: 2021-08-02 10:06:35
+ * @LastEditors: shangXueYun
+ * @LastEditTime: 2021-08-02 17:35:52 -->
+<!-- index.wxml -->
+<view class="container">
+  <view class="search">
+    <van-search left-icon slot="title" focus shape="round" background="#FFFFFF" value="{{ lineName }}" placeholder="关键字／商品名" bind:search="onSearch" />
+    <text class="btnS" bindtap="onCancel">取消</text>
+  </view>
+  <!-- <view class="dialog">
+    <van-dialog id="van-dialog" confirm-button-color='#1CC296'/>
+  </view> -->
+  <view class="history" wx:if="{{ historyList.length > 0 }}">
+    <view class="topCon">
+      <h4>历史搜索</h4>
+      <view class="iconfont  icon-cms_shanchu-233" bindtap="onDelete"></view>
+    </view>
+    <view class="list">
+      <view class="item" wx:for="{{ historyList }}" bindtap="onSearch" data-value="{{ item.sreachName }}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        {{ item.sreachName }}
+      </view>
+    </view>
+  </view>
+</view>

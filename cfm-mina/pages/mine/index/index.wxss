@@ -1,0 +1,356 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+/* pages/mine/index/index.wxss */
+page{
+  width:100%;
+  height:100%;
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom: 0;
+}
+.mine-container{
+  min-height:100%;
+  width:100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  position: relative;
+}
+.mine-head{
+  width:100%;
+  box-sizing: border-box;
+  background: linear-gradient(43deg, #EBF7FF 0%, #F5F2FF 100%);
+}
+.mine-info{
+  width:100%;
+  box-shadow: 0 2rpx 16rpx 0 #E5E5E5;
+  border-radius: 8rpx;
+  background: linear-gradient(43deg, #EBF7FF 0%, #F5F2FF 100%);
+}
+.mine-info-top{
+  width:100%;
+  height:320rpx;
+  padding: 144rpx 30rpx 0 30rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.mine-content{
+  float: left;
+}
+.mine-pic{
+  width:120rpx;
+  height:120rpx;
+  float: left;
+  /* border-radius: 50%; */
+}
+.mine-pic image{
+  display: block;
+  width:100%;
+  height:100%;
+  border-radius: 50%;
+}
+.mine-message{
+  float: left;
+  margin-left:28rpx;
+  color: #2C3038;
+}
+.mine-message text{
+  display: block;
+}
+.mine-name{
+  font-size: 36rpx;
+  /* color: #2C3038; */
+  line-height: 40rpx;
+  margin-top: 30rpx;
+}
+.mine-phone{
+  font-size: 28rpx;
+  /* color: #8D8E92; */
+  line-height: 45rpx;
+  margin-top:20rpx;
+}
+.mine-right-icon{
+  height:120rpx;
+  float: right;
+  padding-top:25rpx;
+}
+.mine-info-bottom{
+  width:100%;
+  height:143rpx;
+  background-color: #ffffff;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  padding:28rpx 0rpx 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  box-shadow:0 4rpx 8rpx 0 rgba(227,231,238,0.58);
+}
+.mine-integral{
+  width:33.33%;
+  float: left;
+}
+.integral-icon{
+  float: left;
+  width:68rpx;
+  height:56rpx;
+}
+.integral-icon image{
+  display: block;
+  width:100%;
+  height:100%;
+}
+.integral-title{
+  display: block;
+  line-height: 24rpx;
+	color: #2C3038;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top:20rpx;
+}
+.integral-count{
+  display: block;
+  font-family: ﻿PingFang-SC-Bold;
+	font-size: 36rpx;
+  color:#2C3038;
+  line-height: 36rpx;
+  text-align: center;
+}
+.mine-line{
+  width:2rpx;
+  height:43rpx;
+  background: #e5e5e5;
+  position: absolute;
+  z-index:2;
+  left:50%;
+  top:60rpx;
+}
+.order-manage{
+  width:100%;
+  /* background-color: #fff; */
+  /* border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx; */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(43deg, #EBF7FF 0%, #F5F2FF 100%);
+  box-sizing: border-box;
+  /* box-shadow:0 4rpx 8rpx 0 rgba(227,231,238,0.58); */
+}
+.om-wrap{
+  /* border-radius: 32rpx 32rpx 0rpx 0rpx;*/
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  width: 100%;
+  /* box-shadow: 0 2rpx 16rpx 0 #E5E5E5; */
+  padding:20rpx 32rpx 0;
+  /* border-radius: 8rpx; */
+  background-color: #fff;
+  box-sizing: border-box;
+}
+.manage-head{
+  width:100%;
+  padding: 30rpx 20rpx 0;
+  box-sizing: border-box;
+  height:106rpx;
+}
+.manage-title{
+  display: block;
+  float:left;
+  height:26rpx;
+  line-height: 26rpx;
+  font-size: 30rpx;
+  color:#2C3038;
+  font-weight: bold;
+}
+.manage-right{
+  float: right;
+  height:26rpx;
+}
+.manage-right>text{
+  font-size: 26rpx;
+  color:#666666;
+  line-height: 26rpx;
+  float: left;
+}
+.manage-right image{
+  display: block;
+  width:14rpx;
+  height:26rpx;
+  float: left;
+}
+.manage-right .icon-right{
+  display: inline-block;
+  font-size: 24rpx;
+  color: #666666;
+  margin-left: 10rpx;
+}
+.order-list{
+  width:100%;
+  margin-top: 20rpx;
+  padding-bottom: 30rpx;
+  display: flex;
+}
+.order-li{
+  width:33%;
+}
+.order-li-icon{
+  position: relative;
+  z-index: 1;
+  width: 46rpx;
+  height: 46rpx;
+  margin:0 auto;
+}
+.order-li-icon image{
+  display: block;
+  width:100%;
+  height:100%;
+}
+.order-li-icon text{
+  display: none;
+  position: absolute;
+  z-index: 2;
+  background-color:#FB3640;
+  width:30rpx;
+  height:30rpx;
+  border-radius:30rpx;
+  font-size: 20rpx;
+  color:#ffffff;
+  line-height:30rpx;
+  text-align: center;
+  top:-18rpx;
+  right:-18rpx;
+  border:6rpx solid #ffffff;
+}
+.waitorder{
+  width: 52rpx;
+  height: 42rpx;
+}
+.order-li-info{
+  display: block;
+  width:100%;
+  text-align: center;
+  font-size: 24rpx;
+  color:#040F0F;
+  line-height: 24rpx;
+  margin-top:26rpx;
+}
+.mineList{
+  width:100%;
+  box-sizing: border-box;
+  margin-bottom:20rpx;
+  padding-right:32rpx;
+  padding: 20rpx 32rpx 0;
+}
+.mineList-li{
+  width:100%;
+  height:112rpx;
+  border-bottom:2rpx solid #F0F0F0;
+  padding: 40rpx 20rpx 0 20rpx;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 1px 2px 3px 4px rgba(230, 230, 230, 0.3);
+  border-radius: 12rpx;
+  margin-bottom: 20rpx;
+}
+.mineList-li2{
+  background: #fff;
+  padding-left:0;
+  line-height: 28rpx;
+  padding-right:0;
+}
+.mineList-li-info{
+  display: block;
+  line-height: 28rpx;
+  float: left;
+  height:28rpx;
+  font-size: 32rpx;
+  color:#040F0F;
+  font-weight: 400;
+}
+.mineList-li-icon{
+  float: right;
+  height:28rpx;
+}
+.mineList-li-icon text{
+  display: block;
+  width:100%;
+  height:100%;
+ font-size: 28rpx;
+ color:#666666;
+}
+.mineList-li-messge{
+  position: absolute;
+  z-index: 2;
+  top:31rpx;
+  right:70rpx;
+  display: block;
+  width: 90rpx;
+	height: 50rpx;
+	background-color: rgba(255, 240, 240, 1);
+	border-radius: 25rpx;
+  font-size: 28rpx;
+	line-height: 50rpx;
+	color: #ff7674;
+  text-align: center;
+}
+.view_show{
+  display: block!important;
+}
+.view_hide{
+  display: none!important;
+}
+.user-jiantou{
+  color:#C6C6C6;
+  font-size:28rpx;
+}
+/* .mineList-li2{
+  border-bottom:0;
+} */
+.getUser{
+  position: absolute;
+  z-index: 2;
+  width:628rpx;
+  height:148rpx;
+  padding:0;
+  margin:0;
+  opacity: 0;
+}
+.mine-protocol {
+  width: 100%;
+  height: 60rpx;
+  /* line-height: 160rpx; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10rpx;
+}
+.protocol {
+  font-size: 24rpx;
+  color: #1CC296;
+}

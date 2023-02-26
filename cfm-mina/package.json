@@ -1,0 +1,24 @@
+{
+  "name": "cfm-mina",
+  "version": "1.0.0",
+  "description": "<!--\r  * @Description: \r  * @verbose: \r  * @Author: shangXueYun\r  * @Date: 2021-07-23 16:26:22\r  * @LastEditors: shangXueYun\r  * @LastEditTime: 2021-08-02 11:59:50\r -->\r npm init 一路回车   完成后根目录会生成package.json文件",
+  "main": "app.js",
+  "dependencies": {
+    "@vant/weapp": "^1.10.4"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "postcss-pxtransform": "^3.5.3"
+  },
+  "scripts": {
+    "build": "gulp css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@192.168.1.233:mercury-fed-group/cfm-mina.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

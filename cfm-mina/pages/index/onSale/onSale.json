@@ -1,0 +1,9 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationStyle": "custom",
+  "navigationBarBackgroundColor": "#FB3640",
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index"
+  },
+  "enablePullDownRefresh": true
+}

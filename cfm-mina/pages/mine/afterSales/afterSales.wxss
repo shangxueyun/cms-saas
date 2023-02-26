@@ -1,0 +1,135 @@
+.after-sales{
+  height: 100%;
+}
+.nav{
+  height: 80rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1024;
+  box-shadow:0 2rpx 4rpx 0 rgba(227,231,238,0.58);
+}
+.nav>view{
+  font-size: 30rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+  color: #474747;
+  line-height: 72rpx;
+  border-bottom: 6rpx solid transparent;
+  border-top: 4rpx solid transparent;
+  width: 120rpx;
+  text-align: center;
+}
+.nav>.navChecked{
+  border-bottom-color: #1CC296;
+  color: #1CC296;
+}
+.navItem>text{
+  display: block;
+  font-weight: 400;
+}
+.navChecked>text{
+  font-weight: 500;
+}
+.orderList{
+  padding-top: 80rpx;
+  height: 100%;
+}
+.scoll-h{
+  height: 100%;
+  position: relative;
+}
+.orderItem{
+  margin-top: 16rpx;
+  background-color: #ffffff;
+}
+.orderItem:last-child {
+  margin-bottom: 16rpx;
+}
+.order-item-header{
+  padding: 10rpx 28rpx;
+}
+.order-item-header>view {
+  color: #666666;
+  font-size: 26rpx;
+  padding: 10rpx 0;
+}
+.order-item-content {
+  border-top: 2rpx solid #F2F2F2;
+  /* border-bottom: 2rpx solid #F2F2F2; */
+}
+.shop-name{
+  color: #2C3038;
+  font-size: 28rpx;
+  font-weight: bold;
+  height: 64rpx;
+  line-height: 64rpx;
+  padding: 0 28rpx;
+  border-bottom: 1px solid #F2F2F2;
+}
+.goods-item{
+  display: flex;
+  border-bottom: 1px solid #F0F0F0;
+  padding: 20rpx 0 20rpx 0;
+  margin-left: 28rpx;
+}
+.goods-item>image{
+  width: 70rpx;
+  height: 70rpx;
+  border: 1px solid #F2F2F2;
+  margin-right: 16rpx;
+}
+.item-info{
+  min-width: 200rpx;
+}
+.item-info>view:nth-child(1) {
+  color: #2C3038;
+  font-size: 26rpx;
+  margin-bottom: 8rpx;
+}
+.item-info>view:nth-child(2) {
+  color: #8D8E92;
+  font-size: 24rpx;
+}
+.button-wrap{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.od-button{
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 48rpx;
+  text-align: center;
+  color: #2C3038;
+  font-size: 24rpx;
+  border-radius: 28rpx;
+  border: 1px solid #ABACAF;
+  align-self: center;
+  margin-right: 28rpx;
+}
+.od-status{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 28rpx;
+  border-bottom: 1px solid #F2F2F2;
+}
+.ods-left>view:nth-child(1){
+  color: #2C3038;
+  font-size: 30rpx;
+  padding: 10rpx 0 5rpx 0;
+}
+.ods-left>view:nth-child(2){
+  color: #8D8E92;
+  font-size: 26rpx;
+  padding: 5rpx 0 10rpx 0;
+}
+od-status .iconfont {
+  align-self: center;
+}

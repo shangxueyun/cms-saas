@@ -1,0 +1,793 @@
+[
+  {
+    "name": "登录",
+    "url": "/uaa/oauth/token",
+    "method": "post",
+    "data": {
+      "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbIm9wZW5pZCJdLCJpZCI6MSwiZXhwIjoxNDk2NDU2MTQ1LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjUyNWFlYThjLTYyYzQtNDdmNS1hOTdmLWVkZGM4OTE2ZjViMCIsImNsaWVudF9pZCI6IndlYl9hcHAifQ.KLUdvCuZyZUYGI3S2O4qoZ7kcHNVeSTuSqLWmCITNN_fIt0V3ZQRiY3kNsk7CYK2isVHRtnUjcPCptPFMHMUBthnXMCMnURg6JSTBnxYOMg-fpq5llJ53hbuipYx21tGgN9MGknSUQHBX8LYX3Muwww4xe-g5386rM_DQuqKlvlAQkic2GpmeM7YTsbuP70OdrRKvjO3nZG315CGY7Yt-TXFjpTPjrGS8f4uyi16-ofLJHqZHUSaQshONtyzujY7rRm8tgQcjQrI37BGBtoH71VKPBvHXJS9UmQ7pYzWmmp1Z89fTSedS5dVOtwtuD0YTvtYGh5d4PzDTsZLWhIltA",
+      "token_type": "bearer",
+      "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbIm9wZW5pZCJdLCJhdGkiOiI1MjVhZWE4Yy02MmM0LTQ3ZjUtYTk3Zi1lZGRjODkxNmY1YjAiLCJpZCI6MSwiZXhwIjoxNDk5MDA0OTQ1LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImE0NDhmNGZiLTM2MDQtNDM2My1iZjNjLTE4NTMxODM1ZWNiNCIsImNsaWVudF9pZCI6IndlYl9hcHAifQ.fCVwsQKS6oJ-gQt5dtcyUvGhtxQw3VObJ0z6YbuMXRBxO2dnxVtX2nY2Zx8hMGUoq_UUOJ59zhemfN0pk288DF2DKZXrz7I9uuTyz7hjWjcaNqPLH10m5pcPwCd_Z5qf5c6WS6_e5H7v1AVtxiFKNoCT_EwESdveWvHIsaxhnuXtUuLhiiGvdNk67QH7fT-yzVnNdLUQtyoRMaYz89pwdNeN7O-zGhghDAzbRwuS3I2ew6YKnU7wsyGgvKi7zcjxssppy9su6t9EnHcPrCHNzqusc1rjTKQ4cyfkyy_2THmrhFx_OA5NVf5LmPj6P8B9VvY34wHAW3Rh3KtfTjGzzQ",
+      "expires_in": 43199,
+      "scope": "openid",
+      "id": 1,
+      "jti": "525aea8c-62c4-47f5-a97f-eddc8916f5b0"
+    }
+  },
+  {
+    "name": "获取当前用户",
+    "url": "/uaa/api/account",
+    "data": {
+      "id": 1,
+      "name": "Administrator",
+      "email": "admin@localhost",
+      "imageUrl": "",
+      "activated": true,
+      "langKey": "zh-cn",
+      "createdBy": "system",
+      "createdDate": "2017-04-21T00:00:00+08:00",
+      "lastModifiedBy": "system",
+      "lastModifiedDate": null,
+      "employeeNumber": null,
+      "telephone": "admin",
+      "sex": null,
+      "address": null,
+      "verificationCode": null,
+      "generateCodeTime": null
+    }
+  },
+  {
+    "name": "首页商圈列表",
+    "url": "/saa/api/malls",
+    "data": [
+      {
+        "id": 1,
+        "name": "商圈A",
+        "buildingArea": 3000
+      },
+      {
+        "id": 2,
+        "name": "商圈B",
+        "buildingArea": 3000
+      },
+      {
+        "id": 3,
+        "name": "商圈C",
+        "buildingArea": 3000
+      }
+    ]
+  },
+  {
+    "name": "首页区域列表",
+    "url": "/saa/api/area-aggrs/scope",
+    "data": [
+      {
+        "id": 1,
+        "areaName": "区域1",
+        "buildingArea": 1000,
+        "rentedArea": 800,
+        "avgRent": 10,
+        "avgRentRef": 11,
+        "intentionRate": 0.12,
+        "intentionRateRef": 0.1,
+        "payRate": 0.34,
+        "payRateRef": 0.2,
+        "rentRate": 0.78,
+        "rentRateRef": 0.87
+      },
+      {
+        "id": 2,
+        "areaName": "区域2",
+        "buildingArea": 1000,
+        "rentedArea": 800,
+        "avgRent": 10,
+        "avgRentRef": 11,
+        "intentionRate": 0.12,
+        "intentionRateRef": 0.1,
+        "payRate": 0.34,
+        "payRateRef": 0.2,
+        "rentRate": 0.78,
+        "rentRateRef": 0.87
+      },
+      {
+        "id": 3,
+        "areaName": "区域3",
+        "buildingArea": 1000,
+        "rentedArea": 800,
+        "avgRent": 10,
+        "avgRentRef": 11,
+        "intentionRate": 0.12,
+        "intentionRateRef": 0.1,
+        "payRate": 0.34,
+        "payRateRef": 0.2,
+        "rentRate": 0.78,
+        "rentRateRef": 0.87
+      },
+      {
+        "id": 4,
+        "areaName": "区域4",
+        "buildingArea": 1000,
+        "rentedArea": 800,
+        "avgRent": 10,
+        "avgRentRef": 11,
+        "intentionRate": 0.12,
+        "intentionRateRef": 0.1,
+        "payRate": 0.34,
+        "payRateRef": 0.2,
+        "rentRate": 0.78,
+        "rentRateRef": 0.87
+      }
+    ]
+  },
+  {
+    "name": "首页区域详情店铺",
+    "url": "/saa/api/area-aggrs/shops",
+    "data": [
+      {
+        "id": 1,
+        "buildingArea": 100,
+        "code": "A001",
+        "location": "G4",
+        "shopName": "KFC",
+        "industry": "FOOD",
+        "expectedRent": 12,
+        "rent": 14,
+        "rentStatus": "UNPAID",
+        "status": "IDLE"
+      },
+      {
+        "id": 2,
+        "buildingArea": 100,
+        "code": "A002",
+        "location": "G4",
+        "shopName": "KFC",
+        "industry": "FOOD",
+        "expectedRent": 16,
+        "rent": 14,
+        "rentStatus": "OVERDUE",
+        "status": "LEASED"
+      },
+      {
+        "id": 3,
+        "buildingArea": 100,
+        "code": "A003",
+        "location": "G4",
+        "shopName": "KFC",
+        "industry": "FOOD",
+        "expectedRent": 12,
+        "rent": 14,
+        "rentStatus": "UNPAID",
+        "status": "INTENTION"
+      },
+      {
+        "id": 4,
+        "buildingArea": 100,
+        "code": "A004",
+        "location": "G4",
+        "shopName": "KFC",
+        "industry": "FOOD",
+        "expectedRent": 12,
+        "rent": 14,
+        "rentStatus": "UNPAID",
+        "status": "LEASED"
+      },
+      {
+        "id": 5,
+        "buildingArea": 100,
+        "code": "A005",
+        "location": "G4",
+        "shopName": "KFC",
+        "industry": "FOOD",
+        "expectedRent": 12,
+        "rent": 14,
+        "rentStatus": "PAID",
+        "status": "LEASED"
+      }
+    ]
+  },
+  {
+    "name": "首页意向铺位",
+    "url": "/saa/api/leads/shop/:id",
+    "data": [
+      {
+        "id": 1,
+        "contactName": "阿道夫",
+        "contactTelephone": "12312312312",
+        "expectedRent": 12,
+        "industry": "FOOD",
+        "intentionValue": 0,
+        "lastFollowTime": "2017-04-12"
+      },
+      {
+        "id": 2,
+        "contactName": "阿道夫",
+        "contactTelephone": "12312312312",
+        "expectedRent": 12,
+        "industry": "FOOD",
+        "intentionValue": 0.3,
+        "lastFollowTime": "2017-04-12"
+      },
+      {
+        "id": 3,
+        "contactName": "阿道夫",
+        "contactTelephone": "12312312312",
+        "expectedRent": 12,
+        "industry": "FOOD",
+        "intentionValue": 0.7,
+        "lastFollowTime": "2017-04-12"
+      }
+    ]
+  },
+  {
+    "name": "首页营业铺位",
+    "url": "/saa/api/tenant-shops/shop/:shopId",
+    "data": {
+      "brand": "KFC",
+      "tenant": "KFC",
+      "contactName": "联系人",
+      "contactTelephone": "12312312312",
+      "contractStart": "2016.03.04",
+      "contractEnd": "2018.03.04",
+      "billInfo": {
+        "nextRentBillDay": "2017.06.07",
+        "nextPmfeeBillDay": "2017.06.10"
+      },
+      "contractRent": [
+        {
+          "id": 1,
+          "periodStart": "2017.06.07",
+          "periodEnd": "2017.06.07",
+          "rent": 12
+        },
+        {
+          "id": 2,
+          "periodStart": "2017.06.07",
+          "periodEnd": "2017.06.07",
+          "rent": 12
+        },
+        {
+          "id": 3,
+          "periodStart": "2017.06.07",
+          "periodEnd": "2017.06.07",
+          "rent": 12
+        }
+      ]
+    }
+  },
+  {
+    "name": "首页铺位历史",
+    "url": "/saa/api/shops/history/:id",
+    "data": [
+      {
+        "id": 1,
+        "shopName": "CFK",
+        "business": "KFC",
+        "contractStart": "2017.03.04",
+        "contractEnd": "2017.07.08"
+      },
+      {
+        "id": 2,
+        "shopName": "CFK",
+        "business": "KFC",
+        "contractStart": "2017.03.04",
+        "contractEnd": "2017.07.08"
+      }
+    ]
+  },
+  {
+    "name": "招商首页",
+    "url": "/saa/api/shops/total/:mallId",
+    "data": [
+      {
+        "shopStatus": "IDLE",
+        "shopTotal": 100,
+        "shopAreaTotal": 1000
+      },
+      {
+        "shopStatus": "INTENTION",
+        "shopTotal": 100,
+        "shopAreaTotal": 1000
+      },
+      {
+        "shopStatus": "LEASED",
+        "shopTotal": 100,
+        "shopAreaTotal": 1000
+      }
+    ]
+  },
+  {
+    "name": "招商空置铺位",
+    "url": "/saa/api/shops/list",
+    "data": [
+      {
+        "id": 1,
+        "code": "B-001",
+        "buildingArea": 1234,
+        "availableArea": 1234,
+        "buildingNumber": "A",
+        "floor": "12",
+        "location": "1栋3区",
+        "expectedIndustry": "FOOD",
+        "expectedRent": 12,
+        "leads": []
+      },
+      {
+        "id": 2,
+        "code": "B-002",
+        "buildingArea": 1234,
+        "availableArea": 1234,
+        "buildingNumber": "A",
+        "floor": "12",
+        "location": "1栋3区",
+        "expectedIndustry": "FOOD",
+        "expectedRent": 12,
+        "leads": []
+      },
+      {
+        "id": 3,
+        "code": "B-003",
+        "buildingArea": 1234,
+        "availableArea": 1234,
+        "buildingNumber": "A",
+        "floor": "12",
+        "location": "1栋3区",
+        "expectedIndustry": "FOOD",
+        "expectedRent": 12,
+        "leads": []
+      }
+    ]
+  },
+  {
+    "name": "招商成交铺位",
+    "url": "/saa/api/shops/leased-list",
+    "data": [
+      {
+        "areaTotal": 1234,
+        "shopTotal": 13,
+        "tenantTotal": 13,
+        "avgRent": 12,
+        "expectedRent": 14,
+        "industry": "FOOD"
+      },
+      {
+        "areaTotal": 1234,
+        "shopTotal": 13,
+        "tenantTotal": 13,
+        "avgRent": 12,
+        "expectedRent": 14,
+        "industry": "RETAIL"
+      },
+      {
+        "areaTotal": 1234,
+        "shopTotal": 13,
+        "tenantTotal": 13,
+        "avgRent": 12,
+        "expectedRent": 14,
+        "industry": "BDUCATION"
+      }
+    ]
+  },
+  {
+    "name": "招商业态铺位详情",
+    "url": "/saa/api/shops/leaseds",
+    "data": [
+      {
+        "id": 1,
+        "code": "234",
+        "contractStart": "2017.04.09",
+        "contractEnd": "2019.04.09",
+        "expectedIndustry": "FOOD",
+        "expectedRent": 12,
+        "industry": "BDUCATION",
+        "rent": 15,
+        "shopName": "KFC",
+        "status": "LEFT"
+      },
+      {
+        "id": 1,
+        "code": "234",
+        "contractStart": "2017.04.09",
+        "contractEnd": "2019.04.09",
+        "expectedIndustry": "FOOD",
+        "expectedRent": 12,
+        "industry": "BDUCATION",
+        "rent": 11,
+        "shopName": "KFC",
+        "status": "WAITING"
+      },
+      {
+        "id": 1,
+        "code": "234",
+        "contractStart": "2017.04.09",
+        "contractEnd": "2019.04.09",
+        "expectedIndustry": "FOOD",
+        "expectedRent": 12,
+        "industry": "BDUCATION",
+        "rent": 15,
+        "shopName": "KFC",
+        "status": "IN_BUSINESS"
+      },
+      {
+        "id": 1,
+        "code": "234",
+        "contractStart": "2017.04.09",
+        "contractEnd": "2019.04.09",
+        "expectedIndustry": "FOOD",
+        "expectedRent": 12,
+        "industry": "BDUCATION",
+        "rent": 15,
+        "shopName": "KFC",
+        "status": "ENTERING"
+      },
+      {
+        "id": 1,
+        "code": "234",
+        "contractStart": "2017.04.09",
+        "contractEnd": "2019.04.09",
+        "expectedIndustry": "FOOD",
+        "expectedRent": 12,
+        "industry": "BDUCATION",
+        "rent": 15,
+        "shopName": "KFC",
+        "status": "LEAVING"
+      }
+    ]
+  },
+  {
+    "name": "合同数量",
+    "url": "/saa/api/contracts/number",
+    "data": 123
+  },
+  {
+    "name": "合同审批列表",
+    "url": "/saa/api/contracts",
+    "data": [
+      {
+        "id": 1,
+        "createdDate": "2017-04-02 12:43",
+        "approvalStatus": "APPROVAL",
+        "lead": {
+          "id": 1,
+          "tenantInfo": {
+            "name": "KFC"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "createdDate": "2017-04-02 12:43",
+        "approvalStatus": "WAITING",
+        "lead": {
+          "id": 1,
+          "tenantInfo": {
+            "name": "KFC"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "createdDate": "2017-04-02 12:43",
+        "approvalStatus": "DISAPPROVAL",
+        "lead": {
+          "id": 1,
+          "tenantInfo": {
+            "name": "KFC"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "合同详情",
+    "url": "/saa/api/contracts/:id",
+    "data": {
+    }
+  },
+  {
+    "name": "商机跟踪历史",
+    "url": "/saa/api/leads/FollowRecord/:id",
+    "data": [
+      {
+        "id": 1,
+        "shopName": "KFC",
+        "newLeaseIntention": "输单",
+        "followDate": "2017.01.04",
+        "contactEmail": "asdf@123.com",
+        "contactName": "阿斯蒂芬",
+        "contactTelephone": "12312312312",
+        "followMode": "电话",
+        "source": "网络",
+        "shopAreaFrom": 123,
+        "shopAreaTo": 321,
+        "expectedShop": "A123",
+        "expectedRent": 12,
+        "expectedStart": "2017-09-01",
+        "expectedEnd": "2019-09-01"
+      },
+      {
+        "id": 1,
+        "shopName": "KFC",
+        "newLeaseIntention": "方案报价",
+        "followDate": "2017.01.04",
+        "contactEmail": "asdf@123.com",
+        "contactName": "阿斯蒂芬",
+        "contactTelephone": "12312312312",
+        "followMode": "电话",
+        "source": "网络",
+        "shopAreaFrom": 123,
+        "shopAreaTo": 321,
+        "expectedShop": "A123",
+        "expectedRent": 12,
+        "expectedStart": "2017-09-01",
+        "expectedEnd": "2019-09-01"
+      },
+      {
+        "id": 1,
+        "shopName": "KFC",
+        "newLeaseIntention": "方案报价",
+        "followDate": "2017.01.04",
+        "contactEmail": "asdf@123.com",
+        "contactName": "阿斯蒂芬",
+        "contactTelephone": "12312312312",
+        "followMode": "电话",
+        "source": "网络",
+        "shopAreaFrom": 123,
+        "shopAreaTo": 321,
+        "expectedShop": "A123",
+        "expectedRent": 12,
+        "expectedStart": "2017-09-01",
+        "expectedEnd": "2019-09-01"
+      }
+    ]
+  },
+  {
+    "name": "获取商机详情",
+    "url": "/saa/api/leads/:id",
+    "data": {
+      "contactName": "阿斯顿",
+      "contactTelephone": "12312312312"
+    }
+  },
+  {
+    "name": "获取运营首页头部",
+    "url": "/saa/api/tenant-shops/head/:id",
+    "data": {
+      "shopNumbers": 123,
+      "tenantShopNumbers": 123,
+      "payRate": 0.6,
+      "payRateRef": 0.5,
+      "paid": 12354,
+      "overdueNumbers": 12,
+      "overdue": 124534,
+      "buildingArea": 123
+    }
+  },
+  {
+    "name": "运营列表",
+    "url": "/saa/api/tenant-shops/finance",
+    "data": [
+      {
+        "industry": "LIFE",
+        "shopTotal": 123,
+        "avgRent": 12,
+        "avgSales": 123,
+        "areaTotal": 1234,
+        "payRate": 0.6,
+        "payRateRef": 0.7
+      },
+      {
+        "industry": "FOOD",
+        "shopTotal": 123,
+        "avgRent": 12,
+        "avgSales": 123,
+        "areaTotal": 1234,
+        "payRate": 0.6,
+        "payRateRef": 0.7
+      },
+      {
+        "industry": "BDUCATION",
+        "shopTotal": 123,
+        "avgRent": 12,
+        "avgSales": 123,
+        "areaTotal": 1234,
+        "payRate": 0.6,
+        "payRateRef": 0.7
+      },
+      {
+        "industry": "FINANCIAL",
+        "shopTotal": 123,
+        "avgRent": 12,
+        "avgSales": 123,
+        "areaTotal": 1234,
+        "payRate": 0.6,
+        "payRateRef": 0.7
+      }
+    ]
+  },
+  {
+    "name": "运营首页巡检",
+    "url": "/saa/api/daily-logs/head",
+    "data": {
+      "haveTour": 12,
+      "toTour": 43,
+      "unusual": 23
+    }
+  },
+  {
+    "name": "运营业态铺位",
+    "url": "/saa/api/tenant-shops/industry",
+    "data": [
+      {
+        "id": 1,
+        "shopName": "KFC",
+        "rent": 12,
+        "expectedRent": 13,
+        "lastSales": 123,
+        "historySales": 124,
+        "status": "IN_BUSINESS",
+        "rentStatus": "PAID",
+        "pmStatus": "PAID",
+        "stars": 3
+      },
+      {
+        "id": 1,
+        "shopName": "KFC",
+        "rent": 12,
+        "expectedRent": 13,
+        "lastSales": 123,
+        "historySales": 124,
+        "status": "IN_BUSINESS",
+        "rentStatus": "PAID",
+        "pmStatus": "UNPAID",
+        "stars": 3
+      },
+      {
+        "id": 1,
+        "shopName": "KFC",
+        "rent": 12,
+        "expectedRent": 13,
+        "lastSales": 123,
+        "historySales": 124,
+        "status": "WAITING",
+        "rentStatus": "UNPAID",
+        "pmStatus": "PAID",
+        "stars": 3
+      },
+      {
+        "id": 1,
+        "shopName": "KFC",
+        "rent": 12,
+        "expectedRent": 13,
+        "lastSales": 123,
+        "historySales": 124,
+        "status": "LEFT",
+        "rentStatus": "OVERDUE",
+        "pmStatus": "OVERDUE",
+        "stars": 3
+      }
+    ]
+  },
+  {
+    "name": "运营商铺财务详情",
+    "url": "/saa/api/tenant-shops/finance/:id",
+    "data": {
+      "tenant": "KFC",
+      "shopName": "KFC",
+      "floor": "A001",
+      "status": "IN_BUSINESS",
+      "area": 1234,
+      "dailyLogs": [
+        {
+          "sales": 123,
+          "businessDay": "2017-03-32",
+          "traffic": 12,
+          "open": true,
+          "sanitaryStatus": "GOOD",
+          "stars": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "",
+    "url": "/saa/api/daily-logs/sales/rate",
+    "data": [
+      {
+        "rate": 12,
+        "rateDate": "汽车",
+        "salesRate": 23
+      },
+      {
+        "rate": 17,
+        "rateDate": "家居",
+        "salesRate": 5
+      },
+      {
+        "rate": 23,
+        "rateDate": "3C",
+        "salesRate": 12
+      },
+      {
+        "rate": 8,
+        "rateDate": "图书",
+        "salesRate": 15
+      },
+      {
+        "rate": 16,
+        "rateDate": "服装",
+        "salesRate": 19
+      }
+    ]
+  },
+  {
+    "name": "",
+    "url": "/saa/api/daily-logs/star/rate",
+    "data": [
+      {
+        "rate": 12,
+        "rateDate": "1"
+      },
+      {
+        "rate": 17,
+        "rateDate": "2"
+      },
+      {
+        "rate": 23,
+        "rateDate": "3"
+      },
+      {
+        "rate": 8,
+        "rateDate": "4"
+      },
+      {
+        "rate": 16,
+        "rateDate": "5"
+      }
+    ]
+  },
+  {
+    "name": "",
+    "url": "/saa/api/daily-logs/traffic/rate",
+    "data": [
+      {
+        "rate": 12,
+        "rateDate": "1"
+      },
+      {
+        "rate": 17,
+        "rateDate": "2"
+      },
+      {
+        "rate": 23,
+        "rateDate": "3"
+      },
+      {
+        "rate": 8,
+        "rateDate": "4"
+      },
+      {
+        "rate": 16,
+        "rateDate": "5"
+      }
+    ]
+  },
+  {
+    "name": "",
+    "url": "/saa/api/tenant-shops/daily",
+    "data": [
+      {
+        "id": 1,
+        "shopName": "KFC",
+        "floor": "1层"
+      }
+    ]
+  },
+  {
+    "name": "",
+    "url": "/saa/api/daily-logs/detail/head",
+    "data": {
+      "shopName": "KFC",
+      "stars": 3,
+      "payStatus": "UNPAID"
+    }
+  }
+]

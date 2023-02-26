@@ -1,0 +1,132 @@
+.rd-top{
+  background-color: #ffffff;
+  margin-top: 10rpx;
+}
+.goods-content{
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #F0F0F0;
+}
+.goods-item{
+  display: flex;
+  padding: 20rpx 0 20rpx 0;
+}
+.goods-item>image{
+  width: 100rpx;
+  height: 100rpx;
+  border: 1px solid #F2F2F2;
+  margin-right: 20rpx;
+}
+.item-info{
+  min-width: 300rpx;
+}
+.item-info>view:nth-child(1) {
+  color: #2C3038;
+  font-size: 32rpx;
+  margin-bottom: 18rpx;
+}
+.item-info>view:nth-child(2) {
+  color: #8D8E92;
+  font-size: 28rpx;
+}
+.amount-of-money{
+  display: flex;
+  justify-content: flex-end;
+}
+.amount-of-money>text:nth-child(1) {
+  color: #2C3038;
+  font-size: 26rpx;
+}
+.amount-of-money>text:nth-child(2) {
+  color: #FB3640;
+  font-size: 30rpx;
+  font-weight: 500;
+}
+.orderNo,.appl-time{
+  display: flex;
+  justify-content: space-between;
+  padding: 28rpx 30rpx;
+  border-bottom: 1px solid #F0F0F0;
+  font-size: 30rpx;
+  color: #2C3038;
+}
+
+.orderNo>text:nth-child(2){
+  color: #757B82;
+}
+.appl-time>text:nth-child(2){
+  color: #757B82;
+}
+.van-steps--vertical{
+  padding-left: 30rpx;
+}
+
+.rd-bottom{
+  margin-top: 16rpx;
+  background-color: #ffffff;
+  /* margin-bottom: 150rpx; */
+}
+.reason{
+  display: flex;
+  justify-content: space-between;
+  padding: 28rpx 30rpx;
+  border-bottom: 1px solid #F0F0F0;
+  font-size: 30rpx;
+  color: #2C3038;
+}
+.reason>text:nth-child(1){
+  display: inline-block;
+  width: 130rpx;
+}
+.reason>text:nth-child(2){
+  color: #757B82;
+  flex: 1;
+  text-align: right
+}
+.description{
+  padding: 28rpx 30rpx;
+  color: #2C3038;
+}
+.description>view:nth-child(2) {
+  color: #757B82;
+  margin-top: 20rpx;
+}
+.goods-image{
+  padding: 28rpx 30rpx;
+}
+.goods-image image {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 8rpx;
+  border: 1px solid #F2F2F2;
+  margin-right: 20rpx;
+}
+.processItemCon{
+  float: none;
+  margin-left: 50rpx;
+}
+.processItem:first-child .processItemCon>view:first-child { 
+  color: #1CC296;
+}
+.processItemCon>view:nth-child(2) {
+  color: #757B82;
+  font-size: 26rpx;
+  margin: 12rpx 0;
+}
+.processItemCon .tips{
+  color: #757B82;
+  font-size: 24rpx;
+}
+.steps{
+  padding-bottom: 30rpx;
+}
+.processItem{
+  height: 160rpx;
+}
+.lined{
+  height: 160rpx;
+}
+.processItem:nth-child(2) .done{
+  color: #D9D9D9;
+  border-color: #D9D9D9;
+  background-color: #D9D9D9;
+}

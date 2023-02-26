@@ -1,0 +1,110 @@
+<!--pages/mine/parkingPayment/parkingPayment.wxml-->
+<view class="park-container" style="border-top: 1rpx solid #f2f2f2;">
+  <van-cell title="到访区域" is-link value="{{ from.buildingName }}" bind:click="SelectTradingDol">
+    <span slot="icon" class="flag">*</span>
+  </van-cell>
+</view>
+
+<view class="park-container">
+  <van-cell title="日期" is-link value="{{ from.recordDate }}" bind:click="SelectNameDol">
+    <span slot="icon" class="flag">*</span>
+  </van-cell>
+</view>
+
+<view class="park-container">
+  <van-cell title="时间" is-link value="{{ from.time }}" bind:click="SelectValue">
+    <span slot="icon" class="flag">*</span>
+  </van-cell>
+</view>
+
+<view class="park-container">
+  <van-cell title="车牌" class="plate">
+    <view slot="right-icon" class="park-number">
+      <view class="keepBox">
+        <view catchtap='open' data-index="{{index}}" class="inputli {{index == currentIndex ? 'clickAct' : ''}}" wx:for="{{plateNo}}" wx:key="index">{{item}}</view>
+        <view wx:if="{{showNewNo}}" catchtap='newNo' class="newInput">
+          <image src="../../../img/index/chuchoucuoshilvse.png"></image>
+          <text>新能源</text>
+        </view>
+      </view>
+    </view>
+  </van-cell>
+</view>
+
+<view class="park-container">
+  <van-cell title="7天内是否到访或途径国内疫情中高风险地区">
+    <span slot="icon" class="flag">*</span>
+    <van-radio-group custom-class="flex-radio" slot="right-icon" value="{{ from.radio7 }}" bind:change="onChange7">
+      <van-radio name="{{ false }}" checked-color="#5AB880">是</van-radio>
+      <van-radio custom-class="margin" name="{{ true }}" checked-color="#5AB880">否</van-radio>
+    </van-radio-group>
+  </van-cell>
+</view>
+
+<view class="park-container">
+  <van-cell title="是否有发热、干咳等症状">
+    <span slot="icon" class="flag">*</span>
+    <van-radio-group custom-class="flex-radio" slot="right-icon" value="{{ from.radio }}" bind:change="onChange">
+      <van-radio name="{{ false }}" checked-color="#5AB880">是</van-radio>
+      <van-radio custom-class="margin" name="{{ true }}" checked-color="#5AB880">否</van-radio>
+    </van-radio-group>
+  </van-cell>
+</view>
+
+<view class="footer">
+  <view class="content">
+    <van-checkbox value="{{ from.checked }}" bind:change="checkbox">以上填写的内容真实有效。如未履行疫情防控义务造成传染病传播扩散，将承担相应的法律责任。</van-checkbox>
+  </view>
+  <button
+    disabled="{{ !fromDataBle }}"
+    bindtap="submit"
+  >登记预约</button>
+</view>
+
+<van-popup show="{{ TradingDol }}"  position="bottom" bind:close="TradingDolCancel">
+  <van-picker
+    show-toolbar
+    title="请选择到访区域"
+    active-class="active-class"
+    value-key="value"
+    columns="{{ TradingDolcolumns }}"
+    bind:cancel="TradingDolCancel"
+    bind:confirm="TradingDolConfirm"
+  />
+</van-popup>
+<van-popup show="{{ NameDol }}"  position="bottom" bind:close="NameDolCancel">
+  <van-datetime-picker
+    type="date"
+    title="请选择"
+    active-class="active-class"
+    value="{{ currentDate1 }}"
+    min-date="{{ minDate1 }}"
+    max-date="{{ maxDate2 }}"
+    bind:cancel="NameDolCancel"
+    bind:confirm="NameDolConfirm"
+  />
+</van-popup>
+<!-- <van-picker
+  show-toolbar
+  title="标题"
+  columns="{{ [] }}"
+  bind:cancel="onCancel"
+  bind:confirm="onConfirm"
+/> -->
+<van-popup show="{{ timeDol }}"  position="bottom" bind:close="timeDolCancel">
+  <van-picker
+    show-toolbar
+    title="选择时间"
+    active-class="active-class"
+    columns="{{ timeDolcolumns }}"
+    value-key="show"
+    bind:cancel="timeDolCancel"
+    bind:confirm="timeDolConfirm"
+  />
+</van-popup>
+
+<view wx:if="{{ isShow }}" class="panelView">
+  <v-panel is-show="{{isShow}}" bindok="inputOk" binddelete="delete" bindinputchange="click" key-board-type="{{keyBoardType}}" backgroundColor="#ced3dd" /> 
+</view>
+
+

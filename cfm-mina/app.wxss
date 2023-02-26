@@ -1,0 +1,417 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* 全局加载样式 */
+.Global_loading-succee{
+  color: #fff;
+  background: #79C32A;
+}
+.Global_loading-fail{
+  color: #fff;
+  background: #E76B6D;
+}
+.Global_loading-info{
+  background: #919399;
+  color: #fff;
+}
+/* 全局消息样式 */
+.Global_message-succee{
+  color: #fff;
+  background: #79C32A;
+}
+.Global_message-fail{
+  color: #fff;
+  background: #E76B6D;
+}
+.Global_message-info{
+  background: #919399;
+  color: #fff;
+}
+/* 从新定义加载样式 */
+.van-toast{
+  color: #fff;
+}
+
+/**app.wxss**/
+page{
+  width:100%;
+  height:100%;
+  background-color: #F4F4F4;
+}
+/* 按钮初始化 */
+button::after{
+  border:0;
+}
+.reset-button{
+  border-radius: 0;
+}
+/* 按钮初始化 */
+
+.clearing:after{
+	display:block;
+	clear:both;
+	content:"";
+	visibility:hidden;
+	height:0
+	} 
+.clearing{
+	zoom:1;
+	}
+
+/* 字体样式 */
+/*  */
+
+@font-face {
+  font-family: 'iconfont';  /* Project id 2724380 */
+  src: url('//at.alicdn.com/t/font_2724380_oumi9ldjz3.woff2?t=1634785762481') format('woff2'),
+       url('//at.alicdn.com/t/font_2724380_oumi9ldjz3.woff?t=1634785762481') format('woff'),
+       url('//at.alicdn.com/t/font_2724380_oumi9ldjz3.ttf?t=1634785762481') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yishiyong:before {
+  content: "\e715";
+}
+
+.icon-yiguoqi:before {
+  content: "\e714";
+}
+
+.icon-zhedie:before {
+  content: "\e713";
+}
+
+.icon-xiala:before {
+  content: "\e712";
+}
+
+.icon-logo:before {
+  content: "\e711";
+}
+
+.icon-qishou:before {
+  content: "\e710";
+}
+
+.icon-fanhui:before {
+  content: "\e70f";
+}
+
+.icon-kfd_xing:before {
+  content: "\e70c";
+}
+
+.icon-kfd_jia:before {
+  content: "\e70b";
+}
+
+.icon-kfd_jian-33:before {
+  content: "\e70a";
+}
+
+.icon-kfd_gouwucheS:before {
+  content: "\e709";
+}
+
+.icon-kfd_gouwucheL:before {
+  content: "\e708";
+}
+
+.icon-cms_shaixuan-xia:before {
+  content: "\e682";
+}
+
+.icon-right:before {
+  content: "\e60d";
+}
+
+.icon-kfd_jian:before {
+  content: "\e707";
+}
+
+.icon-kfd_yiquxiao:before {
+  content: "\e706";
+}
+
+.icon-kfd_yiwancheng:before {
+  content: "\e705";
+}
+
+.icon-kfd_yijushou:before {
+  content: "\e704";
+}
+
+.icon-kfd_peisongzhong:before {
+  content: "\e703";
+}
+
+.icon-kfd_daijianhuo:before {
+  content: "\e702";
+}
+
+.icon-kfd_daijiedan:before {
+  content: "\e701";
+}
+
+.icon-kfd_yijiedan:before {
+  content: "\e700";
+}
+
+.icon-daizhifu_daizhifu-23:before {
+  content: "\e6ff";
+}
+
+.icon-kfd_dianpu:before {
+  content: "\e6fe";
+}
+
+.icon-cms_sousuo:before {
+  content: "\e6fd";
+}
+
+.icon-cms_fujiantianjia:before {
+  content: "\e6fc";
+}
+
+.icon-cms_cuowu:before {
+  content: "\e6fb";
+}
+
+.icon-kfd_dianhua:before {
+  content: "\e6fa";
+}
+
+.icon-kfd_shouhou:before {
+  content: "\e6f9";
+}
+
+.icon-kfd_daishouhuo:before {
+  content: "\e6f8";
+}
+
+.icon-kfd_daizhifu:before {
+  content: "\e6f7";
+}
+
+.icon-cms_guanbi:before {
+  content: "\e6f6";
+}
+
+.icon-kfd_shouyes:before {
+  content: "\e6f5";
+}
+
+.icon-kfd_shouyeL:before {
+  content: "\e6f4";
+}
+
+.icon-kfd_gerenzhongxinS:before {
+  content: "\e6f3";
+}
+
+.icon-kfd_gerenzhongxinL:before {
+  content: "\e6f2";
+}
+
+.icon-cms_shanchu-233:before {
+  content: "\e6f1";
+}
+
+.icon-a-tianjiazhaopian1:before {
+  content: "\e6f0";
+}
+
+.icon-cms_xuanzhong:before {
+  content: "\e6ef";
+}
+
+.icon-cms_gou-227:before {
+  content: "\e6ee";
+}
+
+.icon-a-dingwei2x:before {
+  content: "\e6ed";
+}
+
+/* 七宝iconfont */
+/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: 'iconfont';  /* Project id 3582782 */
+  src: 
+       url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3582782_0q1ut6j8i12e.woff?t=1660530114226') format('woff'),
+       url('//at.alicdn.com/t/c/font_3582782_0q1ut6j8i12e.ttf?t=1660530114226') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chenggong:before {
+  content: "\e74c";
+}
+
+.icon-tingche:before {
+  content: "\e74a";
+}
+
+.icon-kefu:before {
+  content: "\e74b";
+}
+
+.icon-yuyuejilu:before {
+  content: "\e747";
+}
+
+.icon-tianjiazhaopian:before {
+  content: "\e748";
+}
+
+.icon-dianhua:before {
+  content: "\e749";
+}
+
+.icon-erweima:before {
+  content: "\e746";
+}
+
+   
+/* 字体样式 */
+
+/*底部按钮的公共样式  */
+.submit-bottom{
+  position: fixed;
+  left: 60rpx;
+  bottom: 40rpx;
+  background: #323DDB;
+  color: #fff;
+  width: 84%;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 30rpx;
+  z-index: 999;
+  border-radius: 44rpx;
+}
+/*底部按钮的公共样式  */
+
+/* steps start */
+.stepsProcess{
+  padding: 30rpx 24rpx 0 24rpx;
+  position: relative;
+  background: #fff;
+  height: 360rpx;
+}
+.pre{
+  height:auto;
+}
+.status3ProcessLine{
+  width: 1rpx;
+  height: 240rpx;
+  background: #eee;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}
+.stepsProcessCon{
+  position: absolute;
+  left: 24rpx;
+  top: 30rpx;
+}
+.pre .stepsProcessCon{
+  position: relative;
+  left: 0;
+  top:0;
+  z-index: 0;
+}
+.pre .processItem{
+  position: relative;
+}
+.preLine .processItem:last-child .processItemCon view:last-child{
+  color:#83ABE2;
+} 
+.prev .processItem:last-child .lined{
+  display: none;
+}
+.lined{
+  width: 1rpx;
+  height: 120rpx;
+  background: #eee;
+  position: absolute;
+  left:10rpx;
+  top:22rpx;
+}
+.processItem{
+  height: 120rpx;
+}
+.processItem:last-child .lined{
+  background:  transparent;
+}
+.processItem>view:first-child{
+  width: 16rpx;
+  height: 16rpx;
+  border: 5rpx solid #fff;
+  margin-right: 20rpx;
+  float: left;
+  background: #eeeeee;
+  border-radius: 50%;
+}
+.processItem>view.done{
+  background: #1CC296;
+  border-color: #1CC296;
+}
+.processItemCon{
+  float: left;
+}
+.processItemCon>view:first-child{
+  line-height: 30rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #18191A;
+}
+.processItemCon>view:last-child{
+  line-height: 26rpx;
+  font-size: 26rpx;
+  color: #757B82;
+  font-weight: 400;
+  margin-bottom: 20rpx;
+}
+.status3Content>view:first-child,.status4Content>view:first-child{
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  margin-bottom: 20rpx;
+}
+.status3Content>view:nth-child(2),.status4Content>view:nth-child(2){
+  color: #fff;
+  line-height: 30rpx;
+  font-size: 24rpx;
+}
+.status3Content .countDown1,.status4Content .countDown1{
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+.status4Content>view:last-child{
+  margin-top: 35rpx;
+  height: 64rpx;
+}
+.status3Content>view:nth-child(3){
+  margin-top: 20rpx;
+}
+/* steps end */

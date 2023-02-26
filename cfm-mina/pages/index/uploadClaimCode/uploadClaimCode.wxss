@@ -1,0 +1,117 @@
+
+/* pages/mine/parkingPayment/parkingPayment.wxss */
+page{
+  background-color: #fff;
+}
+.park-container{
+  background: #ffffff;
+}
+.park-container .flag{
+  display: block;
+  height: 34rpx;
+  line-height: 60rpx;
+  margin-right: 4rpx;
+  color: red;
+}
+.upload{
+  width: 34%;
+  margin: 0 auto;
+  padding-top: 24%;
+}
+.van-uploader__upload {
+  width: 244rpx !important;
+  height: 224rpx !important;
+}
+.van-uploader__preview-image {
+  width: 244rpx !important;
+  height: 224rpx !important;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #F5F9FF;
+  padding: 52rpx;
+}
+.content{
+  width: auto;
+}
+.content .van-checkbox {
+  font-size: 26rpx;
+  margin-bottom: 32rpx;
+}
+.footer button{
+  width: 68%;
+  font-size: 28rpx;
+  color: #fff;
+  background: #323DDB;
+  border-radius: 40rpx;
+}
+button[disabled]:not([type]) {
+  background: #A5A9AD;
+  color: #fff
+}
+.succee{
+  width: auto;
+}
+.active-class{
+  font-weight: bolder !important;
+  border-top: 2rpx solid #ccc;
+  border-bottom: 2rpx solid #ccc;
+}
+.succee .van-center-enter-active{
+  width: 72%;
+  height: 482rpx;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20rpx;
+}
+.succee-content{
+  padding: 40rpx;
+  background: #fff;
+}
+.succee .img{
+  padding-top: 20rpx;
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 20rpx;
+}
+.succee .h3{
+  color: #030303;
+  line-height: 34rpx;
+  font-weight: bolder;
+}
+.succee .text{
+  color: #757B82;
+  font-size: 26rpx;
+  line-height: 80rpx;
+}
+.succee .button{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 52rpx;
+}
+.succee .button .exit{
+  width: 200rpx;
+  margin: 0;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  background: #fff;
+  color: #323DDB;
+  border: 2rpx solid #3742DD;
+  border-radius: 40rpx;
+}
+.succee .button .again{
+  width: 200rpx;
+  margin: 0;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  background: #323DDB;
+  color: #fff;
+  border-radius: 40rpx;
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#F7F8FA",
+  "navigationBarTitleText": "大食堂",
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index"
+  }
+}

@@ -1,0 +1,25 @@
+
+<view class="reservationRecord" style="border-top: 1rpx solid #f2f2f2;">
+  <view class="content">
+    <view class="item" wx:item wx:for="{{dataList}}" wx:key="index">
+      <view class="item-left">
+        <view class="left-top">
+          <view class="model">
+            <image class="image" src="../../../img/index/code.png"></image>
+            <view class="text">
+              <text>{{ item.recordDate }} {{ item.startTime }}~{{ item.endTime }}</text>
+              <text>{{ item.buildingName }}</text>
+            </view>
+          </view>
+        </view>
+        <text class="time">登记时间：{{ item.createdDateTime }}</text>
+      </view>
+      <view class="{{ (item.onDelete && item.level === 3) ? 'item-right item-cancel' : 'item-right' }}">
+        <button bindtap="cancel" data-id="{{ item.id }}" wx:if="{{ item.level === 1 }}">取消</button>
+        <button wx:if="{{ item.onDelete && item.level === 3 }}" class="color">已取消</button>
+      </view>
+      <view wx:if="{{ item.level === 3 }}" class="cancel"></view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,126 @@
+.rd-top{
+  background-color: #ffffff;
+  margin-top: 10rpx;
+}
+.goods-content{
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #F0F0F0;
+}
+.goods-content .tips {
+  color: #1CC296;
+  font-size: 24rpx;
+}
+.goods-item{
+  display: flex;
+  padding: 20rpx 0 20rpx 0;
+}
+.goods-item>image{
+  width: 100rpx;
+  height: 100rpx;
+  border: 1px solid #F2F2F2;
+  margin-right: 20rpx;
+}
+.item-info>view:nth-child(1) {
+  color: #2C3038;
+  font-size: 32rpx;
+  margin-bottom: 18rpx;
+}
+.item-info>view:nth-child(2) {
+  color: #8D8E92;
+  font-size: 28rpx;
+}
+.amount-of-money{
+  display: flex;
+  justify-content: flex-end;
+}
+.amount-of-money>text:nth-child(1) {
+  color: #2C3038;
+  font-size: 26rpx;
+}
+.amount-of-money>text:nth-child(2) {
+  color: #FB3640;
+  font-size: 30rpx;
+  font-weight: 500;
+}
+.orderNo,.appl-time{
+  display: flex;
+  justify-content: space-between;
+  padding: 28rpx 30rpx;
+  border-bottom: 1px solid #F0F0F0;
+  font-size: 30rpx;
+  color: #2C3038;
+}
+.orderNo .tips{
+  color: #8D8E92;
+  font-size: 26rpx;
+  margin-left: 14rpx;
+}
+.rd-bottom{
+  margin-top: 16rpx;
+  background-color: #ffffff;
+  margin-bottom: 150rpx;
+}
+.reason{
+  display: flex;
+  justify-content: space-between;
+  padding: 28rpx 30rpx;
+  border-bottom: 1px solid #F0F0F0;
+  font-size: 30rpx;
+  color: #2C3038;
+}
+.reason>view:nth-child(2){
+  color: #9EA3AA;
+}
+.description{
+  padding: 28rpx 30rpx;
+  color: #2C3038;
+}
+.description>view:nth-child(2) {
+  color: #757B82;
+  margin-top: 20rpx;
+}
+.goods-image{
+  padding: 28rpx 30rpx;
+}
+.goods-image image {
+  width: 180rpx!important;
+  height: 180rpx!important;
+  border-radius: 8rpx;
+  border: 1px solid #F2F2F2;
+}
+textarea {
+  width: 100%;
+  height: 140rpx;
+}
+.icon-right{
+  font-size: 30rpx;
+  color: #C6C6C6;
+}
+.reason-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28rpx;
+  font-size: 30rpx;
+  color: #444547;
+  height: 80rpx;
+  line-height: height 80px;
+}
+.icon-cms_gou-227{
+  color: #1CC296;
+}
+.reason-list .active{
+  color:#1CC296;
+}
+.submit-bottom{
+  z-index: 99;
+}
+.selectedListSTR{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 500rpx;
+  display: inline-block;
+  text-align: right;
+  vertical-align: bottom;
+}

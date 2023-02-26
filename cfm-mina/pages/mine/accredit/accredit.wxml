@@ -1,0 +1,22 @@
+<view class="accredit">
+  <view class="showTop">
+    <view class="showLogo">
+      <view class="iconfont icon-logo"></view>
+    </view>
+    <view class="showInfo">小 象 买 菜 到 家</view>
+  </view>
+  <view class="showMiddle"  bindtap='throttle'>
+    <view class="showMess">
+      授权进入小象买菜到家
+    </view>
+  </view>
+  <view class="showBottom">
+    <view class='select' bindtap='selectAgree'>
+      <view></view>
+      <image src='../../../img/global/selected.png' wx:if='{{selected}}'></image>
+    </view>
+    已阅读并同意
+    <view class="protocol" bindtap='goProtocol'>《用户注册协议与隐私政策》</view>
+    <!-- <web-view class="protocol" src="https://crm-dev.yunwutech.com/h5/src/CustomerRegistryPrivacyAgreement.html">《用户注册协议与隐私政策》</web-view> -->
+  </view>
+</view>

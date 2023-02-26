@@ -1,0 +1,27 @@
+<!-- pages/shoppingCar/payResult/payResult.wxml -->
+<view class='payResult'>
+<view class="logo iconfont icon-cms_xuanzhong" wx:if="{{orderStatus}}">
+  <!-- <view class="iconfont icon-right"></view> -->
+</view>
+<view class="logo iconfont icon-cms_cuowu" wx:else style="color:#FF7674">
+  <!-- <view class="iconfont icon-right"></view> -->
+</view>
+<view class="logMess">
+  {{payMessage}}
+</view>
+<view class="paySuccess" wx:if="{{orderStatus}}">
+  支付金额：{{payNumber}}元
+</view>
+<view class="tips" wx:else>
+  <view class="tipsT">
+    请在5分钟内完成付款，否则订单会被取消
+  </view>
+  <view class="tipsT">
+    如已支付，可稍后查询订单状态，无需重新支付
+  </view>
+</view>
+<view class="button">
+  <view class="{{item.check ? 'bgcolor' : ''}}" 
+  wx:for="{{button}}" wx:key="id" bindtap='goButton' data-id='{{item.id}}'>{{item.name}}</view>
+</view>
+</view>

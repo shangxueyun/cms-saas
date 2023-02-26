@@ -1,0 +1,357 @@
+/* pages/mine/parkingPayment/parkingPayment.wxss */
+page{
+  background-color: #fff;
+}
+.park-container{
+  background: #ffffff;
+}
+.park-container .flag{
+  display: block;
+  height: 34rpx;
+  line-height: 60rpx;
+  margin-right: 4rpx;
+  color: red;
+}
+.park-swiper{
+  width:100%;
+  height:336rpx;
+  background: #A4C9FC;
+}
+.park-swiper>.parkSwiper{
+  width:100%;
+  height:100%;
+}
+.park-swiper>.parkSwiper .swiperItem{
+  width:100%;
+  height:100%;
+}
+.margin{
+  margin-left: 20rpx;
+}
+.park-swiper>.parkSwiper .swiperItem image{
+  display: block;
+  width:100%;
+  height:100%;
+}
+.park-number{
+  width:580rpx;
+  border-radius: 16rpx;
+  min-height:50rpx;
+  box-sizing: border-box;
+  z-index: 9;
+}
+
+.keepBox{
+  width:100%;
+  height:50rpx;
+  display: flex;
+  justify-content: center;
+}
+.keepBox>.inputli{
+  margin:0 8rpx;
+  text-align: center;
+  line-height: 74rpx;
+  width: 66rpx;
+  height: 74rpx;
+  border-radius:6rpx;
+  border:2rpx solid rgba(204,200,200,1);
+  font-size:36rpx;
+}
+.keepBox>.newInput{
+  margin:0 8rpx;
+  width: 66rpx;
+  height: 74rpx;
+  border-radius:6rpx;
+  border:2rpx solid rgba(204,200,200,1);
+}
+.keepBox>.newInput>image{
+  display: block;
+  width: 32rpx;
+  height: 28rpx;
+  margin: 8rpx auto;
+  background: #eee;
+}
+.keepBox>.newInput>text{
+  display: block;
+  margin-top: -32rpx;
+  height: 20rpx;
+  font-size: 15rpx;
+  text-align: center;
+  color:#A8AAB4;
+}
+.park-container .plate .van-cell{
+  height: 124rpx;
+  line-height: 88rpx;
+  padding-left: 24px;
+}
+.park-container .van-radio-group{
+  display: flex;
+  margin-left: 14px;
+}
+.keepBox>.clickAct{
+  border:2rpx solid rgba(17,142,233,1);
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #F5F9FF;
+  padding: 52rpx;
+}
+.content{
+  width: auto;
+}
+.content .van-checkbox {
+  font-size: 26rpx;
+  margin-bottom: 32rpx;
+}
+.footer button{
+  width: 68%;
+  font-size: 28rpx;
+  color: #fff;
+  line-height: 41px;
+  height: 82rpx;
+  background: #323DDB;
+  border-radius: 40rpx;
+}
+button[disabled]:not([type]) {
+  background: #A5A9AD;
+  color: #fff
+}
+.search-history{
+  width:100%;
+  display: flex;
+  margin-bottom:58rpx;
+  padding:0 8rpx;
+  box-sizing: border-box;
+}
+.active-class{
+  font-weight: bolder !important;
+  border-top: 2rpx solid #ccc;
+  border-bottom: 2rpx solid #ccc;
+}
+.panelView{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.search-history>view{
+  width:30%;
+  margin-right:5%;
+  height:76rpx;
+  text-align: center;
+  line-height: 76rpx;
+  border-radius:6rpx;
+  border:2rpx solid rgba(204,200,200,1);
+  background: #fff;
+  font-size: 30rpx;
+}
+.search-history>view:last-child{
+  margin-right:0;
+}
+.park_btn{
+  width:100%;
+  height:80rpx;
+  border-radius:40rpx;
+  font-size:32rpx;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 80rpx;
+}
+.btn_action{
+  background:rgba(131,171,226,1);
+  box-shadow:0px 6rpx 14rpx 0px rgba(198,222,255,1);
+}
+.btn_default{
+  background:#ccc;
+  box-shadow:0px 6rpx 14rpx 0px #eee;
+}
+.tabLink{
+  width:694rpx;
+  border-radius: 16rpx;
+  margin:20rpx auto 0;
+}
+.double{
+  display: flex;
+  width:100%;
+}
+.double>view{
+  height:110rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  width:50%;
+  box-shadow: 0rpx 0rpx 50rpx #E4E1E1;
+}
+.double>view>view{
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.double>view>view>image{
+  display: block;
+  width:48rpx;
+  height:36rpx;
+  margin-right:30rpx;
+}
+.double>view>view>text{
+  display: block;
+  line-height: 34rpx;
+  color:#FE4F4C;
+  font-size: 30rpx;
+  height:34rpx;
+}
+.double>view:last-child{
+  margin-left:20rpx;
+}
+.double>view:last-child>view>image{
+  height:42rpx;
+  width:42rpx;
+}
+.double>view:last-child>view>text{
+  color:#D9950A;
+  height:42rpx;
+  line-height: 42rpx;
+}
+.single{
+  width:100%;
+  height:110rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:20rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  box-shadow: 0rpx 2rpx 50rpx #E4E1E1;
+}
+.single>image{
+  display: block;
+  width:44rpx;
+  height:44rpx;
+  margin-right:30rpx;
+}
+.single>text{
+  display: block;
+  line-height: 44rpx;
+  color:#5EB882;
+  font-size: 30rpx;
+  height:44rpx;
+}
+.explain-tip{
+  width:100%;
+  margin-top:20rpx;
+  padding-bottom:30rpx;
+  box-sizing: border-box;
+}
+.explain-tip>text{
+  font-size:28rpx;
+  color:rgba(97,98,101,1);
+  line-height:40rpx;
+  margin-bottom: 20rpx;
+  width:100%;
+  display: block;
+  padding: 0 48rpx;
+  box-sizing: border-box;
+}
+.explain-tip>.explain-tit{
+  font-size: 30rpx;
+  color:#333;
+  line-height: 50rpx;
+}
+.changeMall{
+  width:320rpx;
+}
+.area{
+  width:100%;
+  height:40rpx;
+  display: flex;
+  margin-bottom:60rpx;
+}
+.area>text{
+  display: block;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  margin-right:10rpx;
+  font-weight: bold;
+}
+.area>view{
+  line-height: 40rpx;
+  font-size: 20rpx;
+  color:#8D8E92;
+}
+/* 绑定手机号 */
+.bindPhone{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .7);
+  z-index: 1024;
+}
+.bindBox{
+  width: 702rpx;
+  height: 612rpx;
+  border-radius: 30rpx;
+  background: white;
+  position: absolute;
+  left: 24rpx;
+  top: 50%;
+  margin-top: -306rpx;
+  box-sizing: border-box;
+  padding: 60rpx 46rpx 0rpx;
+}
+.bindBox>text{
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 53rpx;
+  display: block;
+  padding: 0 10rpx;
+}
+.input,.submit{
+  width: 610rpx;
+  height: 88rpx;
+  background: #f8f9fb;
+  border-radius: 44rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50rpx;
+  padding-right: 40rpx; 
+}
+.input>input{
+  font-size: 30rpx;
+  color: #333;
+  width: 360rpx;
+}
+.input>text{
+  font-size: 28rpx;
+  color: #83ABE2;
+  text-align: center;
+  width: 140rpx;
+  height: 40rpx;
+}
+.submit{
+  margin-top: 70rpx;
+  margin-bottom: 0;
+  justify-content: center;
+  background: #83ABE2;
+  color: #fff;
+  font-size: 38rpx;
+}
+.bindPhoneErrTip{
+  position: absolute;
+  left: 0;
+  bottom: 170rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  color: #ff7674;
+}
+/* 绑定手机号 */

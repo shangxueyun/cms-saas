@@ -1,0 +1,86 @@
+<wxs src="../../../utils/businessTool.wxs" module="tools" />
+<view class="refund-details">
+  <view class="rd-top">
+    <view class='goods-content'>
+      <view class='goods-item'>
+        <image src="{{orderDetail.orderDetail.imageUrl}}"></image>
+        <view class="item-info">
+          <view class=''>
+            {{orderDetail.orderDetail.goodsName}}
+            <text wx:if="{{orderDetail.orderDetail.goodsSpecification && orderDetail.orderDetail.goodsSpecification !== '0'}}">约{{orderDetail.orderDetail.goodsSpecification}}</text>
+            <text wx:else>1</text>
+            {{orderDetail.orderDetail.goodsSpecificationUnit}}
+          </view>
+          <view class="">数量：{{orderDetail.refundNumber}}份</view>
+        </view>
+      </view>
+      <view class="amount-of-money">
+        <text>退款金额：</text><text>¥{{orderDetail.realRefundAmount}}</text>
+      </view>
+    </view>
+    <view class="orderNo">
+      <text>退款单号</text>
+      <text>{{orderDetail.refundOrderNumber}}</text>
+    </view>
+    <view class="appl-time">
+      <text>申请时间</text>
+      <text>{{tools.formatDate(orderDetail.createDateTime)}}</text>
+    </view>
+    <view class="steps">
+      <view class='stepsProcess pre'>
+        <view class='stepsProcessCon' wx:if="{{orderDetail.applyStatus === 'INPROCESS'}}">
+          <view class='processItem'>
+            <view class="done"></view>
+            <view class="lined"></view>
+            <view class='processItemCon'>
+              <view>提交申请</view>
+              <view>您的退款已申请成功，等待审核中</view>
+              <view>{{tools.formatDate(orderDetail.createDateTime)}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='stepsProcessCon' wx:else>
+          <view class='processItem'>
+            <view class="done"></view>
+            <view class="lined"></view>
+            <view class='processItemCon' wx:if="{{orderDetail.applyStatus === 'SUCCESS'}}">
+              <view>审核成功</view>
+              <view>退款金额将在3个工作日内原路返回，请注意查收</view>
+              <view>{{tools.formatDate(orderDetail.processingTime)}}</view>
+            </view>
+            <view class='processItemCon' wx:if="{{orderDetail.applyStatus === 'FAIL'}}">
+              <view>审核失败
+                <text class="tips">（如有疑问请联系客服：{{orderDetail.customerServiceTelphone}}）</text>
+              </view>
+              <view>您的退款申请经核实，不符合退款条件</view>
+              <view>{{tools.formatDate(orderDetail.processingTime)}}</view>
+            </view>
+          </view>
+          <view class='processItem'>
+            <view class="done"></view>
+            <view class="lined"></view>
+            <view class='processItemCon'>
+              <view>提交申请</view>
+              <view>您的退款已申请成功，等待审核中</view>
+              <view>{{tools.formatDate(orderDetail.createDateTime)}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="rd-bottom">
+    <view class="reason">
+      <text>退款原因</text>
+      <text>{{orderDetail.refundRenson}}</text>
+    </view>
+    <view class="description">
+      <view>问题描述</view>
+      <view>{{orderDetail.buyersRemark || ''}}</view>
+    </view>
+    <view class="goods-image">
+      <image src="{{item}}" wx:for="{{orderDetail.refundImageUrlArr}}" wx:key='index'></image>
+    </view>
+  </view>
+  <!-- <button bindtap='withdraw' class="submit-bottom reset-button">取消申请</button> -->
+</view>

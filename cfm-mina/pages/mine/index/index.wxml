@@ -1,0 +1,87 @@
+<!--pages/mine/index/index.wxml-->
+<wxs src="../../../utils/businessTool.wxs" module="tools" />
+<view class="mine-container">
+  <view class="mine-head">
+    <view class="mine-info">
+      <view class="mine-info-top clear" bindtap='goUserInfo'>
+        <!-- <button wx:if="{{!hasUserInfo}}" class="getUser" bindgetuserinfo="getUserInfoFun" open-type="getUserInfo"></button> -->
+        <block wx:if="{{!userInfo.facialPhoto}}">
+          <button wx:if="{{!userInfo.facialPhoto}}" class="getUser" bindtap="goAccredit"> 获取头像昵称 </button>
+          <!-- <button wx:else open-type="getUserInfo" class="getUser" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button> -->
+        </block>
+        <view class="mine-content clear">
+          <view class="mine-pic" bindtap="throttle">
+            <image src="{{imageUrl}}"></image>
+            <!-- <open-data type="userAvatarUrl"></open-data> -->
+          </view>
+          <view class="mine-message">
+            <text wx:if="{{userInfo.facialPhoto}}" class="mine-name">{{name}}</text>
+            <text style="{{!userInfo.facialPhoto ? 'margin-top:50rpx' : 'margin-top:24rpx;'}}" wx:if="{{!userInfo.facialPhoto}}" class="mine-name">登录/注册</text>
+            <!-- <text wx:if="{{hasUserInfo || userInfo.wxTelephone}}" class="mine-phone">{{userInfo.wxTelephone ? userInfo.wxTelephone : ''}}</text> -->
+          </view>
+        </view>
+        <view wx:if="{{userInfo.facialPhoto}}" class="mine-right-icon">
+          <text class="icon iconfont icon-next user-jiantou"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="order-manage">
+    <view class="om-wrap">
+      <view class="manage-head clear" data-status='ALL' bindtap='goOrder'>
+        <text class="manage-title clear"><text></text><text>我的订单</text></text>
+        <view class="manage-right clear">
+          <text>全部订单</text>
+          <text class="iconfont icon-right"></text>
+        </view>
+      </view>
+      <view class="order-list clear">
+        <view class="order-li" data-status='WAIT_PAY' bindtap='goOrder'>
+          <view class="order-li-icon">
+            <image src="../../../img/mine/order-1.png"></image>
+            <text class="{{orderNum.WAIT_PAY > 0 ?'view_show':'view_hide'}}">{{orderNum.WAIT_PAY}}</text>
+          </view>
+          <text class="order-li-info">待支付</text>
+        </view>
+        <view class="order-li" data-status='WAITORDER' bindtap='goOrder'>
+          <view class="order-li-icon waitorder">
+            <image src="../../../img/mine/order-2.png"></image>
+            <text class="{{orderNum.WAITORDER > 0 ?'view_show':'view_hide'}}">{{orderNum.WAITORDER}}</text>
+          </view>
+          <text class="order-li-info">待收货</text>
+        </view>
+        <view class="order-li" bindtap='toAfterSales'>
+          <view class="order-li-icon">
+            <image src="../../../img/mine/order-3.png"></image>
+            <text>31</text>
+          </view>
+          <text class="order-li-info">售后/退款</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="mineList">
+    <view bindtap='toCoupon' class="mineList-li">
+      <view class="mineList-li-center clear">
+        <text class="mineList-li-info">优惠券</text>
+        <view class="mineList-li-icon">
+          <text class="icon iconfont icon-right"></text>
+        </view>
+      </view>
+    </view>
+    <view bindtap='toAddress' class="mineList-li">
+      <view class="mineList-li-center clear">
+        <text class="mineList-li-info">收货地址</text>
+        <view class="mineList-li-icon">
+          <text class="icon iconfont icon-right"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="mine-protocol" wx:if="{{false}}">
+    <view class="protocol"  bindtap='goProtocol'>《用户注册协议与隐私政策》</view>
+  </view>
+</view>
+
+
+

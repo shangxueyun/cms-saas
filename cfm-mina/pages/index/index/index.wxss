@@ -1,0 +1,227 @@
+/**index.wxss**/
+.header{
+ /* height: 100%; */
+ padding-top: 55rpx;
+ position: fixed;
+ width: 100%;
+ top: 0;
+ background-color: #ffffff;
+ z-index: 2;
+}
+.picker-height{
+  width:100%;
+  position: relative;
+  z-index: 1023;
+  background: #fff;
+  margin-top: 2rpx;
+}
+.picker-height>view:first-child .area{
+  height:60rpx;
+  display: flex;
+  color: #050FDA;
+  align-items: flex-end;
+  padding-left: 30rpx;
+}
+.area>text {
+  margin-left: 6rpx;
+}
+
+.forward {
+  margin-top: 0;
+  width: 100%;
+  position: relative;
+  height: 434rpx;
+}
+.forwardB {
+  height: 400rpx;
+  width: 94%;
+  position: absolute;
+  left: 3%;
+  top: 30rpx;
+  /* background: linear-gradient(43deg, #3640DF 0%, #3E3BED 55%, #7C67F1 100%); */
+  box-shadow: 0rpx 4rpx 56rpx 0rpx rgba(81,87,177,0.5000), 0rpx 4rpx 32rpx 0rpx rgba(52,62,224,0.2400), 0rpx 4rpx 16rpx 0rpx rgba(58,53,239,0.1600);
+  border-radius: 32rpx;
+}
+.forwardB>image {
+  height: 100%;
+  width: 100%;
+}
+.forwardBin {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.forwardBTop {
+  width: 90%;
+  height: 92rpx;
+  line-height: 92rpx;
+  /* background: #C7E2FF; */
+  background: rgba(199,226,255,0.16);
+  border-radius: 16rpx;
+  left: 5%;
+  top: 30rpx;
+  position: absolute;
+  display: flex;
+}
+.forwardBTop>view {
+  flex: 1;
+  color: #fff;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  opacity: 1;
+  text-align: center;
+  position: relative;
+}
+.forwardBtn {
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: linear-gradient(270deg, #04BB6F 0%, #21D88B 100%);
+  border-radius: 38rpx;
+  position: absolute;
+  left: calc(50% - 90rpx);
+  top: 16rpx;
+}
+.forwardBButton {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 152rpx;
+}
+.forwardBLeft {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.forwardBLeft>.bIcon {
+  width: 120rpx;
+  height: 120rpx;
+  background: rgba(199,226,255,0.39);
+  border-radius: 52rpx;
+}
+.forwardBLeft>.bIcon>.iconfont {
+  color: #fff;
+  font-size: 48rpx;
+  line-height: 120rpx;
+  text-align: center;
+}
+.forwardBLeft>.name {
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 16rpx;
+}
+
+.classification{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 30rpx 30rpx 0 30rpx;
+}
+.food-item{
+  margin-right: 10rpx;
+  text-align: center;
+  width: 160rpx;
+  margin-bottom: 30rpx;
+}
+.food-item:nth-child(4n) {
+  margin-right: 0;
+}
+.food-item image {
+  width: 108rpx;
+  height: 108rpx;
+}
+.food-item .cf-name {
+  color: #040F0F;
+  font-size: 26rpx;
+}
+.food-item  .cf-name{
+  display: block;
+}
+
+.homeContent {
+  width: 100%;
+  padding: 30rpx;
+}
+.homeTitle {
+  font-size: 36rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #040F0F;
+  line-height: 50rpx;
+}
+.homeBox {
+  height: 500rpx;
+  width: 100%;
+  margin-top: 42rpx;
+  display: flex;
+}
+.homeBoxL {
+  height: 448rpx;
+  width: 332rpx;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 4px 0px rgba(0,63,148,0.1800);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+}
+.homeBoxL>image {
+  height: 100%;
+  width: 100%;
+}
+.homeBoxL>text {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #040F0F;
+}
+.homeBoxR {
+  margin-left: 22rpx;
+}
+.homeBoxRB {
+  position: relative;
+  width: 332rpx;
+  height: 140rpx;
+  background: #FFFFFF;
+  box-shadow: 0rpx 0rpx 8rpx 0rpx rgba(0,63,148,0.1800);
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+}
+.homeBoxRB:last-child {
+  margin-bottom: 0;
+}
+.homeBoxRB>image {
+  height: 128rpx;
+  width: 130rpx;
+  right: 0;
+  position: absolute;
+  margin-top: 14rpx;
+}
+.homeBoxR .homeBoxRB:first-child >image {
+  bottom: 0;
+  width: 140rpx;
+  height: 96rpx;
+}
+.homeBoxR .homeBoxRB:nth-child(3) >image {
+  width: 84rpx;
+  height: 122rpx;
+  margin-top: 20rpx;
+  margin-right: 4rpx;
+}
+.homeBoxRB>text {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #040F0F;
+}

@@ -1,0 +1,32 @@
+<view class="deliveryTime">
+  <view bindtap='_hideModal' class="commodity_screen" wx:if="{{showModalStatus}}"></view>
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class='dateBottom'>
+      选择送达时间
+      <image bindtap='_hideModal' src='../../img/global/close@2x.png'></image>
+    </view>
+    <view class="dateCenter">
+      <scroll-view scroll-y="true" class="tabLeft">
+        <view data-index="{{index}}" bindtap="_tabChange" wx:for="{{dateList}}" wx:key="index" class="leftList {{currentDate == index ? 'active' : ''}}">
+          {{item.title}}
+        </view>
+      </scroll-view>
+      <scroll-view scroll-y="true" class="tabRight">
+        <view wx:if="{{parentIndex == currentDate}}" wx:for-index='parentIndex' wx:for="{{dateList}}" wx:key="index">
+          <view bindtap='_chooseDate' data-parentIndex='{{parentIndex}}' data-index='{{index}}' wx:for="{{item.child}}" wx:key="index" class="rightList {{index == currentTime.index && parentIndex == currentTime.parentIndex ? 'active' : ''}}">
+            <view>
+              <view>
+                {{item.title ? item.title : ''}}{{item.planDeliveryTime}} - {{item.planLastDeliveryTime}} 
+              </view> {{item.distributionFee}} 元配送费
+              <!-- {{item.timeSlot}} -->
+            </view>
+            <view>
+              <image wx:if="{{index == currentTime.index && parentIndex == currentTime.parentIndex }}" src='../../img/global/timeChoose.png'></image>
+              <!-- <text wx:if="{{item.flag}}" class="isFull">已满</text> -->
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

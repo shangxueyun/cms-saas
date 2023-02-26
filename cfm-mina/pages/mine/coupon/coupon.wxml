@@ -1,0 +1,41 @@
+<wxs src="../../../utils/businessTool.wxs" module="tools" />
+<view class="coupon">
+  <view class="useCoupon">
+    <view class="usingItem" wx:for="{{showAllCoupon}}" wx:key="index">
+      <view class="place">
+        <view class="useingTop">
+          <view class="couponLeft">
+            <view class="money">
+              ￥<text>{{item.denomination}}</text>
+            </view>
+            <view class="explain">
+              满{{item.requiredAmoun}}可用
+            </view>
+          </view>
+          <view class="couponRight">
+            <view class="activity">
+              <view class="activityName">{{item.couponName}}</view>
+              <view class="activityButton" bindtap="goShopping" wx:if="{{item.showButtom}}">
+                <text>去使用</text>
+              </view>
+            </view>
+            <view class="activityTime">{{tools.formatDate(item.couponStartTime)}} - {{tools.formatDate(item.couponEndTime)}}</view>
+          </view>
+        </view>
+        <view class="invalidButtom" wx:if="{{!item.showButtom}}">
+          <view>未生效</view>
+        </view>
+      </view>
+      <view class="useingBottom {{item.showTip ? 'showTipHeight' : ''}}">
+        <view class="useTip {{item.showTip ? '' : 'showTipDel'}}">{{item.describe}}</view>
+        <view class='iconfont icon-xiala' wx:if="{{!item.showTip && item.describe}}"  bindtap="showTip" data-index='{{index}}' data-showtip='{{item.showTip}}'></view>
+        <view class='iconfont icon-zhedie' wx:elif="{{item.showTip && item.describe}}"  bindtap="showTip" data-index='{{index}}' data-showtip='{{item.showTip}}'></view>
+      </view>
+    </view>
+  </view>
+  <view class="usingTit"  bindtap="goexpiredCoupon">
+      <view class="usingTip">查看不可用优惠券</view>
+  </view>
+  <van-dialog id="van-dialog" />
+  <view class=""></view>
+</view>

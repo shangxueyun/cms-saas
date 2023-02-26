@@ -1,0 +1,42 @@
+.serviceArea {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+}
+.serviceHeader {
+  width: 100%;
+  position: relative;
+  height: 540rpx;
+}
+.serviceBox {
+  height: 440rpx;
+  width: 86%;
+  position: absolute;
+  left: 3%;
+  padding: 30rpx 30rpx 0 30rpx;
+  top: 40rpx;
+  /* background: linear-gradient(43deg, #3640DF 0%, #3E3BED 55%, #7C67F1 100%); */
+  box-shadow: 0rpx 4rpx 56rpx 0rpx rgba(51,51,50,0.16), 
+  0rpx 4rpx 16rpx 0rpx rgba(51,51,50,0.16);
+  border-radius: 32rpx;
+}
+.serviceBox>image {
+  height: 85%;
+  width: 100%;
+  border-radius: 16rpx;
+}
+.title {
+  font-size: 30rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #2C3038;
+}
+.serviceCon {
+  height: 800rpx;
+  width: 100%;
+  background: #fff;
+}
+.serviceCon>image {
+  height: 100%;
+  width: 100%;
+}

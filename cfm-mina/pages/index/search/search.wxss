@@ -1,0 +1,64 @@
+/**index.wxss**/
+page {
+  --button-normal-font-size: 40rpx;
+  /* background: #eee; */
+  height: auto;
+  background: #fff;
+}
+.search{
+  display: flex;
+  width: calc(100% - 44rpx);
+  background: #FFFFFF;
+  padding: 40rpx 22rpx 0 22rpx;
+  justify-content: space-between;
+}
+.van-search {
+  padding: 0rpx !important;
+  margin: 0rpx 0 20rpx;
+  height: 56rpx;
+  width: calc(750rpx - 126rpx);
+}
+.btnS{
+  font-size: 28rpx;
+  line-height: 60rpx;
+  padding-left: 20rpx;
+}
+.history{
+  width: calc(750rpx - 44rpx);
+  padding: 0 22rpx 0 22rpx;
+}
+.topCon {
+  display: flex;
+  width: 100%;
+  padding: 22rpx 0rpx;
+  justify-content: space-between;
+}
+.topCon h4{
+  color: #040F0F;
+  font-size: 28rpx;
+  font-weight: bolder;
+}
+.list {
+  width: 100%;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* 这里是超出几行省略 */
+  overflow: hidden;
+  height: 120rpx;
+  /*! autoprefixer: off */
+}
+.list .item{
+  display: inline-block;
+  width: max-content;
+  padding: 0 24rpx;
+  color: #666666;
+  font-size: 26rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #F1F1F1;
+  border-radius: 25rpx;
+  margin: 0 10rpx;
+  margin-bottom: 10rpx;
+}

@@ -1,0 +1,317 @@
+<wxs src="../../../utils/businessTool.wxs" module="tools" />
+<view class="order-detail">
+  <view class="od-header" wx:if="{{orderData.orderStatus !== 'DISTRIBUTION'}}">
+    <image src="../../../img/mine/bg.png"></image>
+    <view class="status1Detail" wx:if="{{orderData.orderStatus === 'WAIT_PAY'}}">
+      <text class="iconfont icon-daizhifu_daizhifu-23"></text>
+      <view class="status1Content">
+        <view bindtap="actionSheetShow">
+          待支付
+          <!-- <text class="iconfont icon-right"></text> -->
+        </view>
+        <!-- <view>逾期未支付订单将自动取消</view> -->
+        <!-- <view>{{orderData.orderStatusTips}}</view> -->
+      </view>
+    </view>
+    <view class="status1Detail" wx:if="{{orderData.orderStatus === 'NOT_ACCEPTORDER'}}">
+      <text class="iconfont icon-kfd_daijiedan"></text>
+      <view class="status1Content">
+        <view bindtap="actionSheetShow">
+          待接单
+          <!-- <text class="iconfont icon-right"></text> -->
+        </view>
+        <!-- <view>等待商家接单</view> -->
+        <!-- <view>{{orderData.orderStatusTips}}</view> -->
+      </view>
+    </view>
+    <view class="status1Detail" wx:if="{{orderData.orderStatus === 'ACCEPTORDER'}}">
+      <text class="iconfont icon-kfd_yijiedan"></text>
+      <view class="status1Content">
+        <view bindtap="actionSheetShow">
+          已接单
+          <!-- <text class="iconfont icon-right"></text> -->
+        </view>
+        <!-- <view>商家已接单</view> -->
+        <!-- <view>{{orderData.orderStatusTips}}</view> -->
+      </view>
+    </view>
+    <view class="status1Detail" wx:if="{{orderData.orderStatus === 'NOT_DISTRIBUTION'}}">
+      <text class="iconfont icon-kfd_daijianhuo"></text>
+      <view class="status1Content">
+        <view bindtap="actionSheetShow">
+          待配送
+          <!-- <text class="iconfont icon-right"></text> -->
+        </view>
+        <!-- <view>商家拣货已完成，等待骑手接单</view> -->
+        <!-- <view>{{orderData.orderStatusTips}}</view> -->
+      </view>
+    </view>
+    <!-- <view class="status1Detail" wx:if="{{orderData.orderStatus === 'DISTRIBUTION'}}">
+      <text class="iconfont icon-kfd_peisongzhong"></text>
+      <view class="status1Content">
+        <view bindtap="actionSheetShow">配送中 <text class="iconfont icon-right"></text></view>
+        <view>{{orderData.orderStatusTips}}</view>
+      </view>
+    </view> -->
+    <view class="status1Detail" wx:if="{{orderData.orderStatus === 'COMPLETE'}}">
+      <text class="iconfont icon-kfd_yiwancheng"></text>
+      <view class="status1Content">
+        <view bindtap="actionSheetShow">
+          已完成
+          <!-- <text class="iconfont icon-right"></text> -->
+        </view>
+        <!-- <view>感谢信任，祝您生活愉快</view> -->
+        <!-- <view>{{orderData.orderStatusTips}}</view> -->
+      </view>
+    </view>
+    <view class="status1Detail" wx:if="{{orderData.orderStatus === 'CANCELLED' || orderData.orderStatus === 'NOT_PAY'}}">
+      <text class="iconfont icon-kfd_yiquxiao"></text>
+      <view class="status1Content">
+        <view bindtap="actionSheetShow">
+          已取消
+          <!-- <text class="iconfont icon-right"></text> -->
+        </view>
+        <!-- <view>{{orderData.orderStatusTips}}</view> -->
+      </view>
+    </view>
+    <!-- <view class="status1Detail" wx:if="{{orderData.orderStatus === 'NOT_PAY'}}">
+      <text class="iconfont icon-kfd_yiquxiao"></text>
+      <view class="status1Content">
+        <view bindtap="actionSheetShow">未支付 <text class="iconfont icon-right"></text></view>
+        <view>订单未支付，已自动取消</view>
+      </view>
+    </view> -->
+  </view>
+  <view wx:if="{{orderData.orderStatus === 'DISTRIBUTION'}}">
+    <!-- <view> -->
+    <map id="map" scale='{{scale}}' markers="{{markers}}" polyline="{{polyline}}" include-points="{{includePoints}}" longitude="{{longitude}}" latitude="{{latitude}}">
+      <cover-view slot="callout">
+        <cover-view marker-id="1" class="customerMap">
+          <cover-view>订单配送中</cover-view>
+        </cover-view>
+        <cover-view marker-id="2" class="storeMap">
+          <cover-image src="{{tenantImage ? tenantImage : '../../../img/global/tenant_defalut.png'}}" bindload='showTenantImage'></cover-image>
+        </cover-view>
+      </cover-view>
+    </map>
+  </view>
+  <view class="od-info-address margin-bottom">
+    <view class="od-info" wx:if="{{orderData.orderStatus === 'WAIT_PAY'}}">
+      <view class="od-psinfo">
+        <text>{{orderData.contactPerson}}</text>
+        <text>{{orderData.contactNumber}}</text>
+      </view>
+      <view class="od-address">
+        <text>{{orderData.address}}</text>
+      </view>
+    </view>
+    <view class="od-info" wx:else>
+      <view class="od-psinfo">
+        <text>{{orderData.contactPerson}}</text>
+        <text>{{orderData.contactNumber}}</text>
+      </view>
+      <view class="od-address">
+        <text>{{orderData.address}}</text>
+      </view>
+    </view>
+    <view class="od-time">
+      <text wx:if="{{orderData.orderStatus === 'WAIT_PAY'}}">送达时间：预计{{tools.formatDate(orderData.planLastDeliveryTime)}}前送达</text>
+      <text wx:else>送达时间：预计{{tools.formatDate(orderData.planLastDeliveryTime)}}前送达</text>
+      <text wx:if="{{orderData.orderStatus === 'WAIT_PAY'}}" class="modify" catchtap='showModal'>修改</text>
+    </view>
+  </view>
+  <block wx:if="{{orderData.orderStatus === 'WAIT_PAY'}}">
+    <view class="od-info-goods margin-bottom" wx:for="{{orderData.tenantOrders}}" wx:key="index">
+      <view class='shop-name'>
+        <view class=''>
+          <text class="iconfont icon-kfd_dianpu"></text>
+          {{item.tenantReferred}}
+          <text class="order-number">（订单号：{{item.tenantOrderNumber}}）</text>
+        </view>
+        <view class="shop-item-status1Content">
+          <view bindtap="actionSheetShow" data-id="{{item.orderProcess}}">
+            {{item.orderStatusDescription}}
+            <text class="iconfont icon-right"></text>
+          </view>
+        </view>
+      </view>
+      <view class='goods-content'>
+        <view class='goods-item' wx:for="{{item.details}}" wx:key="index" wx:for-item="item2">
+          <image src="{{item2.imageUrl}}"></image>
+          <view class="item-info">
+            <view class=''>
+              {{item2.goodsName}}
+              <text wx:if="{{item2.goodsSpecification && item2.goodsSpecification !== '0'}}">约{{item2.goodsSpecification}} {{item2.goodsSpecificationUnit}}
+              </text>
+              <text wx:else>1 {{item2.goodsSpecificationUnit}}</text>
+            </view>
+            <view class="infoPrice" wx:if="{{item2.primaryPrice}}">
+              ¥{{item2.goodsPrice}}
+              <view class="oldPrice">¥{{item2.primaryPrice}}</view>
+            </view>
+            <view class="infoPrice" wx:else>¥{{item2.goodsPrice}}</view>
+          </view>
+          <view class="info-right">
+            <view class="number">x{{item2.number}}</view>
+            <view class="total-price">¥{{tools.toFixed2(item2.number * item2.goodsPrice)}}</view>
+          </view>
+        </view>
+        <view class="remarks">
+          <text>订单备注：</text>
+          <text>{{item.remark || ''}}</text>
+        </view>
+        <view class="subtotal">
+          <text>小计</text>
+          <text>¥{{item.totalFee}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="od-info-goods margin-bottom" wx:for="{{orderData.tenantOrders}}" wx:for-item="odItem" wx:key='id'>
+      <view class='shop-name'>
+        <view class=''>
+          <text class="iconfont icon-kfd_dianpu"></text>
+          {{odItem.tenantReferred}}
+          <text class="order-number">（订单号：{{odItem.tenantOrderNumber}}）</text>
+        </view>
+        <view class="shop-item-status1Content">
+          <view bindtap="actionSheetShow" data-id="{{odItem.orderProcess}}">
+            {{odItem.orderStatusDescription}}
+            <text class="iconfont icon-right"></text>
+          </view>
+        </view>
+      </view>
+      <view class='goods-content'>
+        <view class='goods-item' wx:for="{{odItem.details}}" wx:key="index">
+          <image src="{{item.imageUrl}}"></image>
+          <view class="item-info">
+            <view class=''>
+              {{item.goodsName}}
+              <text wx:if="{{item.goodsSpecification && item.goodsSpecification !== '0'}}">约{{item.goodsSpecification}} {{item.goodsSpecificationUnit}}
+              </text>
+              <text wx:else>1 {{item.goodsSpecificationUnit}}</text>
+            </view>
+            <view class="infoPrice" wx:if="{{item.primaryPrice}}">
+              ¥{{item.goodsPrice}}
+              <view class="oldPrice">¥{{item.primaryPrice}}</view>
+            </view>
+            <view class="infoPrice" wx:else>¥{{item.goodsPrice}}</view>
+          </view>
+          <view class="info-right">
+            <view class="number">x{{item.number}}</view>
+            <view class="total-price">¥{{tools.toFixed2(item.number * item.goodsPrice)}}</view>
+          </view>
+          <view class="tips" wx:if="{{item.refundAmount}}">
+            非常抱歉，因重量误差{{item.refundNumber}}{{item.goodsSpecificationUnit}}，已退款¥{{item.refundAmount}}
+          </view>
+        </view>
+        <view class="remarks">
+          <text>订单备注：</text>
+          <text>{{odItem.remark || ''}}</text>
+        </view>
+        <view class="subtotal">
+          <text>小计</text>
+          <text>¥{{odItem.totalFee}}</text>
+        </view>
+        <view class="content-footer">
+          <button type="default" plain="true" bindtap="callPhone" data-id="{{odItem.tenantTelephone}}">
+            联系商家
+          </button>
+          <button type="default" plain="true" bindtap="showCancelHandler" data-item='{{odItem}}' wx:if="{{odItem.orderStatus === 'WAIT_PAY' || odItem.orderStatus === 'NOT_ACCEPTORDER' || odItem.orderStatus === 'ACCEPTORDER'}}">
+            取消订单
+          </button>
+          <!-- <button type="default" plain="true" bindtap="delHandler" data-id="{{odItem.id}}" wx:if="{{odItem.orderStatus === 'COMPLETE' || odItem.orderStatus === 'CANCELLED' || odItem.orderStatus === 'NOT_PAY'}}">
+            删除订单
+          </button> -->
+          <!-- <button type="default" plain="true" class="to-pay" bindtap="toPay" wx:if="{{odItem.orderStatus === 'WAIT_PAY'}}">
+            去支付 {{orderData.payTimeDeadLine}}
+          </button> -->
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="amount-of-money margin-bottom">
+    <view>
+      <text>订单金额</text>
+      <text>¥{{orderData.totalFee}}</text>
+    </view>
+    <!-- wx:if="{{orderData.orderStatus === 'WAIT_PAY'}}" -->
+    <view>
+      <text>配送费</text>
+      <text>¥{{orderData.freigh}}</text>
+    </view>
+    <view wx:if="{{ orderData.couponAmount > 0}}">
+      <text>优惠券</text>
+      <text>-¥{{orderData.couponAmount}}</text>
+    </view>
+    <view>
+      <text>实付金额</text>
+      <text class="paid-in">¥{{orderData.actualPayment}}</text>
+    </view>
+  </view>
+  <view class="other-info margin-bottom">
+    <view>
+      <text>订单编号：</text>
+      <text class="grey" wx:if="{{orderData.orderStatus === 'WAIT_PAY'}}">{{orderData.orderNumber}}</text>
+      <text class="grey" wx:else>{{orderData.orderNumber}}</text>
+    </view>
+    <!-- <view wx:if="{{orderData.orderStatus !== 'WAIT_PAY' && orderData.orderStatus !== 'NOT_ACCEPTORDER' && orderData.orderStatus !== 'ACCEPTORDER' && orderData.orderStatus !== 'NOT_PAY'}}">
+      <text>配送方式：</text>
+      <text class="grey">{{orderData.order.freigh}}</text>
+    </view> -->
+    <view wx:if="{{orderData.distributionPersonId}}">
+      <text>配送人员：</text>
+      <text class="grey" bindtap="callPhone" data-id="{{orderData.distributionTelephone}}">{{orderData.distributionPersonName || ''}}   <text class="iconfont icon-kfd_dianhua"></text></text>
+    </view>
+    <view wx:if="{{orderData.distributionPersonId}}">
+      <text>配送手机：</text>
+      <text class="grey">{{orderData.distributionTelephone || ''}}</text>
+    </view>
+    <view wx:if="{{orderData.orderStatus !== 'WAIT_PAY'}}">
+      <text>支付方式：</text>
+      <text class="grey">微信</text>
+    </view>
+    <view>
+      <text>下单时间：</text>
+      <text class="grey" wx:if="{{orderData.orderStatus === 'WAIT_PAY'}}">{{tools.formatDate(orderData.createOrderTime)}}</text>
+      <text class="grey" wx:else>{{tools.formatDate(orderData.createOrderTime)}}</text>
+    </view>
+  </view>
+  <view class="footer">
+    <!-- <button type="default" plain="true" bindtap="showCancelHandler" data-item='{{orderData}}' wx:if="{{orderData.orderStatus === 'WAIT_PAY' || orderData.orderStatus === 'NOT_ACCEPTORDER' || orderData.orderStatus === 'ACCEPTORDER'}}">取消订单</button> -->
+    <button type="default" plain="true" bindtap="showCancelHandler" data-item='{{orderData}}' wx:if="{{orderData.orderStatus === 'WAIT_PAY'}}">取消订单</button>
+    <button type="default" plain="true" bindtap="delHandler" data-id="{{orderData.id}}" wx:if="{{orderData.orderStatus === 'COMPLETE' || orderData.orderStatus === 'CANCELLED' || orderData.orderStatus === 'NOT_PAY'}}">
+      删除订单
+    </button>
+    <button type="default" plain="true" class="to-pay" bindtap="toPay" wx:if="{{orderData.orderStatus === 'WAIT_PAY'}}">
+      去支付 {{orderData.payTimeDeadLine}}
+    </button>
+  </view>
+  <van-action-sheet show="{{ show }}" bind:close="onClose" bind:select="onSelect" title="订单跟踪">
+    <view class='stepsProcess pre'>
+      <view class='stepsProcessCon'>
+        <view class='processItem' wx:for="{{orderProcess}}" wx:key="index">
+          <view></view>
+          <view class="lined"></view>
+          <view class='processItemCon'>
+            <view>{{item.remark}}</view>
+            <view>{{tools.formatDate(item.orderProcessTime)}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </van-action-sheet>
+  <van-action-sheet show="{{ showCancel }}" title="选择取消原因" bind:close="onCloseCancel">
+    <view wx:for="{{reasonList}}" wx:key="index" class="reason-list" bindtap="selectReason" data-index="{{ index }}">
+      <text class='{{selectedIndex === index ? "active" : "" }}'>{{item.name}}</text>
+      <text class="iconfont icon-cms_gou-227" wx:if="{{selectedIndex === index}}"></text>
+    </view>
+    <button type="default" plain="true" bindtap="cancelOrder" class="cancle-btn">确 定</button>
+  </van-action-sheet>
+  <van-dialog id="van-dialog" />
+  <!-- 预计送达时间弹层 -->
+  <deliveryTime id="DeliveryTime" bind:querylEvent="_querylEvent"></deliveryTime>
+  <!-- <deliveryTime id="DeliveryTime" bind:backTime="getCurrentTime"></deliveryTime> -->
+  <van-toast id="van-toast" />
+</view>

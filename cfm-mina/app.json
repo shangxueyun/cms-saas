@@ -1,0 +1,90 @@
+{
+  "pages": [
+    "pages/index/location/location",
+    "pages/index/index/index",
+    "pages/index/search/search",
+    "pages/index/searchResult/searchResult",
+    "pages/index/onSale/onSale",
+    "pages/index/serviceArea/serviceArea",
+    "pages/index/cheapMarket/cheapMarket",
+    "pages/shop/storeShopp/storeShopp",
+    "pages/shoppingCar/index/index",
+    "pages/shoppingCar/editOrder/editOrder",
+    "pages/shoppingCar/payResult/payResult",
+    "pages/shoppingCar/usingCoupon/usingCoupon",
+    "pages/mine/index/index",
+    "pages/mine/addressManage/addressManage",
+    "pages/mine/addAddress/addAddress",
+    "pages/mine/order/order",
+    "pages/mine/orderDetail/orderDetail",
+    "pages/mine/afterSales/afterSales",
+    "pages/mine/refundDetails/refundDetails",
+    "pages/mine/applyService/applyService",
+    "pages/mine/protocol/protocol",
+    "pages/mine/coupon/coupon",
+    "pages/mine/expireCoupon/expireCoupon",
+    "pages/mine/accredit/accredit",
+    "pages/index/reservationCode/reservationCode",
+    "pages/index/subscribe/subscribe",
+    "pages/index/reservationRecord/reservationRecord",
+    "pages/index/uploadClaimCode/uploadClaimCode"
+  ],
+  "networkTimeout": {
+    "request": 30000,
+    "connectSocket": 3000,
+    "uploadFile": 30000,
+    "downloadFile": 30000
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee",
+    "backgroundColorTop": "#fff",
+    "backgroundColorBottom": "#fff",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 30,
+    "pageOrientation": "portrait"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#0F1332",
+    "backgroundColor": "#FFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index/index",
+        "text": "首页",
+        "iconPath": "img/index/home.png",
+        "selectedIconPath": "img/index/selectedHome.png"
+      },
+      {
+        "pagePath": "pages/shoppingCar/index/index",
+        "text": "购物车",
+        "iconPath": "img/index/shop.png",
+        "selectedIconPath": "img/index/selectedShop.png"
+      },
+      {
+        "pagePath": "pages/mine/index/index",
+        "text": "我的",
+        "iconPath": "img/index/min.png",
+        "selectedIconPath": "img/index/selectedMin.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-toast": "@vant/weapp/toast/index"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "位置信息将用于自动选择离您最近的菜场"
+    }
+  },
+  "requiredBackgroundModes": [
+    "location"
+  ],
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

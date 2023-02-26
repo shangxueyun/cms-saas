@@ -1,0 +1,88 @@
+<!-- pages/mine/addAddress/addAddress.wxml -->
+<form bindsubmit="formBindsubmit">
+  <view class="addAddress-content">
+    <view class="tip-info {{tipShow?'tip_Show':'tip_Hide'}}">{{tip}}</view>
+    <view class="addAddress-info">
+      <view class="addAddress-li">
+        <text class="addAddress-text">联系人</text>
+        <view class="addAddress-input">
+          <input name='contactPerson' bindblur="checkContactPerson" value='{{address.contactPerson}}' placeholder-class="psection" class="comInput" placeholder='您的姓名' maxlength="10"></input>
+        </view>
+      </view>
+      <!-- <view class="addAddress-li">
+        <text class="addAddress-text">配送菜场</text>
+        <view class="section">
+          <picker bindchange="bindPickerChange" value="{{index}}" range-key="name" range="{{malls}}">
+            <view class="{{mall.id?'picker comInput':'picker comInput psection'}}">
+              {{mall.name}}
+            </view>
+          </picker>
+        </view>
+      </view> -->
+      <view class="addAddress-li">
+        <text class="addAddress-text">电话</text>
+        <view class="addAddress-input">
+          <input type="number" name='contactNumber' bindblur="checkContactNumber" value='{{address.contactNumber}}' placeholder-class="psection" class="comInput" placeholder='配送员联系您的手机号'></input>
+          <text>{{inputInfo}}</text>
+        </view>
+      </view>
+      <view class="addAddress-li addAddress-di">
+        <view class="addAddress-text">地址</view>
+        <!-- <view wx:if="{{ldata}}" class="addAddress-input" bindtap="btnTap"> -->
+          <!-- <view class="choose-address clear">
+            <text name="address" class="{{address.address ? 'textInput' : 'textPlaceholder'}}">
+              {{address.address ? address.address : '请选择小区'}}
+            </text>
+            <text class='icon iconfont icon-next choose-address-right'></text>
+          </view> -->
+          <picker bindchange="bindPickerAddress" style="width:80%" value="{{distributionScopesIndex}}" range-key="poiname" range="{{distributionScopes}}">
+            <view class="layout {{address.address ? 'layoution' : ''}}" hover-class="none" hover-stop-propagation="false">
+              <view class="{{address.address ? 'picker comInput':'picker comInput psection'}}">
+                {{address.address ? address.address : '请选择小区'}}
+              </view>
+            </view>
+            <view class='iconfont icon-right'></view>
+          </picker>
+        <!-- </view> -->
+        <!-- <button style="padding:0;background:#fff;text-align:left" wx:if="{{!ldata}}" class="addAddress-input" open-type="openSetting" bindopensetting='mapLocate'>
+          <view class="choose-address clear">
+            <text name="address" class="{{address.address ? 'textInput' : 'textPlaceholder'}}">
+              {{address.address ? address.address : '请选择小区'}}
+            </text>
+          </view>
+        </button> -->
+      </view>
+      <view class="addAddress-li">
+        <text class="addAddress-text">楼栋</text>
+        <view class="addAddress-inputflex">
+          <input name="buildingNumber" bindblur="checkBuildingNumber" value='{{address.buildingNumber}}' placeholder-class="psection" class="comInput" placeholder='例：1'></input>
+          <view>栋</view>
+        </view>
+      </view>
+      <view class="addAddress-li">
+        <text class="addAddress-text">门牌号</text>
+        <view class="addAddress-inputflex">
+          <input name="streetNumber" bindblur="checkStreetNumber" value='{{address.streetNumber}}' placeholder-class="psection" class="comInput" placeholder='例：101'></input>
+          <view>室</view>
+        </view>
+      </view>
+      <view class="addAddress-li">
+        <text class="addAddress-text default-address">设为默认地址</text>
+        <view class="addAddress-input default-address-ip">
+          <switch checked="{{switch1Checked}}" bindchange="switch1Change" color="#1CC296" />
+        </view>
+      </view>
+    </view>
+    <view class="addAddress-tips">
+      <text class="tips">目前只支持指定小区配送，范围外无法送达</text>
+    </view>
+  </view>
+  <!-- <view class="distribution_scope" wx:if="{{mall.id}}">
+    <text></text>
+    <text>配送范围</text>
+    <map wx:if="{{mall.id}}" id="map" longitude="{{map.longitude}}" latitude="{{map.latitude}}" polyline="{{map.polyline}}" scale="14" markers="{{map.markers}}" include-points="{{map.include-points}}" show-location="true" style="width: 100%; height: 380rpx;"></map>
+  </view> -->
+  <button formType="submit" class="submit-bottom reset-button {{tipShow?'bt_disabled':''}}">
+    保存地址
+  </button>
+</form>

@@ -1,0 +1,166 @@
+<!-- pages/shoppingCar/editOrder/editOrder.wxml -->
+<form bindsubmit="formSubmit">
+  <!-- 预计送达时间弹层 -->
+  <view bindtap='hideModal' class="commodity_screen" wx:if="{{showModalStatus}}"></view>
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class='dateBottom'>
+      选择送达时间
+      <image bindtap='hideModal' src='../../../img/global/close@2x.png'  lazy-load="true"></image>
+    </view>
+    <view class="dateCenter">
+      <scroll-view scroll-y="true" class="tabLeft">
+        <view data-index="{{index}}" bindtap="tabChange" wx:for="{{dateList}}" wx:key="index" class="leftList {{currentDate == index ? 'active' : ''}}">
+          {{item.title}}
+        </view>
+      </scroll-view>
+      <scroll-view scroll-y="true" class="tabRight">
+        <view wx:if="{{parentIndex == currentDate}}" wx:for-index='parentIndex' wx:for="{{dateList}}" wx:key="index">
+          <view bindtap='chooseDate' data-parentIndex='{{parentIndex}}' data-index='{{index}}' wx:for="{{item.child}}" wx:key="index" class="rightList {{index == currentTime.index && parentIndex == currentTime.parentIndex ? 'active' : ''}}">
+            <view>
+              <view>
+                {{item.title ? item.title : ''}}{{item.planDeliveryTime}} - {{item.planLastDeliveryTime}} 
+              </view> {{item.distributionFee}} 元配送费
+            </view>
+            <view>
+              <image wx:if="{{index == currentTime.index && parentIndex == currentTime.parentIndex }}" src='../../../img/global/timeChoose.png'  lazy-load="true"></image>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="editOrder" >
+      <view class='orderAddress' wx:if="{{!address.id}}" bindtap='toAddress'>
+        <view style="margin-top:20rpx;margin-bottom:50rpx;" class="address-top clearing">
+          <view class="address-info">
+            <text style="margin-right:20rpx;">请添加收货地址</text>
+          </view>
+          <view class="iconfont icon-right"></view>
+        </view>
+        <image class="aaddress-bottom" src="../../../img/global/adderssBorder.png"  lazy-load="true"></image>
+      </view>
+      <view wx:if="{{address.id}}" bindtap='toAddress' class="orderAddress">
+        <view class="address-top clearing">
+          <view class="address-info">
+            <text style="margin-right:20rpx;">{{address.contactPerson}}</text>
+            <text>{{address.contactNumber}}</text>
+          </view>
+          <view class="iconfont icon-right"></view>
+        </view>
+        <view class="address-address">
+          {{address.address}}
+          <text class="streetNumber" wx:if="{{address.buildingNumber}}">{{address.buildingNumber + '栋'}}</text>
+          <text class="streetNumber" wx:if="{{address.streetNumber}}">{{address.streetNumber + '室'}}</text>
+        </view>
+        <image class="aaddress-bottom" src="../../../img/global/adderssBorder.png"  lazy-load="true"></image>
+      </view>
+      <view class="willdelivery clear" bindtap='showModal'>
+        <view>配送时间</view>
+        <view class="timeSelect" wx:if="{{currentTime.parentIndex===-1 && currentTime.index===-1}}" style="color:#1CC296;font-weight: 600;">
+          请选择
+          <view class="iconfont icon-right"></view>
+        </view>
+        <view wx:elif="{{currentTime.parentIndex>-1 && currentTime.index>-1}}"  style="color:#1CC296;font-weight: 600;">
+          {{dateList.length > 0 ? (dateList[currentTime.parentIndex].child[currentTime.index].title ? dateList[currentTime.parentIndex].child[currentTime.index].title : dateList[currentTime.parentIndex].title) : ''}} {{dateList.length > 0 ? dateList[currentTime.parentIndex].child[currentTime.index].planDeliveryTime : ''}} - {{dateList.length > 0 ? dateList[currentTime.parentIndex].child[currentTime.index].planLastDeliveryTime : ''}}
+          <view class="iconfont icon-right"></view>
+        </view>
+      </view>
+      <view class="order-content {{deadLine ? 'pad' : ''}}">
+        <view class="order-list">
+          <view wx:for="{{tenantOrders}}" wx:key="businessTypeId" class="order-list-li">
+            <view class="bussnessInfo">
+              <view class="shopBox">
+                <view class="shopInfo">
+                  <view class="iconfont icon-kfd_dianpu"></view>
+                  <view>{{item.tenantReferred}}</view>
+                </view>
+                <view class="shopListLi" wx:for-index="dataindex" wx:for="{{item.details}}" wx:key="tenantId">
+                  <view wx:key="dataindex" class="goodsInfo">
+                    <view class='goodsInfo-left'>
+                      <image  lazy-load="true" class="goodsIcon" src="{{ item.imageUrl ? item.imageUrl : '../../../img/global/good-defalut.png'}}"></image>
+                      <view>
+                        <view class="goodsInfoname">{{item.goodsName}}
+                        <view wx:if="{{item.goodsSpecification}}">约{{item.goodsSpecification}}{{item.goodsSpecificationUnit}}</view>
+                        <view wx:else>1{{item.goodsSpecificationUnit}}</view>
+                        </view>
+                      <view class="goodsInfoprice">
+                        <view class="infoPrice" wx:if="{{item.showDiscount}}">
+                          ¥{{item.goodsPrice}}
+                          <view class="oldPrice">¥{{item.primaryPrice}}</view>
+                        </view>
+                        <view class="infoPrice" wx:else>
+                          ¥{{item.goodsPrice}}
+                        </view>
+                      </view>
+                      </view>
+                    </view>
+                    <view class='goodsInfo-bottom'>
+                      <view>x {{item.number}}</view>
+                      <view>
+                        ￥{{item.goodsTotal}}
+                      </view>
+                    </view>
+                  </view>
+                </view>
+                  <!-- <view class="shopTall">
+                     <view class="{{bottomStyle?'bottomStyle':''}}" style="bottom:{{reasonHeight}}px" >
+                      <view  class="remarks">
+                        <view class="remarks-label">订单备注：</view>
+                             <input maxlength="20" placeholder-class="phcolor" value="{{item.remark}}" data-index="{{index}}" bindinput='getText' data-dataindex="{{dataindex}}" class="remarks-text" placeholder='选填'></input>
+                      </view>
+                    </view>
+                  </view> -->
+              </view>
+              <view class="busBox">
+                <view class="busTotal">
+                  <text>小计</text>
+                  <text>￥</text>
+                  <text>{{item.totalFee}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="order-total">
+            <view class="order-price-list clearing">
+              <view>订单金额</view>
+              <view>￥{{totalPrice}}</view>
+            </view>
+            <view class="order-price-list clearing">
+              <view>配送费</view>
+              <view>￥{{dateList[currentTime.parentIndex].child[currentTime.index].distributionFee ? dateList[currentTime.parentIndex].child[currentTime.index].distributionFee : '0'}}</view>
+            </view>
+            <view class="order-price-list clearing" bindtap='goAllCoupon'>
+              <view>优惠券</view>
+              <view wx:if="{{couponAmount.amount <= 0}}">
+                <view class="selectCoupon">
+                  <view class="selectLeft">
+                    <image src="../../../img/global/coupon.png"></image>
+                  </view>
+                  <view class="selectRight">{{usingCouponNum}}张可用</view>
+                </view>
+                <text class="icon iconfont icon-right"></text>
+              </view> 
+            <view wx:else>
+              -￥{{couponAmount.amount}}<text class="icon iconfont icon-right"></text>
+            </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    <view class='control'>
+      <view class='btn'>
+        <view class='controlLeft'>
+          <view class='shoppingCarPrice'>
+            <view>
+              实付金额:
+              <view class="totalPrice">
+                ￥{{totalFee}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <button formType="submit" class='controlRight controlRightOn'>去支付</button>
+      </view>
+    </view>
+  </view>
+</form>

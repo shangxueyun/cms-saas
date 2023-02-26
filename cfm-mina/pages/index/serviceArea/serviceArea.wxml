@@ -1,0 +1,29 @@
+<!--
+ * @Description: 
+ * @verbose: 
+ * @Author: shangXueYun
+ * @Date: 2022-08-16 11:06:47
+ * @LastEditors: shangXueYun
+ * @LastEditTime: 2022-08-19 14:35:28
+-->
+
+<view class="serviceArea">
+  <!-- <view class="" ></view> -->
+  <view class="serviceHeader" >
+    <view class="serviceBox">
+      <image wx:if="{{type === 'account'}}"  bindtap="previewImage" data-url="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/accountbg.jpeg" src="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/accountbg.jpeg" lazy-load="true"></image>
+      <image wx:if="{{type === 'building'}}"  bindtap="previewImage" data-url="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/buildingbg.jpeg" src="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/buildingbg.jpeg" lazy-load="true"></image>
+      <image wx:if="{{type === 'dining'}}"  bindtap="previewImage" data-url="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/diningbg.jpeg" src="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/diningbg.jpeg" lazy-load="true"></image>
+      <image wx:if="{{type === 'safety'}}"  bindtap="previewImage" data-url="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/safetybg.jpeg" src="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/safetybg.jpeg" lazy-load="true"></image>
+      <view class="title">{{title}}</view>
+    </view>
+  </view>
+  <view class="serviceCon" >
+    <image wx:if="{{type === 'account'}}" bindtap="previewImage" data-url="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/accountPic.png" src="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/accountPic.png" lazy-load="true"></image>
+    <image wx:if="{{type === 'building'}}" bindtap="previewImage" data-url="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/buildingPic.png" src="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/buildingPic.png" lazy-load="true"></image>
+    <image wx:if="{{type === 'dining'}}" bindtap="previewImage" data-url="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/diningPic.png" src="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/diningPic.png" lazy-load="true"></image>
+    <image wx:if="{{type === 'safety'}}" bindtap="previewImage" data-url="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/safetyPic.png" src="https://qibao-prod-public-file.oss-cn-shanghai.aliyuncs.com/mina-resource/safetyPic.png" lazy-load="true"></image>
+  </view>
+</view>
+
+<van-toast id="van-toast" />

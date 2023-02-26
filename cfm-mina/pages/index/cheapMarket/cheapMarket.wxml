@@ -1,0 +1,61 @@
+<view class="marketBackgroud">
+  <image class="" src="../../../img/global/marketBg.png" lazy-load="false"></image>
+</view>
+<view class="market">
+  <view class="marketTitle">
+    - - 菜场爆款  今日好价 - -
+  </view>
+  <view class="marketGoods">
+    <!-- <scroll-view class="Goodscroll" scroll-y="true" bindscroll="scroll"> -->
+      <!-- data-id="{{ item.id }}"
+      wx:for-index="index"
+      wx:for-item="item"
+      data-tenantId="{{item.tenantId}}"
+      data-goodsId="{{item.gId}}"
+      data-parentId="{{item.sId}}" -->
+      <!-- wx:key="index" -->
+      <view class="GoodsItem" wx:for="{{cheapMarketData}}" wx:key="{{item.gId}}">
+        <view class="imUrl" hover-class="none" hover-stop-propagation="false">
+          <image src="{{item.gImgurl ? item.gImgurl : '../../../img/global/good-defalut.png'}}" lazy-load="true"></image>
+          <view class="lineStock" wx:if="{{item.lineStock > 0 && item.lineStock <= 5}}">仅剩{{item.lineStock}}件</view>
+          <view class='goodsCover' wx:elif="{{ item.lineStock <= 0}}">
+             <view class="cover">已售完</view>
+          </view>
+        </view>
+        <!-- <image class="GoodsItemImage" src="{{item.gImgurl ? item.gImgurl : '../../../img/global/good-defalut.png'}}" lazy-load="true" /> -->
+        <view class="GoodsList_button" hover-class="none" hover-stop-propagation="false">
+          <view class="title">{{item.lineName}}
+            <view class="specification" wx:if="{{!item.specification || item.specification<=0}}">1{{item.unitName}}
+            </view>
+            <view class="specification" wx:else>约{{item.specification}}{{item.unitName}}
+            </view>
+          </view>
+          <text class="store">【{{item.tenantName}}】</text>
+          <view class="foter">
+            <!-- <text class="price" wx:if="{{item.showDiscount}}">¥{{item.discountPrice}}</text>
+            <text class="price" wx:else>¥{{item.price}}</text> -->
+            <view class="infoPrice" wx:if="{{item.resourcePrice}}">
+              ¥{{item.price}}
+              <view class="oldPrice">¥{{item.resourcePrice}}</view>
+            </view>
+            <view class="infoPrice" wx:else>
+              ¥{{item.price}}
+            </view>
+            <view class="addcar"  bindtap="addShopCar" wx:if='{{item.lineStock > 0}}' data-index="{{index}}" data-havaNum="{{item.havaNum}}"  data-lineStock="{{item.lineStock}}">
+              <view class='iconfont icon-kfd_gouwucheL'></view>
+            </view>
+            <view class="addcar placeholder" wx:else ></view>
+            <!-- <image src="../../../img/global/cheapCar.png"  bindtap="addShopCar" wx:if='{{item.lineStock > 0}}' data-index="{{index}}" data-havaNum="{{item.havaNum}}"  data-lineStock="{{item.lineStock}}"></image> -->
+          </view>
+        </view>
+      </view>
+      <view class="loadAll"wx:if="{{cheapMarketData.length!==0}}">
+        <text>- </text>
+        <text> 已经到底了 </text>
+        <text> -</text>
+      </view>
+    <!-- </scroll-view> -->
+  </view>
+</view>
+
+<van-toast id="van-toast" />

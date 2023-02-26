@@ -1,0 +1,50 @@
+<!-- index.wxml -->
+  <!-- 商铺头部 -->
+  <view class="shopInfo">
+    <view class="shopBg">
+      <image class="returnBtn" src="../../../img/global/return.png" bindtap="goBack" ></image>
+      <image src="../../../img/global/bg@2x.png" class="bgC"  lazy-load="true"></image>
+    </view>
+    <view class="shopCenter">
+      <view class="shopTitle">
+        <view class="shopImge">
+            <image wx:if="{{shopInfo.shopPhotos}}" src="{{ shopInfo.shopPhotos }}" bindtap="previewImage" data-url='{{shopInfo.shopPhotos ? shopInfo.shopPhotos : null}}'  lazy-load="true"></image>
+            <image wx:else src="../../../img/global/tenant_defalut.png"  lazy-load="true"></image>
+        </view>
+        <view class="shopName">
+            <view class="shopNameN">{{shopInfo.referred}}</view>
+            <!-- <view class="shopNameN">{{shopInfo.referred}}</view> -->
+            <view class="shopNameI">
+              <view class="shopPure">
+                地址：{{buildingName}} {{shopNo}}
+              </view>
+              <view class="shopNumber">
+                <view class="telephone">电话：{{shopInfo.telephone ? shopInfo.telephone : ''}}</view>
+                <view class="shopIconB" bindtap='calling'>
+                  <view class="shopIcon">
+                    <view class='iconfont icon-dianhua'></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 整体内容 -->
+  <view class="content">
+    <!-- 商家 -->
+    <view class="shopMessage">
+      <view class="message-content">
+        <view class="mes-top">
+          证照信息
+        </view>
+        <view class="shop-li">
+          <image wx:if="{{item.imgUrl}}" wx:for="{{shopInfo.qualifiedDTOS}}" wx:key="{{ index }}" src="{{ item.imgUrl }}" bindtap="previewImage" data-url='{{item.imgUrl ? item.imgUrl : null}}' lazy-load="true"></image>
+          <!-- <image src="{{item.imgUrl}}" wx:for="{{shopInfo.qualifiedDTOS}}" wx:if="{{item.imgUrl}}"  lazy-load="true" wx:key="id"></image> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <van-toast id="van-toast" />
+<!-- </view> -->

@@ -1,0 +1,62 @@
+<wxs src="../../../utils/businessTool.wxs" module="tools" />
+<view class="apply-service">
+  <view class="rd-top">
+    <view class='goods-content'>
+      <view class='goods-item'>
+        <image src="{{orderObj.imageUrl}}"></image>
+        <view class="item-info">
+          <view class=''>
+            {{orderObj.goodsName}} 
+            <text wx:if="{{orderObj.goodsSpecification && orderObj.goodsSpecification !== '0'}}">约{{orderObj.goodsSpecification}}</text>
+            <text wx:else>1</text>
+            {{orderObj.goodsSpecificationUnit}}
+          </view>
+          <view class="">¥{{orderObj.goodsPrice}}  x{{orderObj.number}}</view>
+        </view>
+      </view>
+      <view class="tips" wx:if="{{orderObj.refundAmount}}">
+        非常抱歉，因重量误差{{orderObj.refundNumber}}{{orderObj.goodsSpecificationUnit}}，已退款¥{{orderObj.refundAmount}}
+      </view>
+      <view class="amount-of-money">
+        <!-- <text>实付金额：</text><text>¥{{tools.toFixed2(orderObj.goodsPrice*orderObj.number)}}</text> -->
+        <text>实付金额：</text><text>¥{{payAmount}}</text>
+      </view>
+    </view>
+    <view class="orderNo">
+      <text>申请数量<text class="tips">最多可申请{{refundNumber}}件</text></text>
+      <van-stepper value="{{ 1 }}" min="1" max="{{refundNumber}}" bind:change="onChange" disable-input="{{true}}"/>
+    </view>
+    <view class="appl-time">
+      <text>退款金额</text>
+      <text>¥{{applyData.estimateRefundAmount}}</text>
+    </view>
+  </view>
+  <view class="rd-bottom">
+    <view class="reason">
+      <text>退款原因</text>
+      <view bindtap="showAction">
+        <text wx:if="{{ !selectedListSTR }}">请选择</text>
+        <text wx:else class="selectedListSTR">{{ selectedListSTR }}</text>
+        <text class="iconfont icon-right"></text>
+      </view>
+    </view>
+    <view class="description">
+      <view>问题描述</view>
+      <view>
+        <textarea bindinput="bindTextAreaBlur" placeholder="您可以在这里详细描述商品的问题" placeholder-style="color: #757B82;" maxlength="50"/>
+      </view>
+    </view>
+    <view class="goods-image">
+      <!-- multiple="{{true}}" -->
+      <van-uploader preview-size="180rpx" file-list="{{ fileList }}" bind:after-read="afterRead" max-count="3" deletable="{{ true }}" upload-text="添加图片" catch:delete="deleteImg"/>
+    </view>
+  </view>
+  <button bindtap='Submit' class="submit-bottom reset-button">提交</button>
+
+  <van-action-sheet show="{{ show }}" title="选择退款原因" bind:close="onClose">
+    <view wx:for="{{reasonList}}" wx:key="index" class="reason-list" bindtap="selectReason" data-index="{{ index }}">
+      <text class='{{selectedIndex === index ? "active" : "" }}'>{{item.name}}</text>
+      <text class="iconfont icon-cms_gou-227" wx:if="{{selectedIndex === index}}"></text>
+    </view>
+  </van-action-sheet>
+</view>

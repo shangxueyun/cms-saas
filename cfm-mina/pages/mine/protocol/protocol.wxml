@@ -1,0 +1,3 @@
+<view class="protocol">
+  <web-view src="{{url}}">《用户注册协议与隐私政策》加载中。。。</web-view>
+</view>

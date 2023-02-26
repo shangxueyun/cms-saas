@@ -1,0 +1,36 @@
+<wxs src="../../../utils/businessTool.wxs" module="tools" />
+<view class="coupon">
+  <view class="useCoupon">
+    <view class="usingItem" wx:for="{{expireCoupon}}" wx:key="index">
+      <view class="useingTop {{item.type == '已过期' ? 'expireBgc' : 'usingBgc'}}">
+        <view class="couponLeft">
+          <view class="money">
+            ￥<text>{{item.denomination}}</text>
+          </view>
+          <view class="explain">
+            满{{item.required_amoun}}可用
+          </view>
+        </view>
+        <view class="couponRight">
+          <view class="activity">
+            <view class="activityName" wx:if="{{item.multiple>1}}">{{item.coupon_name}}*{{item.multiple}}</view>
+            <view class="activityName" wx:else>{{item.coupon_name}}</view>
+            <view class="activityButton">
+            </view>
+          </view>
+          <view class="activityTime">{{item.coupon_start_time}} - {{item.coupon_end_time}}</view>
+        </view>
+      </view>
+      <view class="useingBottom {{item.showTip ? 'showTipHeight' : ''}}">
+        <view class="useTip {{item.showTip ? '' : 'showTipDel'}}">{{item.jhp_describe}}</view>
+        <view class='iconfont icon-xiala' wx:if="{{!item.showTip && item.jhp_describe}}"  bindtap="showTip" data-index='{{index}}' data-showtip='{{item.showTip}}'></view>
+        <view class='iconfont icon-zhedie' wx:elif="{{item.showTip && item.jhp_describe}}"  bindtap="showTip" data-index='{{index}}' data-showtip='{{item.showTip}}'></view>
+      </view>
+    </view>
+  </view>
+  <view class="usingTit" wx:if="{{loadAll}}">
+      <view class="usingTip">—— {{showTip}} ——</view>
+  </view>
+  <van-dialog id="van-dialog" />
+  <view class=""></view>
+</view>

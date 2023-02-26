@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "预约记录",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "onReachBottomDistance": 350
+}

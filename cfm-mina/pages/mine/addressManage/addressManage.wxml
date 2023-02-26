@@ -1,0 +1,38 @@
+<!-- pages/mine/addressManage/addressManage.wxml -->
+<view class="address-container">
+  <!-- <view wx:if="{{mode=='choose' && location.address}}" class="outside-info clear">
+  <text>当前地址不在配送范围，请选择范围内配送地址</text>
+</view> -->
+  <view class="address-list">
+    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="index">
+      <view class="content clear">
+        <view class="adderss-default" wx:if="{{item.showAddress}}"></view>
+        <label data-num="{{index}}" bindtap="clickRadio" class="radio-label clear {{item.checkedR? 'radio-active':''}}">
+          <view class="radio-info-flex">
+            <view wx:if="{{!manage}}">
+              <view hidden="{{item.showAddress}}" class="radio-deflut">
+                <image src="../../../img/mine/checked2.png"></image>
+              </view>
+              <view hidden="{{!item.showAddress}}" class="radio-deflut {{item.showAddress?'radio-deflut-curcle':''}}"></view>
+            </view>
+            <view class="radio-info {{item.showAddress?'radio-info-default':''}}">
+              <text class="user-info">
+                <text>{{item.contactPerson}}</text>
+                <text></text>
+                <text>{{item.contactNumber}}</text>
+              </text>
+              <text class="address-info">{{item.address + ' ' + (item.buildingNumber ? item.buildingNumber + '栋' : '') + '' + item.streetNumber + '室'}}</text>
+            </view>
+          </view>
+        </label>
+        <view class="address-edit" data-index="{{index}}" bindtap='edit'>
+          <image src="../../../img/mine/edit.png"></image>
+          <image src="../../../img/mine/edit.png"></image>
+        </view>
+      </view>
+      <view class="del" catchtap="del" data-index="{{index}}">删除</view>
+    </view>
+  </view>
+  <van-dialog id="van-dialog" />
+</view>
+<button bindtap='toAddAddress' class="submit-bottom reset-button">新增地址</button>

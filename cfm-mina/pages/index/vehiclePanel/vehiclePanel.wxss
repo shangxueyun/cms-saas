@@ -1,0 +1,76 @@
+:host {
+  width: 100%;
+}
+.vehicle-panel {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display:flex;
+  flex-direction:column;
+  z-index: 1000;
+  background: #ced3dd;
+  padding-bottom:14rpx;
+}
+.vehicle-panel-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16rpx;
+  box-sizing: border-box;
+}
+.vehicle-panel-row-last{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16rpx;
+  box-sizing: border-box;
+}
+.vehicle-panel-row-button {
+  background-color: #fff;
+  margin: 8rpx 5rpx;
+  padding: 5rpx;
+  width: 80rpx;
+  height: 74rpx;
+  text-align: center;
+  line-height: 74rpx;
+  border-radius: 10rpx;
+  font-size: 38rpx;
+  color:#333;
+  box-shadow: -2rpx 4rpx 4rpx #ccc;
+}
+.vehicle-hover {
+  background-color: #ccc;
+}
+.vehicle-panel-row-button-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 130rpx;
+  height: 74rpx;
+  background: #aab3be;
+}
+.vehicle-en-button-delete {
+  width: 55rpx;
+  height: 85rpx;
+}
+.vehicle-panel-ok {
+  background-color: #fff;
+  width: 130rpx;
+  height: 74rpx;
+  font-size: 38rpx;
+  color:#333;
+  background: #aab3be;
+}
+.okList{
+  height:74rpx;
+  width:100%;
+  text-align:right;
+  padding:0 28rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  line-height: 74rpx;
+  color:#4798dc;
+  background: #eee;
+  margin-bottom:16rpx;
+}

@@ -1,0 +1,185 @@
+/* pages/mine/addressManage/addressManage.wxss */
+.address-container{
+  width:100%;
+  min-height:100%;
+  background-color: #f2f2f2;
+  padding-top:20rpx;
+  box-sizing: border-box;
+  padding-bottom: 120rpx;
+}
+.address-list{
+  background-color: #ffffff;
+}
+.address-list .touch-item:last-child .content{
+  border-bottom:none;
+}
+.touch-item {
+ display: flex;
+ justify-content: space-between;
+ padding-left:20rpx;
+ width: 100%;
+ overflow: hidden;
+ height:170rpx;
+ background-color: #ffffff;
+ box-sizing: border-box;
+}
+.content {
+ width: 100%;
+ display: flex;
+ -webkit-transition: all 0.2s;
+ transition: all 0.2s;
+ -webkit-transform: translateX(104rpx);
+ transform: translateX(104rpx);
+ margin-left: -104rpx;
+ padding-right:24rpx;
+ box-sizing: border-box;
+ border-bottom:1px solid #e5e5e5;
+ position: relative;
+}
+.del {
+ background-color:#FB3640;
+ width: 116rpx;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ color: #fff;
+ -webkit-transform: translateX(116rpx);
+ transform: translateX(116rpx);
+ -webkit-transition: all 0.2s;
+ transition: all 0.2s;
+}
+.del image{
+  display: block;
+  width:50rpx;
+  height:50rpx;
+}
+.touch-move-active .content,
+.touch-move-active .del {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+}
+.radio-label{
+  display: block;
+  flex:1;
+  margin-top:40rpx;
+}
+.radio-info-flex{
+display: flex;
+  width:100%;
+}
+.address-edit{
+  width:50rpx;
+  margin-top:60rpx;
+}
+.address-edit image{
+  display:block;
+  width:50rpx;
+  height:50rpx;
+}
+.address-edit image:nth-last-child(1){
+  display: none;
+}
+.radio-info{
+  flex: 1;
+ width:0;
+ margin-left:30rpx;
+}
+.address-info{
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 26rpx;
+  color:#999999;
+  line-height: 30rpx;
+}
+.user-info{
+ display: block;
+ overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+  color:#333333;
+  line-height: 30rpx;
+  margin-bottom:30rpx;
+}
+.user-info text{
+  margin-right:20rpx;
+}
+.address-btn{
+  width:100%;
+  height:98rpx;
+  position: fixed;
+  bottom:0;
+  left:0;
+  z-index: 9;
+}
+.outside-info{
+  width:100%;
+  height:99rpx;
+  margin-top:-20rpx;
+  background-color: rgba(255, 240, 240, 1);
+	border-top: solid 1px rgba(229, 229, 229, 1); 
+  border-bottom: solid 1px rgba(229, 229, 229, 1);
+  padding:0 24rpx;
+  box-sizing: border-box;
+}
+.outside-info text{
+  display:block;
+  font-size: 28rpx;
+  color:#ff7674;
+  line-height:28rpx;
+  float: left;
+  margin-top:34rpx;
+}
+.outside-info .outside-left{
+  margin-right:20rpx;
+  font-size: 36rpx;
+}
+.outside-info .outside-right{
+  float: right;
+}
+.radio-deflut{
+  width:46rpx;
+  height:46rpx;
+  border-radius: 46rpx;
+  border:1rpx solid #cccccc;
+  display: block;
+  margin-top:18rpx;
+}
+.radio-deflut image{
+  display:none;
+  width:100%;
+  height:100%;
+}
+.radio-active .radio-deflut{
+  border: 0;
+  width:50rpx;
+  height:50rpx;
+}
+.radio-active .radio-deflut image{
+  display: block;
+  width:100%;
+  height:100%;
+}
+.adderss-default{
+  position: absolute;
+  width:90%;
+  height:100%;
+  background: rgba(0, 0, 0, 0);
+  left:0;
+  top:0;
+}
+.radio-info-default,.radio-info-default text {
+  color:#cccccc;
+}
+.radio-deflut-curcle{
+  background: #cccccc;
+}
+.address-edit-default image:nth-child(2){
+  display: block;
+}
+.address-edit-default image:nth-child(1){
+  display: none;
+}

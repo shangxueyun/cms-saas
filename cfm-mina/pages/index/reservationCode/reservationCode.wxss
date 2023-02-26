@@ -1,0 +1,54 @@
+/* pages/mine/parkingPayment/parkingPayment.wxss */
+page{
+  background-color: #fff;
+}
+.codeDetails {
+  padding: 50rpx;
+  height: calc(100vh - 100rpx);
+  background: #323DDB;
+}
+.codeDetails .content{
+  height: calc(100% - 100rpx);
+  border-radius: 32rpx;
+  padding: 50rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.codeDetails .content .time{
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #2C3038;
+}
+.codeDetails .content .time text{
+  font-size: 40rpx;
+}
+.codeDetails .content .image{
+  width: 568rpx;
+  height: 568rpx;
+  margin: 0rpx 0rpx 0rpx 0rpx;
+}
+.codeDetails .content .info{
+  height: 300rpx;
+  width: 516rpx;
+  padding: 40rpx;
+  background: #F5F9FF;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.codeDetails .content .info .text{
+  width: 100%;
+  display: flex;
+  height: 52rpx;
+}
+.content .info .text text{
+  line-height: 16rpx;
+  font-size: 34rpx;
+}
+.content .info .text .bolder{
+  font-weight: bolder;
+  font-size: 36rpx;
+}

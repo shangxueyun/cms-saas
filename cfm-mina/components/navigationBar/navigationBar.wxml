@@ -1,0 +1,12 @@
+<view class="title" style="padding-top:{{statusBarHeight}}px;background-color:{{bgColor!=''?bgColor:'#fff'}}">
+  <view class="header">
+    <view class="picker-height">
+      <view>
+        <view class='area'>
+          <view class='iconfont icon-a-dingwei2x'></view>
+          <text>{{marketConfigsAll[areaCurrent].projectManagementName}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

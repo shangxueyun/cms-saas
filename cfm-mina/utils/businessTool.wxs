@@ -1,0 +1,126 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: Pedia.Xu
+ * @Date: 2021-08-25 23:05:06
+ * @LastEditors: Pedia.Xu
+ * @LastEditTime: 2021-10-22 16:16:27
+ */
+var orderStatusFormat = function (status) {
+  var res = ''
+  switch (status) {
+    case 'WAIT_PAY':
+      res = '待支付'
+      break;
+    case 'NOT_ACCEPTORDER':
+      res = '待接单'
+      break;
+    case 'ACCEPTORDER':
+      res = '已接单'
+      break;
+    // case 'PREPAREGOODS':
+    //   res = '待支付'
+    //   break;
+    case 'NOT_DISTRIBUTION':
+      res = '待配送'
+      break;
+    case 'DISTRIBUTION':
+      res = '配送中'
+      break;
+    case 'CANCELLED':
+      res = '已取消'
+      break;
+    case 'COMPLETE':
+      res = '已完成'
+      break;
+    case 'NOT_PAY':
+      res = '已取消'
+      break;
+    default:
+      break;
+  }
+  return res
+}
+
+var applyStatusFormat = function (status) {
+  var res = ''
+  if (status === 'INPROCESS') {
+    res = '待审核'
+  } else if (status === 'SUCCESS') {
+    res = '退款成功'
+  } else if (status === 'FAIL') {
+    res = '退款失败'
+  } else {
+    res = '申请退款'
+  }
+  return res
+}
+
+var activityTypeFormat = function (type) {
+  var res = ''
+  if (type === 'NEW_PEOPLE') {
+    res = '新人立减'
+  } else if (type === 'FULL_MINUS') {
+    res = '满减优惠'
+  }
+  return res
+}
+
+var applyStatusFormat2 = function (status) {
+  var res = ''
+  if (status === 'INPROCESS') {
+    res = '提交申请'
+  } else if (status === 'SUCCESS') {
+    res = '审核成功'
+  } else if (status === 'FAIL') {
+    res = '审核失败'
+  }
+  return res
+}
+
+var formatDate = function (value) {
+  return value ? value.replace(getRegExp('T', 'g'), ' ') : '--'
+}
+
+var formatDate2 = function (value) {
+  return value ? value.replace(getRegExp('T', 'g'), ' ').replace('.000+0000', ' ') : '--'
+}
+
+var formatDateTime = function (value) {
+  return value.substring(0, value.lastIndexOf(':')).replace(getRegExp('T', 'g'), ' ')
+}
+
+var toFixed2 = function (value) {
+  return value.toFixed(2)
+}
+
+var isShowButtonWrap = function (item, item2) {
+  var show = false
+  var goodsSpecification = item2.goodsSpecification
+  var refundNumber = item2.refundNumber ? item2.refundNumber : 0
+  var number = item2.number
+  var goodsPrice = item2.goodsPrice
+  if (item.orderStatus === 'COMPLETE' && goodsPrice !== 0) {
+    if ( number - refundNumber > 0 || number * goodsSpecification - refundNumber > 0) {
+      show = true
+      return show
+    } else {
+      return show
+    }
+  } else {
+    return show
+  }
+}
+
+
+module.exports = {
+  orderStatusFormat: orderStatusFormat,
+  formatDate: formatDate,
+  formatDate2: formatDate2,
+  formatDateTime: formatDateTime,
+  applyStatusFormat: applyStatusFormat,
+  applyStatusFormat2: applyStatusFormat2,
+  activityTypeFormat: activityTypeFormat,
+  isShowButtonWrap: isShowButtonWrap,
+  toFixed2: toFixed2
+}

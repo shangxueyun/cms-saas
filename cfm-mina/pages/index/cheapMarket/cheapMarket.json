@@ -1,0 +1,8 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "平价菜场",
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index"
+  }
+}

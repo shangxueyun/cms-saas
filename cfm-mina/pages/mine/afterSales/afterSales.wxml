@@ -1,0 +1,112 @@
+<wxs src="../../../utils/businessTool.wxs" module="tools" />
+<view class="after-sales">
+  <view class='nav'>
+    <view bindtap='tabSwitch' data-tab='refund' class='navItem {{tabSwitchStatus == "refund" ? "navChecked" : ""}}'><text>退款申请</text></view>
+    <view bindtap='tabSwitch' data-tab='record' class='navItem {{tabSwitchStatus == "record" ? "navChecked" : ""}}'><text>申请记录</text></view>
+  </view>
+  <view class='orderList' wx:if='{{tabSwitchStatus == "refund"}}'>
+    <view class='orderItem' wx:for='{{afterSaleList}}' wx:key='id' data-id='{{item.id}}'>
+      <!-- <view class='order-item-header'>
+        <view class='order-time'>下单时间：{{tools.formatDate(item.order.createOrderTime)}}</view>
+        <view class='order-No'>订单编号：{{item.tenantOrderNumber}}</view>
+      </view>
+      <view class="order-item-content">
+        <view class='shop-name'>
+          <text class="iconfont icon-kfd_dianpu"></text>
+          {{item.tenantReferred}}
+        </view>
+        <view class='goods-content'>
+          <view class='goods-item' wx:for="{{item.details}}" wx:key="index" wx:for-item="item2" wx:key="index">
+            <image src="{{item2.imageUrl}}"></image>
+            <view class="item-info">
+              <view class=''>
+                {{item2.goodsName}} 
+                <text wx:if="{{item2.goodsSpecification && item2.goodsSpecification !== '0'}}">约{{item2.goodsSpecification}}</text>
+                <text wx:else>1</text>
+                {{item2.goodsSpecificationUnit}}
+              </view>
+              <view class="">数量：{{item2.number}}份</view>
+            </view>
+            <view class="button-wrap">
+              <view class="od-button" bindtap="toApplyService" data-item2='{{item2}}' data-item='{{item}}'>
+                {{tools.applyStatusFormat(item2.applyStatus)}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view> -->
+      <view class='order-item-header'>
+        <view class='order-time'>下单时间：{{tools.formatDate(item.createOrderTime)}}</view>
+        <view class='order-No'>订单编号：{{item.orderNumber}}</view>
+      </view>
+      <view class="order-item-content" wx:for='{{item.tenantOrders}}' wx:key='id' data-id='{{item.id}}'>
+          <view class='shop-name'>
+            <text class="iconfont icon-kfd_dianpu"></text>
+            {{item.tenantReferred}}
+          </view>
+          <view class='goods-content'>
+            <view class='goods-item' wx:for="{{item.details}}" wx:key="index" wx:for-item="item2" wx:key="index">
+              <image src="{{item2.imageUrl}}"></image>
+              <view class="item-info">
+                <view class=''>
+                  {{item2.goodsName}} 
+                  <text wx:if="{{item2.goodsSpecification && item2.goodsSpecification !== '0'}}">约{{item2.goodsSpecification}}</text>
+                  <text wx:else>1</text>
+                  {{item2.goodsSpecificationUnit}}
+                </view>
+                <view class="">数量：{{item2.number}}份</view>
+              </view>
+              <view class="button-wrap" wx:if='{{tools.isShowButtonWrap(item, item2)}}'>
+                <view class="od-button" bindtap="toApplyService" data-item2='{{item2}}' data-item='{{item}}'>
+                  {{tools.applyStatusFormat(item2.applyStatus)}}
+                </view>
+              </view>
+            </view>
+          </view>
+      </view>
+    </view>
+  </view>
+  <view class='orderList' wx:else>
+    <scroll-view scroll-top="{{scrollTopType}}" bindscrolltolower="scrollBottom" scroll-y="true" class="scoll-h">
+      <view class='orderItem' wx:for='{{orderList}}' wx:key='id' data-id='{{item.id}}'>
+        <view class='order-item-header'>
+          <view class='order-time'>申请时间：{{tools.formatDate(item.createDateTime)}}</view>
+          <view class='order-No'>退款单号：{{item.refundOrderNumber}}</view>
+        </view>
+        <view class="order-item-content">
+          <view class='od-status' bindtap='goDetails' data-id='{{item.id}}'>
+            <view class="ods-left">
+              <view class=''>
+                {{tools.applyStatusFormat2(item.applyStatus)}}
+              </view>
+              <view wx:if="{{item.applyStatus === 'INPROCESS'}}">
+                您的退款已申请成功，等待审核中
+              </view>
+              <view wx:if="{{item.applyStatus === 'SUCCESS'}}">
+                您的退款申请经核实，符合退款条件，请注意查收退款
+              </view>
+              <view wx:if="{{item.applyStatus === 'FAIL'}}">
+                您的退款申请经核实，不符合退款条件
+              </view>
+            </view>
+            <text class="iconfont icon-right" style="align-self: center;color: #666666"></text>
+          </view>
+          <view class='goods-content'>
+            <view class='goods-item'>
+              <image src="{{item.orderDetail.imageUrl}}"></image>
+              <view class="item-info">
+                <view class=''>
+                  {{item.orderDetail.goodsName}}
+                  <text wx:if="{{item.orderDetail.goodsSpecification && item.orderDetail.goodsSpecification !== '0'}}">约{{item.orderDetail.goodsSpecification}}</text>
+                  <text wx:else>1</text>
+                  {{item.orderDetail.goodsSpecificationUnit}}
+                </view>
+                <view class="">数量：{{item.refundNumber}}份</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
