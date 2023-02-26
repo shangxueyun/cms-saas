@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="theme-color" content="#161d24" />
+  <title>小象商业管理系统</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1914259_pc84t1otn3r.css">
+  <style>
+    /* #splash {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      width: 100%;
+      height: 100%;
+      background: url(./static/bg.png) no-repeat center;
+      background-size: cover;
+      z-index: 100000;
+    } */
+
+    .label_2 {
+      display: block;
+      width: 4vw;
+      height: auto;
+      position: absolute;
+      top: 4vh;
+      left: 5vw;
+    }
+
+    .label_1 {
+      display: block;
+      width: 67.2vw;
+      height: auto;
+      position: absolute;
+      left: 16.5vw;
+      bottom: 15vh;
+    }
+
+    #preLoading {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    #preLoading i {
+      margin-top: 50px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      border-top-color: #333;
+      border-left-color: #333;
+      border-right-color: #333;
+      animation: spinner-rotate 0.8s infinite linear;
+    }
+
+    @keyframes spinner-rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+
+      50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+      }
+
+      100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
+
+    .pulseAni {
+      -webkit-animation: pulse 1s infinite;
+      animation: pulse 1s infinite;
+    }
+
+  </style>
+  <script>
+    // eslint-disable-next-line space-before-function-paren
+    function fixScreen() {
+      var fontSize = window.innerWidth * 40 / 375
+      document.documentElement.style.fontSize = fontSize + 'px'
+    }
+    window.addEventListener('resize', fixScreen)
+
+  </script>
+</head>
+
+<body onload="fixScreen()">
+  <!-- <div id="splash">
+    <img class="label_1" src="./static/label_1.png" alt="">
+    <img class="label_2" src="./static/label_2.png" alt="">
+  </div> -->
+  <div id="app">
+
+  </div>
+
+  <script src="./static/jsencrypt.js"></script>
+  <script src="./static/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript"
+    src="https://webapi.amap.com/maps?v=1.4.12&key=b34d8eb5c05c9e74458b7dd1c1010f12&plugin=AMap.Geocoder"></script>
+</body>
+
+</html>
+<script src="//at.alicdn.com/t/font_1914259_pc84t1otn3r.js"></script>

@@ -1,0 +1,903 @@
+@import "config";
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+    margin: 0;
+    /* padding: 0; */
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+}
+
+*,
+ :after,
+ :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+ :after,
+ :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+ :after,
+ :before {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #3296fa;
+}
+
+.fd-nav-content {
+    /* position: fixed; */
+    top: rem(60);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: rem(30);
+}
+
+.dingflow-design .box-scale {
+    transform: scale(1);
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding: rem(54.5) 0;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    min-width: -webkit-min-content;
+    min-width: -moz-min-content;
+    min-width: min-content;
+    background-color: #f5f5f7;
+    -webkit-transform-origin: 0 0 0;
+    transform-origin: 0 0 0;
+}
+
+.dingflow-design .branch-wrap,
+.dingflow-design .node-wrap {
+    display: inline-flex;
+    width: 100%;
+}
+
+.dingflow-design .node-wrap {
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    padding: 0 rem(50);
+    position: relative;
+}
+
+.dingflow-design .branch-wrap,
+.dingflow-design .node-wrap {
+    display: inline-flex;
+    width: 100%;
+}
+
+.dingflow-design .node-wrap {
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    padding: 0 rem(50);
+    position: relative;
+}
+
+.dingflow-design .end-node {
+    border-radius: 50%;
+    font-size: rem(14);
+    color: rgba(25, 31, 37, .4);
+    text-align: left;
+}
+
+.node-wrap-box {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    width: rem(165);
+    min-height: rem(65);
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: rem(4);
+    cursor: pointer;
+}
+
+.dingflow-design .add-node-btn-box {
+    width: rem(240);
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    position: relative;
+}
+
+.node-wrap-box:after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    border-radius: rem(4);
+    border: rem(1) solid transparent;
+    transition: all .1s cubic-bezier(.645, .045, .355, 1);
+    box-shadow: 0 rem(2) rem(5) 0 rgba(0, 0, 0, .1);
+}
+
+.node-wrap-box .title {
+    position: relative;
+    padding-left: rem(16);
+    padding-right: rem(30);
+    width: 100%;
+    height: rem(24);
+    line-height: rem(24);
+    font-size: rem(12);
+    color: #fff;
+    text-align: left;
+    background: #576a95;
+    border-radius: rem(4) rem(4) 0 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.node-wrap-box .content {
+    position: relative;
+    font-size: rem(14);
+    padding: rem(16);
+    padding-right: rem(30);
+}
+
+.start-node.node-wrap-box .content .text {
+    display: block;
+    white-space: nowrap;
+}
+
+.node-wrap-box .content .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.node-wrap-box .content .arrow {
+    position: absolute;
+    right: rem(10);
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(20);
+    height: rem(14);
+    font-size: rem(14);
+    color: #979797;
+}
+
+.anticon {
+    display: inline-block;
+    font-style: normal;
+    vertical-align: baseline;
+    text-align: center;
+    text-transform: none;
+    line-height: 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.anticon:before {
+    display: block;
+    font-family: anticon!important;
+}
+
+.dingflow-design .add-node-btn-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    margin: auto;
+    width: rem(2);
+    height: 100%;
+    background-color: #cacaca;
+}
+
+.dingflow-design .add-node-btn {
+    user-select: none;
+    width: rem(240);
+    padding: rem(20) 0 rem(32);
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-shrink: 0;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+
+.dingflow-design .add-node-btn .btn {
+    outline: none;
+    box-shadow: 0 rem(2) rem(4) 0 rgba(0, 0, 0, .1);
+    width: rem(26);
+    height: rem(26);
+    background: #4767c7;
+    border-radius: 50%;
+    position: relative;
+    border: none;
+    line-height: rem(26);
+    -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+}
+
+.dingflow-design .add-node-btn .btn .iconfont {
+    color: #fff;
+    font-size: rem(16);
+}
+
+.dingflow-design .branch-box-wrap {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: rem(270);
+    width: 100%;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+.dingflow-design .branch-box {
+    display: flex;
+    overflow: visible;
+    min-height: rem(180);
+    height: auto;
+    border-bottom: rem(2) solid #ccc;
+    border-top: rem(2) solid #ccc;
+    position: relative;
+    margin-top: rem(15);
+}
+
+.dingflow-design .add-branch {
+    border: none;
+    outline: none;
+    user-select: none;
+    justify-content: center;
+    font-size: rem(12);
+    padding: 0 rem(10);
+    height: rem(30);
+    line-height: rem(30);
+    border-radius: rem(15);
+    color: #000;
+    background: #fff;
+    box-shadow: 0 rem(2) rem(3) 0 rgba(0, 0, 0, .1);
+    position: absolute;
+    top: rem(-16);
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: center center;
+    cursor: pointer;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+}
+
+.dingflow-design .branch-box .col-box {
+    background: #f5f5f7;
+}
+
+.dingflow-design .col-box {
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.dingflow-design .branch-box .col-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    margin: auto;
+    width: rem(2);
+    height: 100%;
+    background-color: #cacaca;
+}
+
+.top-left-cover-line,
+.top-right-cover-line {
+    position: absolute;
+    height: rem(3);
+    width: 50%;
+    background-color: #f5f5f7;
+    top: rem(-2);
+}
+
+.bottom-left-cover-line,
+.bottom-right-cover-line {
+    position: absolute;
+    height: rem(3);
+    width: 50%;
+    background-color: #f5f5f7;
+    bottom: rem(-2);
+}
+
+.dingflow-design .condition-node,
+.dingflow-design .condition-node-box {
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+}
+
+.dingflow-design .condition-node-box {
+    padding-top: rem(30);
+    padding-right: rem(50);
+    padding-left: rem(50);
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-grow: 1;
+    position: relative;
+}
+
+.dingflow-design .condition-node-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: rem(2);
+    height: 100%;
+    background-color: #cacaca;
+}
+
+.dingflow-design .auto-judge {
+    position: relative;
+    width: rem(220);
+    min-height: rem(72);
+    background: #fff;
+    border-radius: rem(4);
+    padding: rem(14) rem(19);
+    cursor: pointer;
+}
+
+.dingflow-design .auto-judge .title-wrapper {
+    position: relative;
+    font-size: rem(12);
+    color: #15bc83;
+    text-align: left;
+    line-height: rem(16);
+}
+
+.dingflow-design .auto-judge .title-wrapper .editable-title {
+    display: inline-block;
+    max-width: rem(120);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.editable-title:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: rem(40);
+}
+
+.dingflow-design .auto-judge .title-wrapper .priority-title {
+    display: inline-block;
+    float: right;
+    margin-right: rem(10);
+    color: rgba(25, 31, 37, .56);
+}
+
+.dingflow-design .auto-judge .close {
+    display: none;
+    position: absolute;
+    right: rem(-10);
+    top: rem(-10);
+    width: rem(20);
+    height: rem(20);
+    font-size: rem(14);
+    color: rgba(0, 0, 0, .25);
+    border-radius: 50%;
+    text-align: center;
+    line-height: rem(20);
+    z-index: 2;
+}
+
+.dingflow-design .auto-judge .content {
+    font-size: rem(14);
+    color: #191f25;
+    text-align: left;
+    margin-top: rem(6);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.dingflow-design .auto-judge .sort-right {
+    right: 0;
+    border-left: rem(1) solid #f6f6f6;
+}
+
+.dingflow-design .auto-judge .sort-left,
+.dingflow-design .auto-judge .sort-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: none;
+    z-index: 1;
+}
+
+.dingflow-design .auto-judge:after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    border-radius: rem(4);
+    border: rem(1) solid transparent;
+    transition: all .1s cubic-bezier(.645, .045, .355, 1);
+    box-shadow: 0 rem(2) rem(5) 0 rgba(0, 0, 0, .1);
+}
+
+.node-wrap-box:before {
+    content: "";
+    position: absolute;
+    top: rem(-12);
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 0;
+    height: rem(4);
+    border-style: solid;
+    border-width: rem(8) rem(6) rem(4);
+    border-color: #cacaca transparent transparent;
+    background: #f5f5f7;
+}
+
+.node-wrap-box .close {
+    display: none;
+    position: absolute;
+    right: rem(10);
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(20);
+    height: rem(20);
+    font-size: rem(14);
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: rem(20);
+}
+
+.node-wrap-box .placeholder {
+    color: #bfbfbf;
+}
+
+.dingflow-design .auto-judge .sort-left {
+    left: 0;
+    border-right: rem(1) solid #f6f6f6;
+}
+
+.top-right-cover-line {
+    right: rem(-1);
+}
+
+.bottom-right-cover-line {
+    right: rem(-1);
+}
+
+.bottom-left-cover-line,
+.bottom-right-cover-line {
+    position: absolute;
+    height: rem(3);
+    width: 50%;
+    background-color: #f5f5f7;
+    bottom: rem(-2);
+}
+
+.bottom-left-cover-line {
+    left: rem(-1);
+}
+
+.top-left-cover-line {
+    left: rem(-1);
+}
+
+.dingflow-design .end-node .end-node-text {}
+
+.end-node-circle {}
+
+.dingflow-design .end-node .end-node-text {
+    margin-top: rem(5);
+    text-align: center;
+}
+
+.dingflow-design .end-node .end-node-circle {
+    width: rem(10);
+    height: rem(10);
+    margin: auto;
+    border-radius: 50%;
+    background: #dbdcdc;
+}
+
+.node-wrap-box.active .close,
+.node-wrap-box:active .close,
+.node-wrap-box:hover .close {
+    display: block;
+}
+
+.node-wrap-box .close {
+    display: none;
+    position: absolute;
+    right: rem(10);
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(20);
+    height: rem(20);
+    font-size: rem(14);
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: rem(20);
+}
+
+.anticon {
+    display: inline-block;
+    font-style: normal;
+    vertical-align: baseline;
+    text-align: center;
+    text-transform: none;
+    line-height: 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ant-popover-placement-right,
+.ant-popover-placement-rightBottom,
+.ant-popover-placement-rightTop {
+    padding-left: rem(10);
+}
+
+.ant-popover {
+    font-family: Chinese Quote, -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: rem(14);
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, .65);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    cursor: auto;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    white-space: normal;
+    font-weight: 400;
+    text-align: left;
+}
+
+.ant-popover-placement-rightTop>.ant-popover-content>.ant-popover-arrow {
+    top: 12px;
+}
+
+.ant-popover-placement-right,
+.ant-popover-placement-rightBottom,
+.ant-popover-placement-rightTop {
+    padding-left: rem(10);
+}
+
+.ant-popover-placement-left,
+.ant-popover-placement-leftBottom,
+.ant-popover-placement-leftTop {
+    padding-right: rem(10);
+}
+
+.ant-popover-placement-right,
+.ant-popover-placement-rightBottom,
+.ant-popover-placement-rightTop {
+    padding-left: rem(10);
+}
+
+.ant-popover-placement-rightBottom>.ant-popover-content>.ant-popover-arrow {
+    bottom: rem(12);
+}
+
+.ant-popover-placement-right>.ant-popover-content>.ant-popover-arrow,
+.ant-popover-placement-rightBottom>.ant-popover-content>.ant-popover-arrow,
+.ant-popover-placement-rightTop>.ant-popover-content>.ant-popover-arrow {
+    left: rem(6);
+    -webkit-box-shadow: rem(-3) rem(3) rem(7) rgba(0, 0, 0, .07);
+    box-shadow: rem(-3) rem(3) rem(7) rgba(0, 0, 0, .07);
+}
+
+.ant-popover-placement-left>.ant-popover-content>.ant-popover-arrow,
+.ant-popover-placement-leftBottom>.ant-popover-content>.ant-popover-arrow,
+.ant-popover-placement-leftTop>.ant-popover-content>.ant-popover-arrow {
+    right: rem(6);
+    -webkit-box-shadow: rem(3) rem(-3) rem(7) rgba(0, 0, 0, .07);
+    box-shadow: rem(3) rem(-3) rem(7) rgba(0, 0, 0, .07);
+}
+
+.ant-popover-arrow {
+    background: #fff;
+    width: 8.48528137px;
+    height: 8.48528137px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    display: block;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.ant-popover-inner {
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: rem(4 );
+    -webkit-box-shadow: 0 rem(2) rem(8) rgba(0, 0, 0, .15);
+    box-shadow: 0 rem(2) rem(8) rgba(0, 0, 0, .15);
+}
+
+.ant-popover-inner-content {
+    padding: rem(12) rem(16);
+    color: rgba(0, 0, 0, .65);
+}
+
+.add-node-popover {
+    width: rem(300);
+    min-height: rem(140);
+}
+
+.add-node-popover-header {
+    position: relative;
+    margin-bottom: rem(15);
+}
+
+.add-node-popover-close {
+    cursor: pointer;
+    position: absolute;
+    top: rem(5);
+    right: rem(5);
+    color: rgba(0, 0, 0, .25);
+}
+
+.anticon-close:before,
+.anticon-cross:before {
+    content: "\E633";
+}
+
+.anticon:before {
+    display: block;
+    font-family: anticon!important;
+}
+
+.add-node-popover-body {
+    display: flex;
+}
+
+.add-node-popover-item {
+    cursor: pointer;
+    text-align: center;
+    flex: 1;
+    color: #191f25!important;
+}
+
+.add-node-popover-item.approver .item-wrapper {
+    color: #ff943e;
+}
+
+.add-node-popover-item .item-wrapper {
+    user-select: none;
+    display: inline-block;
+    width: rem(50);
+    height: rem(50);
+    margin-bottom: rem(5);
+    background: #fff;
+    /* border: 1px solid #e2e2e2; */
+    /* border-radius: 50%; */
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+}
+
+.add-node-popover-item .iconfont {
+    font-size: rem(35);
+    line-height: rem(50);
+}
+
+.add-node-popover-item.notifier .item-wrapper {
+    color: #3296fa;
+}
+
+.add-node-popover-item.condition .item-wrapper {
+    color: #15bc83;
+}
+
+
+/* 修改 */
+
+.branch-box .node-wrap {
+    padding-top: rem(55);
+    padding-right: rem(50);
+    padding-left: rem(50);
+}
+
+.start-node:before {
+    content: none;
+}
+
+.approver-start-title {
+    background-color: #3f4b6c;
+}
+
+.approver-title {
+    background-color: #56b987!important;
+}
+
+.notifier-title {
+    background-color: #4767c7!important;
+}
+
+button {
+    cursor: pointer;
+}
+
+.titleIcon {
+    display: inline-block;
+    width: rem(14);
+    height: rem(14);
+    margin-right: rem(4);
+    vertical-align: text-top;
+    background-size: contain!important;
+}
