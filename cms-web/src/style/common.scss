@@ -1,0 +1,1464 @@
+// 标准按钮
+.el-button.bzan {
+  padding: 0 27px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px !important;
+  color: #ffffff;
+
+  &:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    border-color: transparent;
+  }
+
+  &:active {
+    color: #ffffff;
+    opacity: 0.8;
+    border-color: transparent;
+  }
+
+  &.bzan1 {
+    background: #44af69;
+
+    &:active {
+      border-color: #44af69;
+    }
+  }
+
+  &.bzan2 {
+    background: #3575f6;
+
+    &:active {
+      border-color: #3575f6;
+    }
+  }
+
+  &.bzan3 {
+    background: #91cf48;
+
+    &:active {
+      border-color: #91cf48;
+    }
+  }
+
+  &.bzan4 {
+    background: #6b69d6;
+
+    &:active {
+      border-color: #6b69d6;
+    }
+  }
+
+  &.bzan5 {
+    background: #e08545;
+
+    &:active {
+      border-color: #e08545;
+    }
+  }
+
+  &.bzan6 {
+    background: #303d72;
+
+    &:active {
+      border-color: #303d72;
+    }
+  }
+
+  &.bzan7 {
+    background: #e2434d;
+
+    &:active {
+      border-color: #e2434d;
+    }
+  }
+
+  &.bzan8 {
+    background: #d69c7c;
+
+    &:active {
+      border-color: #d69c7c;
+    }
+  }
+}
+
+// 图标按钮
+.el-button.tban {
+  padding: 0px 10px;
+  height: 32px;
+  font-size: 14px !important;
+
+  &.tban1 {
+    color: #44af69;
+    border: 1px solid #44af69;
+
+    &:hover {
+      background-color: #f0f9f3;
+    }
+  }
+
+  &.tban2 {
+    color: #3575f6;
+    border: 1px solid #3575f6;
+  }
+
+  &.tban3 {
+    color: #455aec;
+    border: 1px solid #455aec;
+  }
+
+  &.tban4 {
+    color: #df8544;
+    border: 1px solid #df8544;
+
+    &:hover {
+      background-color: rgba(223, 133, 68, 0.1);
+    }
+  }
+
+  &.tban5 {
+    color: #f3af2c;
+    border: 1px solid #f3af2c;
+
+    &:hover {
+      background-color: rgba(243, 175, 44, 0.1);
+    }
+  }
+
+  &.tban6 {
+    color: #6b69d6;
+    border: 1px solid #6b69d6;
+  }
+
+  &.tban7 {
+    color: #465dce;
+    border: 1px solid #455aec;
+  }
+
+  &.tban8 {
+    color: #e53854;
+    border: 1px solid #e53854;
+
+    &:hover {
+      background-color: rgba(229, 56, 84, 0.1);
+    }
+  }
+}
+
+// 下来菜单按钮
+.el-dropdown {
+  span {
+    font-size: 14px;
+  }
+
+  .icon-zelvxuanzefeiyongdaosanjiaoxingfandui {
+    font-size: 14px;
+  }
+
+  &.dropdownBtn {
+    >button {
+      color: #ffffff;
+      padding: 0 20px;
+      height: 32px;
+    }
+
+    &.dropdownBtn1 {
+      >button {
+        background-color: #3575f6;
+      }
+    }
+
+    &.dropdownBtn2 {
+      >button {
+        background-color: #44af69;
+      }
+    }
+
+    &.dropdownBtn3 {
+      >button {
+        background-color: #91cf48;
+      }
+    }
+
+    &.dropdownBtn4 {
+      >button {
+        background-color: #ffb300;
+      }
+    }
+
+    &.dropdownBtn5 {
+      >button {
+        background-color: #e2434d;
+      }
+    }
+
+    &.dropdownBtn7 {
+      vertical-align: top;
+
+      .el-button-group {
+        height: 32px;
+        padding: 0;
+        display: flex;
+
+        .el-button {
+          display: block;
+        }
+
+        .el-button--default {
+          background-color: #fdbab1;
+          color: #ffffff;
+          height: 32px;
+          padding: 0 20px;
+        }
+
+        .el-dropdown__caret-button {
+          background-color: #ffffff;
+          color: #fdbab1;
+          border-color: #fdbab1;
+          padding: 0px 5px;
+          height: 32px;
+
+          .el-dropdown__icon {
+            &.el-icon-arrow-down {
+              color: #fdbab1;
+            }
+          }
+        }
+      }
+    }
+
+    &.dropdownBtn6 {
+      vertical-align: top;
+
+      .el-button-group {
+        height: 32px;
+        padding: 0;
+        display: flex;
+
+        .el-button {
+          display: block;
+        }
+
+        .el-button--default {
+          background-color: #6b69d6;
+          color: #ffffff;
+          height: 32px;
+          padding: 0 20px;
+        }
+
+        .el-dropdown__caret-button {
+          background-color: #ffffff;
+          color: #6b69d6;
+          border-color: #6b69d6;
+          padding: 0px 5px;
+          height: 32px;
+
+          .el-dropdown__icon {
+            &.el-icon-arrow-down {
+              color: #6b69d6;
+            }
+          }
+        }
+      }
+    }
+
+    &.dropdownBtn8 {
+      >button {
+        border: none;
+        color: #3575f6;
+
+        &:hover {
+          background-color: #ffffff;
+        }
+      }
+    }
+
+    &.dropdownBtn9 {
+      >button {
+        border: none;
+        color: #44af69;
+
+        &:hover {
+          background-color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+/*<!-- 新版drawer抽屉样式 -->
+<el-drawer class="newDrawer" :visible.sync="detailsdrawershow" :wrapperClosable="false" size="500px" :append-to-body="true" :withHeader="false">
+      <div slot="title" class="drawerTitle">
+        <p class="title">基本设置</p>
+        <span class="editBtn" @click="onEdit" v-if="hasAuthority('05050103') && readOnly">
+          <i class="iconfont icon-edit1"></i>编辑
+        </span>
+      </div>
+      <div class="main_content">
+        <div class="el_drawer_body">
+          <div class="dr-head"><span class="vertical"></span>基础信息</div>
+          <div class="main_body">
+            <el-form :model="detalisForm" :rules="createRulese" style="margin: 0 20px 0 20px;" ref="detalisForm">
+              <el-form-item prop="projectManagementId">
+                <div class="itemtitle">项目<i class="required">*</i></div>
+                <div v-if="readOnly">  {{detalisForm.referred}} </div>
+                <el-select v-model="detalisForm.projectManagementId"  size="small" v-else placeholder="请选择">
+                  <el-option v-for="item in options1" :key="item.id" :label="item.referred" :value="item.id"></el-option>
+                </el-select>
+              </el-form-item>
+            </el-form>
+          </div>
+        </div>
+        <div class="el_drawer_foot"  v-if="!readOnly">
+          <span class="details_submitBtn" @click="submitFun">确定</span>
+          <span class="details_cannelBtn" @click="drawerClose">取消</span>
+        </div>
+      </div>
+    </el-drawer>
+*/
+.boxshdow {
+  height: 15px;
+  width: 100%;
+  background-color: #f8f6f9;
+}
+
+.newDrawer {
+  .el-drawer {
+    background-color: #f8f6f9;
+
+    .el-drawer__header {
+      height: 50px;
+      margin: 0;
+      padding: 0 20px 0;
+      background-color: #ffffff;
+
+      .drawerTitle {
+        display: flex;
+        justify-content: space-between;
+
+        >.title {
+          font-size: 16px;
+          font-weight: bolder;
+          color: #262626;
+        }
+
+        .editBtn {
+          width: 48px;
+          font-size: 12px;
+          color: #3575f6
+        }
+      }
+
+    }
+
+    .el-drawer__body {
+      padding: 0;
+      height: 100%;
+      background-color: #f8f6f9;
+      margin-top: 15px;
+
+      &::-webkit-scrollbar {
+        width: 2px !important;
+        height: 2px !important;
+      }
+
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px #fff;
+        background-color: #fff;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px #cccccc;
+      }
+
+      .main_content {
+        height: 100%;
+        position: relative;
+
+        .el_drawer_body {
+          // margin: 15px 0;
+          background-color: #ffffff;
+          height: calc(100% - 71px);
+          overflow-y: auto;
+
+          &::-webkit-scrollbar {
+            width: 4px !important;
+            height: 4px !important;
+          }
+
+          &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px #fff;
+            background-color: #fff;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            box-shadow: inset 0 0 6px #cccccc;
+          }
+
+          >.main_body {
+            padding: 15px 20px;
+
+            .el-form {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+
+              .el-form-item {
+                width: 45%;
+
+                .itemtitle {
+                  font-size: 14px;
+                  color: #777777;
+                  margin-bottom: 10px;
+                }
+
+                .itemtitle+div {
+                  font-size: 14px;
+                  color: #262626;
+                }
+              }
+            }
+          }
+
+          >.dr-head {
+            background-color: #fff;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 20px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            border-bottom: 1px solid #f6f6f6;
+
+            >.vertical {
+              display: inline-block;
+              width: 4px;
+              height: 18px !important;
+              background-color: #3575f6;
+              border-radius: 2px;
+              vertical-align: sub;
+              margin-right: 5px;
+            }
+          }
+        }
+
+        .el_drawer_foot {
+          margin-top: 15px;
+          height: 56px;
+          display: flex;
+          align-items: center;
+          padding: 0 15px;
+          background-color: #ffffff;
+          flex-direction: row-reverse;
+        }
+      }
+    }
+
+    .basInfo {
+      border: none !important;
+      background-color: #fff;
+    }
+  }
+}
+
+//复选框选中样式
+.el-checkbox__input.is-checked .el-checkbox__inner {
+  background-color: #3575F6 !important;
+  border-color: #3575F6 !important;
+}
+
+.el-checkbox__input.is-checked+.el-checkbox__label {
+  color: #3575F6 !important;
+}
+
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  background-color: #3575F6 !important;
+  border-color: #3575F6 !important;
+}
+
+//svg图标
+.svgIcon-label {
+  background: #fff;
+  margin-top: 10px;
+  box-shadow: 0px 2px 3px 0px rgba(190, 199, 208, 0.2);
+  padding: 20px 40px 5px 80px;
+
+  ul {
+    li {
+      display: flex;
+      min-width: 130px;
+      float: left;
+      margin-bottom: 15px;
+
+      img {
+        display: block;
+        height: 20px;
+        width: 20px;
+      }
+
+      span {
+        display: block;
+        line-height: 20px;
+        font-size: 12px;
+        color: #262626;
+        margin-left: 9px;
+      }
+    }
+
+    li:nth-child(4n) {
+      float: none;
+    }
+  }
+}
+
+// 搜索栏
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 1px 2px 5px rgba(190, 199, 208, 0.2);
+  border-radius: 3px;
+  // min-height: 60px;
+  // line-height: 60px;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  justify-content: space-between;
+
+  >div {
+    flex-wrap: wrap;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .el-input,
+  .el-select {
+    margin-right: 10px;
+  }
+
+  .el-input__inner {
+    height: 32px;
+    margin-right: 10px;
+  }
+
+  .el-input__icon {
+    line-height: 32px;
+  }
+
+  .el-select {
+    height: 32px;
+    line-height: 32px;
+    margin-right: 10px;
+  }
+
+  .query-btn {
+    display: inline-block;
+    width: 110px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background-color: #3575f6;
+    margin-left: 10px;
+    margin-top: 0;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #2a6ef0 !important;
+      border-color: #2a6ef0 !important;
+      color: #fff;
+    }
+  }
+
+  .searbar-left {
+    display: flex;
+    align-items: center;
+  }
+}
+
+//页面头部样式
+// <span class="page_head_title">房源招租</span>
+.page_head_title {
+  display: block;
+  line-height: 16px;
+  height: 16px;
+  margin-bottom: 12px;
+  color: #333333;
+  font-size: 16px;
+}
+
+// 页面默认Tab
+// <ul class="default_tab_block">
+//   <li v-if="hasAuthority('02020204')" @click="switchover('industryCAD')">
+//     <span>房源平面图</span>
+//   </li>
+//   <li v-if="hasAuthority('02020205')" @click="switchover('charts')">
+//     <span>租控图</span>
+//   </li>
+//   <li v-if="hasAuthority('02020201') || hasAuthority('02020202') || hasAuthority('02020203')" class="active">
+//     <span>房源列表</span>
+//   </li>
+// </ul>
+.default_tab_block {
+  height: 60px;
+  line-height: 60px;
+  box-shadow: 0px 1px 2px 0px rgba(190, 199, 208, 0.2);
+  background-color: #ffffff;
+  display: flex;
+  margin-bottom: 10px;
+
+  li {
+    width: 160px;
+    height: 60px;
+    cursor: pointer;
+    text-align: center;
+
+    span {
+      font-size: 14px;
+      color: #333333;
+      display: block;
+    }
+
+    .tab_badge {
+      position: relative;
+      display: inline-block;
+      vertical-align: text-bottom;
+
+      span:nth-child(2) {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: -25px;
+        min-width: 18px;
+        height: 18px;
+        line-height: 18px;
+        padding: 0 3px;
+        font-weight: normal;
+        color: white;
+        text-align: center;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+        border-radius: 18px;
+        background: #D92E20;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .active {
+    border-bottom: 3px solid #3575F6;
+
+    span,
+    div {
+      color: #3575F6;
+      font-weight: 600;
+    }
+  }
+}
+
+// tab_block
+// <div class="tab_block_wrap">
+// <ul class="default_tab_block">
+// <li class="">新建审批
+// </li><li class="">我发起的
+// </li><li class="active">待审批
+// </li><li class="">已处理
+// </li><li class="">抄送我的</li>
+// </ul> 
+// <div>按钮</div>
+// </div>
+.tab_block_wrap {
+  display: flex;
+  background-color: #fff;
+  margin: 0 0 10px 0;
+  box-shadow: 1px 2px 5px #eee;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+
+  .default_tab_block {
+    margin-bottom: 0;
+    box-shadow: none;
+
+    li {
+      .newsSpot {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: red;
+        color: #fff;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+// 分页样式 
+/* DOM
+  <div class="ctc-foot1" v-if="total > 0">
+          <span><span style="margin-right:10px">{{pager.currentPage}}/{{Math.ceil(pager.total/pager.pgSize)}}页</span> 共{{pager.total}}条记录</span>
+          <el-pagination v-if="pager.total > 0"
+                         background
+                         layout="prev, pager, next"
+                         :page-size="pager.pgSize"
+                         :total="pager.total"
+                         :current-page.sync="pager.currentPage"
+                         @current-change="current_change">
+          </el-pagination>
+          <div class="pagingnum">
+            显示 <select v-model="pager.pgSize"
+                    @change="pgSizeSelectFn">
+              <option v-for="item in pager.pgNumoptions"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value">
+              </option>
+            </select>
+            条目
+          </div>
+        </div>
+
+
+*/
+.ctc-foot1 {
+  display: flex;
+  justify-content: normal;
+  flex-direction: row-reverse;
+  align-items: center;
+  color: #3f5fbf;
+  font-size: 12px;
+  padding: 20px 20px 50px 20px;
+  background-color: #ffffff;
+
+  .pagingnum {
+    color: #3f5fbf;
+    font-size: 12px;
+
+    select {
+      width: 65px;
+      height: 28px;
+      border-radius: 2px;
+      border-color: #f6f6f7;
+      color: #3577f6;
+    }
+  }
+
+  .el-pagination.is-background .btn-next,
+  .el-pagination.is-background .btn-prev,
+  .el-pagination.is-background .el-pager li {
+    margin: 0 5px;
+    background-color: transparent;
+    color: #3f5fbf;
+    min-width: 30px;
+    border-radius: 2px;
+    font-size: 14px;
+  }
+
+  .el-pagination.is-background .el-pager li:not(.disabled).active {
+    border-radius: 50%;
+    background-color: #3f5fbf !important;
+    color: #fff !important;
+  }
+}
+
+//半页表格头部样式
+.details_table {
+  .el-table__header {
+    border-bottom: none;
+
+    thead {
+      th {
+        border-bottom: none;
+        font-weight: normal;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// 半页表格查看按钮
+.details_cheackBtn {
+  cursor: pointer;
+  color: #3575f6;
+  font-size: 12px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.el-message {
+  top: 200px !important;
+}
+
+//半页 页脚  确定 取消按钮
+/*
+  <div slot="footer"
+           class="dialog-footer">
+        <span @click="saveaddJobOrderFrom('addData')"
+              class="details_submitBtn">确定</span>
+        <span @click="addJobOrderClose"
+              class="details_cannelBtn">取消</span>
+      </div>
+*/
+span {
+  &.details_submitBtn {
+    display: inline-block;
+    width: 90px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #3577f6;
+    color: #ffffff;
+    border-radius: 4px;
+  }
+
+  &.details_cannelBtn {
+    display: inline-block;
+    width: 90px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+    color: #666666;
+    background-color: #ffffff;
+
+    &:hover {
+      color: #3577f6;
+    }
+  }
+}
+
+// 表单取消保存按钮
+// <div class="form_save_btns">
+//   <span>取消</span>
+//   <span>保存</span>
+// </div>
+.form_save_btns {
+  width: 120px;
+  height: 26px;
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    width: 60px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #777777;
+    cursor: pointer;
+
+    &:first-child:hover {
+      color: #3577f6;
+    }
+
+    &:last-child {
+      background: rgba(42, 110, 240, 1);
+      box-shadow: 0px 1px 2px 0px rgba(79, 139, 255, 0.5);
+      color: #fff;
+    }
+  }
+}
+
+//半页模块标题
+/*
+<div class="half_page_title" style="width:100%">
+  <div><i></i>基本信息</div>
+  <div @click="edit"
+        v-if="noedit">
+    <i class="iconfont icon-cms_bianji-">编辑</i>
+  </div>
+  <div class="form_save_btns"
+        v-if="!noedit">
+    <span @click="noedit=true">取消</span>
+    <span @click="saveInfo">保存</span>
+  </div>
+</div>
+*/
+.half_page_title {
+  font-size: 16px;
+  font-weight: bolder;
+  padding: 0 15px;
+  background-color: #fff;
+  border-bottom: 1px solid #f6f6f6;
+  color: #262626;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  align-items: center;
+
+  >div:first-child {
+    display: flex;
+    align-items: center;
+
+    >i {
+      display: block;
+      width: 4px;
+      height: 16px;
+      border-radius: 2px;
+      background: #3575f6;
+      margin-right: 8px;
+    }
+  }
+
+  >div:last-child {
+    >i {
+      color: #3575F6;
+      font-weight: normal;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    >span {
+      font-size: 12px;
+      margin-left: 3px
+    }
+  }
+}
+
+// :hover 下划线
+.underline {
+  color: #3175f6;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// el-dialog 弹窗样式  
+/*
+    <el-dialog class="el_dialog_new"
+               title="新增房源"
+               :visible.sync="hourseVisible"
+               :close-on-click-modal="false">
+      <div class="dialog_content">
+        <div class="title">
+          <i></i>
+          <span>房源基本信息</span>
+        </div>
+        <el-form> ....XXXXX </el-form >
+      </div>
+      <div slot="footer" class="slotfooter">
+        <span @click="addHide" class="details_cannelBtn">关闭</span>
+        <span @click="addBillSave('addBillform')" class="details_submitBtn">确定</span>
+      </div>
+    </el-dialog>
+*/
+.el-dialog__wrapper {
+  &.el_dialog_new {
+    .el-dialog {
+      background-color: #faf7fa;
+
+      .el-dialog__header {
+        padding: 0;
+        margin: 0;
+        height: 50px;
+        line-height: 50px;
+        background-color: #ffffff;
+        padding-left: 15px;
+        font-weight: bold;
+        border: none;
+        margin-bottom: 10px;
+
+        .el-dialog__title {
+          color: #262626;
+          font-size: 16px;
+        }
+      }
+
+      .el-dialog__body {
+        margin: 0;
+        background-color: #ffffff;
+        padding: 0 !important;
+        border: none;
+
+        .dialog_content {
+          overflow-y: auto;
+
+          &::-webkit-scrollbar {
+            width: 4px !important;
+            height: 4px !important;
+          }
+
+          &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px #fff;
+            background-color: #fff;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            box-shadow: inset 0 0 6px #cccccc;
+          }
+
+          form.el-form {
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+          }
+
+          .title {
+            height: 45px;
+            padding-left: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #262626;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #f6f6f6;
+
+            >i {
+              display: inline-block;
+              width: 4px;
+              height: 16px;
+              background: rgba(53, 117, 246, 1);
+              border-radius: 2px;
+              margin-right: 5px;
+            }
+          }
+        }
+
+      }
+
+      .el-dialog__footer {
+        padding: 0;
+        background-color: #ffffff;
+        margin-top: 10px;
+        padding: 0 !important;
+
+        >.slotfooter {
+          height: 56px;
+          line-height: 56px;
+          text-align: right;
+          padding-right: 15px;
+          margin-top: 15px;
+          background-color: #fff;
+          font-size: 14px;
+
+          >span {
+            &.details_submitBtn {
+              display: inline-block;
+              width: 90px;
+              height: 32px;
+              line-height: 32px;
+              text-align: center;
+              cursor: pointer;
+              background-color: #3577f6;
+              color: #ffffff;
+              border-radius: 4px;
+            }
+
+            &.details_cannelBtn {
+              display: inline-block;
+              width: 90px;
+              height: 32px;
+              line-height: 32px;
+              text-align: center;
+              cursor: pointer;
+              color: #666666;
+              background-color: #ffffff;
+
+              &:hover {
+                color: #3577f6;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+el-time-select组合
+<div class="el_time_select_group" :class="{'edit':readonly}">
+  <el-form-item prop="startTime">
+    <p v-if="readonly">102-3</p>
+    <el-time-select style="width:100%"
+                    size="small"
+                    :clearable="false"
+                    v-model="addData.startTime"
+                    :picker-options="{ start: '00:00', step: '00:15', end: '24:00'}">
+    </el-time-select>
+  </el-form-item>
+  <div class="separator">-</div>
+  <el-form-item prop="endTime">
+    <el-time-select v-model="addData.endTime"
+                    prefix-icon=" "
+                    size="small"
+                    style="width:100%"
+                    @change="timeSelectChange"
+                    :picker-options="{ start: '00:00', step: '00:15', end: '24:00', minTime: addData.startTime}">
+    </el-time-select>
+  </el-form-item>
+</div>
+*/
+.el_time_select_group {
+  display: flex;
+  width: 100%;
+  height: 32px;
+  -webkit-appearance: none;
+  background-color: #FFF;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #DCDFE6;
+
+  &.edit {
+    border: none;
+  }
+
+  .el-form-item {
+    width: 45% !important;
+  }
+
+  .el-form-item.is-success .el-input__inner {
+    border: none !important;
+    background-color: transparent;
+  }
+
+  .el-input__inner {
+    border: none !important;
+    background-color: transparent;
+  }
+
+  .separator {
+    margin: 0 8px;
+    height: 32px;
+    line-height: 32px;
+  }
+}
+
+/* 全新半页  model:CRM管理》品牌管理半页
+<drawer class="drawer_new" :show="detailsdrawershow" :title="drawerTitle" :showEditBtn="true" @on-edit="onEdit" @on-hide="onHide">
+  <div class="details_content drawer-body"slot="drawer">
+    <div class="tab">
+      <span>基本信息</span>
+      <span>其他信息</span>
+      <span>操作记录</span>
+    </div>
+    <div class="main_content">
+      <el-form >XXXX表单内容</el-form>
+    </div>
+  </div>
+  <div slot="footer" class="dialog-footer">
+    <span @click="onHide"
+          class="closeBtn">关闭</span>
+    <span class="peveBtn"
+          v-if="tab!==1"
+          @click="peveBtn">上一步</span>
+    <span class="nextBtn"
+          v-if="tab!==3"
+          @click="nextBtn">下一步</span>
+    <span class="saveBtn"
+          v-if="draweDetaileData.reviewStatus==='PENDING' && !readonly"
+          @click="addBrand(false)">暂存</span>
+    <span class="saveSubmit"
+          v-if="draweDetaileData.reviewStatus==='PENDING' && !readonly"
+          @click="addBrand(true)">保存并提交</span>
+  </div>
+</drawer>
+*/
+.drawer_new {
+  .drawer {
+    overflow: hidden !important;
+    background-color: #F7F7F7 !important;
+
+    .wrap {
+      height: calc(100% - 56px) !important;
+      min-height: auto !important;
+      background-color: #F7F7F7 !important;
+
+      .drawer-head {
+        margin: 0 !important;
+        padding: 0 20px !important;
+        height: 50px;
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: center;
+        background-color: #ffffff;
+
+        .el-dialog__close {
+          margin-top: 18px;
+        }
+
+        &.clearfix::after {
+          display: none;
+        }
+
+        .drawer-title {
+          font-size: 16px;
+          font-weight: bolder;
+          color: #262626;
+          height: 50px;
+          line-height: 50px;
+        }
+
+        .dweditbtn {
+          position: absolute;
+          top: 18px;
+          right: 20px;
+        }
+      }
+
+      .drawer-body {
+        .main_content {
+          margin-top: 15px;
+          padding: 20px;
+          background-color: #ffffff;
+          // height: calc(100% - 56px); //根据实际页面需求设置高度 实现内容滚动
+          overflow-y: auto;
+
+          &::-webkit-scrollbar {
+            width: 4px !important;
+            height: 4px !important;
+          }
+
+          &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px #fff;
+            background-color: #fff;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            box-shadow: inset 0 0 6px #cccccc;
+          }
+        }
+      }
+    }
+
+    .dialog-footer {
+      margin-top: 0;
+      margin-right: 0;
+      height: 56px;
+      line-height: 56px;
+      background-color: #ffffff;
+      padding-right: 20px;
+
+    }
+  }
+}
+
+/*
+aliUpload
+<aliUpload class="aliUpload  aliUpload_new"
+           style="width:100px;height:100px" //宽高根据页面实际，标签设置
+          />
+<aliUpload class="aliUpload  aliUpload_small" 长条形上传组件
+  style="width:100px;height:100px" //宽高根据页面实际，标签设置
+/>
+*/
+.aliUpload_new {
+  .oss_file {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    background-color: #F7F9FD !important;
+    border: 1px solid #eaeaea !important;
+    border-radius: 4px !important;
+    color: #3575f6 !important;
+    line-height: initial;
+
+    >i {
+      &.iconfont {
+        font-size: 32px !important;
+        position: absolute !important;
+        top: 20% !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        margin: auto !important;
+        height: auto;
+      }
+    }
+
+    >span {
+      &.upLoadText {
+        position: absolute !important;
+        top: 60% !important;
+        left: 0px !important;
+        right: 0 !important;
+        margin: auto !important;
+        color: #3575F6 !important;
+        bottom: 0;
+
+      }
+    }
+
+    >input {
+      right: 0 !important;
+      top: 0 !important;
+      opacity: 0 !important;
+      cursor: pointer !important;
+      width: 100% !important;
+      height: 100% !important;
+      position: absolute !important;
+      font-size: 0 !important;
+    }
+  }
+}
+
+.aliUpload_small {
+  .oss_file {
+    width: 100% !important;
+    height: 100% !important;
+    // border: none !important;
+    // background-color: #F7F9FD !important;
+    border: 1px solid #3575f6 !important;
+    border-radius: 4px !important;
+    color: #3575f6 !important;
+    line-height: initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >i {
+      &.iconfont {
+        // font-size: 32px !important;
+        // position: absolute !important;
+        // top: 20% !important;
+        // left: 0 !important;
+        // right: 0 !important;
+        // bottom: 0 !important;
+        // margin: auto !important;
+        // height: auto;
+      }
+    }
+
+    >span {
+      &.upLoadText {
+        // position: absolute !important;
+        // top: 60% !important;
+        // left: 0px !important;
+        // right: 0 !important;
+        // margin: auto !important;
+        // color: #3575F6 !important;
+        // bottom: 0;
+
+      }
+    }
+
+    >input {
+      right: 0 !important;
+      top: 0 !important;
+      opacity: 0 !important;
+      cursor: pointer !important;
+      width: 100% !important;
+      height: 100% !important;
+      position: absolute !important;
+      font-size: 0 !important;
+    }
+  }
+}
+
+/*
+imgBox 图片预览
+
+<div v-for="(item,index) in draweDetaileData.imgUrls"
+      :key="index"
+      v-if="draweDetaileData.imgUrls.length>0"
+      style="width: 140px; height: 120px;"     //外层定义宽高
+      class="imgBox imgBoxModel">
+  <img :src="item"
+        class="logoImg">
+  <div @click="showImg1(item,index)"
+        class="bottomTips">预览图片</div>
+  <div v-if="!readonly"
+        class="iconfont icon-cms_cuowu deleteImg"
+        @click="deleteImg(index)"></div>
+</div>
+*/
+.imgBoxModel {
+  margin-right: 15px;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid #eaeaea;
+  border-radius: 2px;
+
+  >.logoImg {
+    width: 100%;
+    height: 100%;
+  }
+
+  >.bottomTips {
+    height: 0px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background: rgba(38, 38, 38, 0.6);
+    line-height: 25px;
+    font-size: 12px;
+    padding: 0 5px;
+    cursor: pointer;
+    color: #FEFEFE;
+    text-align: center;
+    transition: height .5s;
+    overflow: hidden;
+  }
+
+  >.deleteImg {
+    position: absolute;
+    right: -10px;
+    top: -8px;
+    width: 16px;
+    height: 16px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 16px;
+  }
+}
+
+.imgBoxModel:hover {
+  >.bottomTips {
+    height: 25px;
+  }
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ellipsis1 {
+  white-space: normal !important;
+}
+
+// 时间范围组件隐藏清空按钮
+.el-date-range-picker {
+  .el-picker-panel__footer {
+    .el-picker-panel__link-btn:first-child {
+      display: none;
+    }
+  }
+}
+
+.newScrollbar {
+  &::-webkit-scrollbar {
+    width: 2px !important;
+    height: 2px !important;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #fff;
+    background-color: #fff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px #cccccc;
+  }
+}

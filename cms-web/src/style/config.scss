@@ -1,0 +1,41 @@
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-blue: #5e72e4;
+$color-blue-hover: #3349c8;
+$color-blue-1: #539ffd;
+$color-blue-2: #11c5e0;
+$color-green: #65ac69;
+$color-green-hover: #00954d;
+$color-red: #ff7674;
+$color-red-1: #ff0042;
+$color-yellow: #ffcf26;
+$color-orange: #ff9900;
+$color-gray: #b1bbf1;
+$color-gray-hover: #9aa5e5;
+$color-grey: darken($color-white, 20%);
+$color-border: darken($color-white, 10%);
+$color-background: #f0eff5;
+$color-background-1: darken($color-white, 4%);
+$color-background-2: #f8f9fb;
+$color-shadow: #cbd1ff;
+$color-shadow-1: #d8ddf1;
+$color-enter: #C8C8C8;
+
+$style-border: 1px solid $color-border;
+
+$text-primary-color: #333;
+$text-second-color: #a0a4bd;
+$text-third-color: #666666;
+$text-placeholder: #cfd1de;
+
+$doc-width: 1500;
+$win-width: 37.5rem;
+
+@function rem($px) {
+  @return $px * $win-width / $doc-width;
+}
+
+$status-height: rem(40);
+$head-height: rem(88);
+$foot-height: rem(100);
+$padding: rem(30);

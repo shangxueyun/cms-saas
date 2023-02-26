@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+  <title>数据可视化</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_989450_iqdupnge1kg.css">
+  <script src='https://cdn.polyfill.io/v2/polyfill.min.js'></script>
+  <script>
+    var deviceWidth
+    setHtmlFontSize()
+
+    if (window.addEventListener) {
+      window.addEventListener('resize', function () {
+        setHtmlFontSize()
+      }, false)
+    }
+
+    function setHtmlFontSize() {
+      // 3840是设计稿的宽度，当大于3840时采用3840宽度，比例也是除以38.40
+      deviceWidth = document.documentElement.clientWidth > 3840 ? 3840 : document.documentElement.clientWidth
+      document.getElementsByTagName('html')[0].style.cssText = 'font-size:' + deviceWidth / 38.4 + 'px !important'
+    }
+
+  </script>
+  <style>
+    #preLoading {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    #preLoading i {
+      margin-top: 50px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      border-top-color: #333;
+      border-left-color: #333;
+      border-right-color: #333;
+      animation: spinner-rotate 0.8s infinite linear;
+    }
+
+    @keyframes spinner-rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .amap-logo {
+      display: none;
+      opacity: 0 !important;
+    }
+
+    .amap-copyright {
+      opacity: 0;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="app">
+
+  </div>
+  <div style="display:none">
+    <script src="https://s13.cnzz.com/z_stat.php?id=1263108274&web_id=1263108274" language="JavaScript"></script>
+  </div>
+
+  <!-- built files will be auto injected -->
+  <script type="text/javascript"
+    src="https://webapi.amap.com/maps?v=2.0&key=b34d8eb5c05c9e74458b7dd1c1010f12&plugin=AMap.PolyEditor,AMap.CircleEditor,AMap.ElasticMarker">
+  </script>
+  <script type="text/javascript" src="https://webapi.amap.com/loca?v=2.0.0&key=b34d8eb5c05c9e74458b7dd1c1010f12">
+  </script>
+  <!-- <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.12&key=b34d8eb5c05c9e74458b7dd1c1010f12&plugin=AMap.Geocoder,AMap.PolyEditor,AMap.CircleEditor"></script> -->
+  <!-- <script src="/static/ocxfun.js"></script> -->
+</body>
+
+</html>

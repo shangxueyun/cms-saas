@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta charset="utf-8">
+  <title>小象商业管理系统</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_2553190_lqbomuwmi7.css">
+  <link rel="stylesheet" href="static/pptx/css/nv.d3.min.css">
+  <style>
+    #preLoading {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    #preLoading i {
+      margin-top: 50px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      border-top-color: #333;
+      border-left-color: #333;
+      border-right-color: #333;
+      animation: spinner-rotate 0.8s infinite linear;
+    }
+
+    @keyframes spinner-rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+
+      50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+      }
+
+      100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
+
+    .pulseAni {
+      -webkit-animation: pulse 1s infinite;
+      animation: pulse 1s infinite;
+    }
+  </style>
+</head>
+<script type="text/javascript"
+  src="https://webapi.amap.com/maps?v=1.4.12&key=b34d8eb5c05c9e74458b7dd1c1010f12&plugin=AMap.Geocoder,AMap.PolyEditor">
+  </script>
+
+<body>
+  <div id="app">
+
+  </div>
+  <!-- built files will be auto injected -->
+
+  <script type="text/javascript" src="static/pptx/chart/d3.min.js"></script>
+  <script type="text/javascript" src="static/pptx/chart/nv.d3.min.js"></script>
+  <script src="./static/jsencrypt.js"></script>
+  <script src="//at.alicdn.com/t/font_989450_ytmb7630fpc.js"></script>
+  <script src="//at.alicdn.com/t/font_1914259_qb6e8aspqvq.js"></script>
+</body>
+
+</html>
